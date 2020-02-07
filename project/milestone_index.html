@@ -1,0 +1,519 @@
+<!--document--->
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token">
+    <title>Project-milestone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--style code here-->
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/toastr/toastr.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/css/profile.css" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/css/validationEngine.jquery.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="../../PMS-Static/layouts/assets/plugins/summernote/summernote-bs4.css">
+    <!--end-->
+
+    <!--inline css code here-->
+
+    <!--end-->
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
+<!--page content here-->
+<div class="wrapper wrapper-without-filter">
+    <!--Page nav-bar code here-->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <div class="page-header page-header-without-filter">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="details.html" class="nav-link">
+                        Project
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="task_index.html"  class="nav-link">Tasks</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="bug_index.html" class="nav-link">Bugs</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="milestone_index.html" class="nav-link">milestones</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#milestone-model"><i class="fas fa-plus "></i>
+                        Create Milestone
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--end nav-bar-->
+    <!--model for Add bugs-->
+    <div class="modal fade" id="milestone-model">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Milestone</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="resetData">&times;</span>
+                    </button>
+                </div>
+
+                <form class="form validation" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control validate[required] text-input"
+                                   name="name" placeholder="Milestone name">
+                        </div>
+                        <div class="form-group">
+                            <label>Teams</label>
+                            <select class="form-control create-project-select2"  name="id_client" style="width: 100%;" multiple>
+                                <option>Select Teams</option>
+                                <option>Team A</option>
+                                <option>Team B</option>
+                                <option>Team C</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date for complete</label>
+                            <input type="date" class="form-control validate[required] text-input"
+                                   name="name">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-block">Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end-->
+    <!--sidebar code here-->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a href="../../PMS-Static/dashboard/index.html" class="brand-link">
+            <img alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 src="../../PMS-Static/layouts/assets/img/AdminLTELogo.png"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">PMS</span>
+        </a>
+        <div class="sidebar">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="../../PMS-Static/layouts/assets/img/avatar04.png"
+                         class="img-circle elevation-2"
+                         alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="../../PMS-Static/profile/index.html" class="d-block">Pawan garg</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
+                data-accordion="false">
+                <li class="nav-item">
+                    <a href="../../PMS-Static/timer/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-clock-o"></i>
+                        <p>
+                            Timer
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
+                data-accordion="false">
+                <li class="nav-header">Analyze</li>
+                <li class="nav-item">
+                    <a href="../../PMS-Static/dashboard/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboards
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../PMS-Static/report/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>
+                            Reports
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
+                data-accordion="false">
+                <li class="nav-header">Manage</li>
+                <li class="nav-item has-treeview">
+                    <a href="../../PMS-Static/project/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Projects
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../PMS-Static/team/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Teams
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../PMS-Static/client/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Clients
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../PMS-Static/tag/index.html" class="nav-link">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                            Tags
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/index.html">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+            <!--end Sidebar Menu-->
+
+        </div>
+    </aside>
+    <!--end-->
+    <!--main page content-->
+    <div class="content-wrapper">
+        <section class="content-header">
+        </section>
+        <!--content-->
+        <div class="card card-solid">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Milestones</h3>
+                </div>
+                <div class="card-tools">
+                    <a class=" dropdown-toggle ml-auto p-2" data-toggle="dropdown">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" tabindex="-1" href="#">Sort only mine</a>
+                        <a class="dropdown-item" tabindex="-1" href="#">Print</a>
+                        <a class="dropdown-item" tabindex="-1" href="#">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="dataTables_wrapper dt-bootstrap4">
+                    <table class="table table-bordered table-hover dataTable" id="project-table">
+                        <thead>
+                        <tr>
+                            <th style="">Name</th>
+                            <th style="">Teams</th>
+                            <th style="">Total time/Remain</th>
+                            <th style="">Assign To</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                Milestone name
+                                <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Team-A
+                                                <ul>
+                                                    <li>Pawan</li>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                </ul>
+                                            </li>
+                                            <li>Team-B
+                                                <ul>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                    <li>Mehul</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="accordion1">
+                                    <div class="card"></div>
+                                </div>
+                            </td>
+                            <td>team-a,team-b</td>
+                            <td>
+                                <small class="badge badge-primary">120-H</small>
+
+                                <small class="badge badge-danger">20-H</small>
+                            </td>
+                            <td class="project-state">
+                                <span class="text-warning">QA</span>
+                            </td>
+                            <td class="project-state">
+                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" tabindex="-1" href="#">View Report</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn  collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                Milestone name
+                                <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Team-A
+                                                <ul>
+                                                    <li>Pawan</li>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                </ul>
+                                            </li>
+                                            <li>Team-B
+                                                <ul>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                    <li>Mehul</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="accordion">
+                                    <div class="card"></div>
+                                </div>
+                            </td>
+                            <td>team-a,team-b</td>
+                            <td>
+                                <small class="badge badge-primary">120-H</small>
+
+                                <small class="badge badge-danger">20-H</small>
+                            </td>
+                            <td class="project-state">
+                                <span class="text-warning">QA</span>
+                            </td>
+                            <td class="project-state">
+                                <a class=" dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" tabindex="-1" href="#">View Report</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn  collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                Milestone name
+                                <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Team-A
+                                                <ul>
+                                                    <li>Pawan</li>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                </ul>
+                                            </li>
+                                            <li>Team-B
+                                                <ul>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                    <li>Mehul</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="accordion3">
+                                    <div class="card"></div>
+                                </div>
+                            </td>
+                            <td>team-a,team-b</td>
+                            <td>
+                                <small class="badge badge-primary">120-H</small>
+
+                                <small class="badge badge-danger">20-H</small>
+                            </td>
+                            <td class="project-state">
+                                <span class="text-warning">QA</span>
+                            </td>
+                            <td class="project-state">
+                                <a class=" dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" tabindex="-1" href="#">View Report</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                Milestone name
+                                <div id="collapse4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Team-A
+                                                <ul>
+                                                    <li>Pawan</li>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                </ul>
+                                            </li>
+                                            <li>Team-B
+                                                <ul>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                    <li>Mehul</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="accordion4">
+                                    <div class="card"></div>
+                                </div>
+                            </td>
+                            <td>team-a,team-b</td>
+                            <td>
+                                <small class="badge badge-primary">120-H</small>
+
+                                <small class="badge badge-danger">20-H</small>
+                            </td>
+                            <td class="project-state">
+                                <span class="text-warning">QA</span>
+                            </td>
+                            <td class="project-state">
+                                <a class=" dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" tabindex="-1" href="#">View Report</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                Milestone name
+                                <div id="collapse5" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Team-A
+                                                <ul>
+                                                    <li>Pawan</li>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                </ul>
+                                            </li>
+                                            <li>Team-B
+                                                <ul>
+                                                    <li>Ashish</li>
+                                                    <li>ruchita</li>
+                                                    <li>Mehul</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="accordio5">
+                                    <div class="card"></div>
+                                </div>
+                            </td>
+                            <td>team-a,team-b</td>
+                            <td>
+                                <small class="badge badge-primary">120-H</small>
+
+                                <small class="badge badge-danger">20-H</small>
+                            </td>
+                            <td class="project-state">
+                                <span class="text-warning">QA</span>
+                            </td>
+                            <td class="project-state">
+                                <a class=" dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" tabindex="-1" href="#">View Report</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--end content-->
+    </div>
+    <!--end main page content-->
+    <!--footer page here-->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 3.0.1
+        </div>
+        <strong>Copyright</strong>
+        2020
+    </footer>
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+    <!--end footer page-->
+</div>
+<!--end page content-->
+
+<!--scripts here-->
+<script src="../../PMS-Static/layouts/assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="../../PMS-Static/layouts/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="../../PMS-Static/layouts/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../PMS-Static/layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../PMS-Static/layouts/assets/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../PMS-Static/layouts/assets/js/demo.js"></script>
+<!--end-->
+
+<!--incline script here-->
+<!--end-->
+</body>

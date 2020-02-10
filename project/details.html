@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
     <!--end-->
 
     <!--inline css code here-->
@@ -219,18 +220,20 @@
 
                         <div class="card-tools">
                             <form class="form-inline" method="post" id="add_member_form">
-                                <input type="hidden" name="id_project" value="{{ $oProject->id_project }}">
+                                <input type="hidden" name="id_project" value="">
                                 <input type="hidden" name="id_project_role" value="1">
                                 <div class="form-group mx-sm-3 input-group-lg">
-                                    <select class="form-control" id="select2" style="width: 100%;">
-                                        <option selected="selected">Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
-                                    </select>
+                                    <label>
+                                        <select class="form-control select-member">
+                                            <option selected>Select Member</option>
+                                            <option>Alaska</option>
+                                            <option>California</option>
+                                            <option>Delaware</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Washington</option>
+                                        </select>
+                                    </label>
                                 </div>
                                 <button type="button" class="btn btn-success">
                                     <i class="fas fa-plus "></i>
@@ -323,7 +326,7 @@
 <script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="../layouts/assets/js/adminlte.js"></script>
-
+<script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="../layouts/assets/plugins/chart.js/Chart.min.js"></script>
 <script src="../layouts/assets/js/demo.js"></script>
@@ -336,11 +339,12 @@
 <!--end-->
 
 <!--incline script here-->
-<script>
+<script type="application/javascript">
     //Initialize Select2 Elements
-    $('#select2').select2({
+    $(".select-member").select2({
+        tags: true,
         theme: 'bootstrap4'
-    })
+    });
 </script>
 <!--end-->
 </body>

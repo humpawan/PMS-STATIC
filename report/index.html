@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
     <!--end-->
 
     <!--inline css code here-->
@@ -50,14 +51,20 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="fas fa-users"></i> Team
-                            </a>
+                            <label class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <select class="form-control select-report">
+                                    <option> Team</option>
+                                </select>
+                            </label>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="javascript:void(0)" class="nav-link">
-                                <i class="fas fa-file"></i>  Project
-                            </a>
+                            <label class="nav-link">
+                                <i class="fas fa-file"></i>
+                                <select class="form-control select-report">
+                                    <option> Project</option>
+                                </select>
+                            </label>
                         </li>
                     </ul>
                 </div>
@@ -294,7 +301,7 @@
 <script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="../layouts/assets/js/adminlte.js"></script>
-
+<script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="../layouts/assets/plugins/chart.js/Chart.min.js"></script>
 <script src="../layouts/assets/js/demo.js"></script>
@@ -308,6 +315,12 @@
 <!--end-->
 
 <!--incline script here-->
-
+<script>
+    //Initialize Select2 Elements
+    $(".select-report").select2({
+        tags: true,
+        theme: 'bootstrap4'
+    });
+</script>
 <!--end-->
 </body>

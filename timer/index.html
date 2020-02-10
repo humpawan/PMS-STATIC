@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
     <!--end-->
 
     <!--inline css code here-->
@@ -177,7 +178,7 @@
                             <span class="info-box-number text-center text-muted mb-0"><time>48:23:30</time> min</span>
                         </div>
                         <label class="align-content-center">
-                            <select class="form-control select2" id="timer" name="timer">
+                            <select class="form-control select-timer" name="timer">
                                 <option>This week</option>
                                 <option>This month</option>
                                 <option>This year</option>
@@ -189,26 +190,26 @@
             </div>
         </section>
         <!--content-->
-        <div class="card">
+        <div class="card sub-header">
             <div class="card-header">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label>
-                            Filter By:&nbsp&nbsp&nbsp&nbsp
-                        </label>
-                        <ul class="navbar-nav form-inline">
-                            <li class="nav-item d-none d-sm-inline-block">
-                             <span class="users-list-date">
-                                <i class="fas fa-user"></i> Today Assign
-                             </span>
-                            </li>
-                            <li class="nav-item d-none d-sm-inline-block">
-                             <span class="users-list-date">
-                                <i class="fas fa-file"></i> Project
-                             </span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="card-title nav-link">
+                    Filter By:
+                </div>
+                <div class="card-title">
+                    <label class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <select class="form-control select-timer">
+                            <option>Today Assign</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="card-title">
+                    <label class="nav-link">
+                        <i class="fas fa-file"></i>
+                        <select class="form-control select-timer">
+                            <option>Project</option>
+                        </select>
+                    </label>
                 </div>
                 <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#modal-sm"><i class="fas fa-plus"></i> Add task</button>
             </div>
@@ -356,7 +357,7 @@
 <script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="../layouts/assets/js/adminlte.js"></script>
-
+<script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="../layouts/assets/plugins/chart.js/Chart.min.js"></script>
 <script src="../layouts/assets/js/demo.js"></script>
@@ -410,7 +411,12 @@
     }
     $('#timer').select2({
         theme: 'bootstrap4'
-    })
+    });
+    //Initialize Select2 Elements
+    $(".select-timer").select2({
+        tags: true,
+        theme: 'bootstrap4'
+    });
 </script>
 <!--end-->
 </body>

@@ -22,7 +22,7 @@
     <!--inline css code here-->
 <style>
     body{font-family: "Lato"; margin:0; padding: 0;}
-    #myKanban{overflow-x: auto; padding:20px 0;}
+    #Task{overflow-x: auto; padding:20px 0;}
 
     .success{background: #00B961; color:#fff}
     .info1{background: #2A92BF; color:#fff}
@@ -221,7 +221,7 @@
                     <button class="btn btn-success" id="addDefault">Add "Default" board</button>
                     <button class="btn btn-success" id="addToDo">Add element in "To Do" Board</button>
                     <button class="btn btn-danger" id="removeBoard">Remove "Done" Board</button>
-                    <div id="myKanban"></div>
+                    <div id="Task"></div>
                 </div>
             </div>
         </div>
@@ -377,7 +377,7 @@
 <!--end-->
 <script>
     var KanbanTest = new jKanban({
-        element : '#myKanban',
+        element : '#Task',
         gutter  : '10px',
         click : function(el){
             alert(el.innerHTML);

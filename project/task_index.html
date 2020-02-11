@@ -6,7 +6,6 @@
     <meta name="csrf-token">
     <title>Project-task</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!--style code here-->
     <link rel="stylesheet"
           href="../layouts/assets/plugins/fontawesome-free/css/all.min.css">
@@ -18,10 +17,18 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="https://www.riccardotartaglia.it/jkanban/dist/jkanban.min.css" rel="stylesheet">
     <!--end-->
-
     <!--inline css code here-->
+<style>
+    body{font-family: "Lato"; margin:0; padding: 0;}
+    #myKanban{overflow-x: auto; padding:20px 0;}
 
+    .success{background: #00B961; color:#fff}
+    .info{background: #2A92BF; color:#fff}
+    .warning{background: #F4CE46; color:#fff}
+    .error{background: #FB7D44; color:#fff}
+</style>
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -208,6 +215,16 @@
     <div class="content-wrapper">
         <section class="content-header">
         </section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myKanban"></div>
+                    <button class="btn btn-success" id="addDefault">Add "Default" board</button>
+                    <button class="btn btn-success" id="addToDo">Add element in "To Do" Board</button>
+                    <button class="btn btn-danger" id="removeBoard">Remove "Done" Board</button>
+                </div>
+            </div>
+        </div>
         <!--content-->
         <div class="row">
             <div class="col-md-9">
@@ -356,8 +373,100 @@
 <script src="../layouts/assets/plugins/flot-old/jquery.flot.resize.min.js"></script>
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
 <script src="../layouts/assets/plugins/flot-old/jquery.flot.pie.min.js"></script>
+<script src="https://gitcdn.xyz/repo/riktar/jkanban/master/dist/jkanban.min.js"></script>
 <!--end-->
+<script>
+    var KanbanTest = new jKanban({
+        element : '#myKanban',
+        gutter  : '10px',
+        click : function(el){
+            alert(el.innerHTML);
+            alert(el.dataset.eid)
+        },
+        boards  :[
+            {
+                'id' : '_todo',
+                'title'  : 'To Do (drag me)',
+                'class' : 'info',
+                'item'  : [
+                    {
+                        'id':'task-1',
+                        'title':'Try drag me',
+                    },
+                    {
+                        'id':'task-2',
+                        'title':'Click me!!',
+                    }
+                ]
+            },
+            {
+                'id' : '_working',
+                'title'  : 'Working',
+                'class' : 'warning',
+                'item'  : [
+                    {
+                        'title':'Do Something!',
+                    },
+                    {
+                        'title':'Run?',
+                    }
+                ]
+            },
+            {
+                'id' : '_done',
+                'dragTo' : ['_working'],
+                'title'  : 'Done (Drag only in Working)',
+                'class' : 'success',
+                'item'  : [
+                    {
+                        'title':'All right',
+                    },
+                    {
+                        'title':'Ok!',
+                    }
+                ]
+            }
+        ]
+    });
 
+    var toDoButton = document.getElementById('addToDo');
+    toDoButton.addEventListener('click',function(){
+        KanbanTest.addElement(
+            '_todo',
+            {
+                'title':'Test Add',
+            }
+        );
+    });
+
+    var addBoardDefault = document.getElementById('addDefault');
+    addBoardDefault.addEventListener('click', function () {
+        KanbanTest.addBoards(
+            [{
+                'id' : '_default',
+                'title'  : 'Default (Can\'t drop in Done)',
+                'dragTo':['_todo','_working'],
+                'class' : 'error',
+                'item'  : [
+                    {
+                        'title':'Default Item',
+                    },
+                    {
+                        'title':'Default Item 2',
+                    },
+                    {
+                        'title':'Default Item 3',
+                    }
+                ]
+            }]
+        )
+    });
+
+    var removeBoard = document.getElementById('removeBoard');
+    removeBoard.addEventListener('click',function(){
+        KanbanTest.removeBoard('_done');
+    });
+</script>
 <!--incline script here-->
 <!--end-->
 </body>

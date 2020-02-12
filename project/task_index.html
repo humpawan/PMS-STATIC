@@ -18,16 +18,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
     <link href="https://www.riccardotartaglia.it/jkanban/dist/jkanban.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../layouts/assets/plugins/daterangepicker/daterangepicker.css">
     <!--end-->
     <!--inline css code here-->
 <style>
     body{font-family: "Lato"; margin:0; padding: 0;}
     #Task{overflow-x: auto; padding:20px 0;}
-
-    .success{background: #00B961; color:#fff}
-    .info1{background: #2A92BF; color:#fff}
-    .warning{background: #F4CE46; color:#fff}
-    .error{background: #FB7D44; color:#fff}
 </style>
     <!--end-->
 </head>
@@ -66,6 +62,23 @@
                     </button>
                 </li>
             </ul>
+        </div>
+        <div class="sub-header">
+            <div class="form-inline">
+                <div class="form-group">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-default  filter-date">
+                                    <i class="far fa-calendar-alt"></i> Filter-By
+
+                                    <i class="fas fa-caret-down"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
     <!--end nav-bar-->
@@ -372,11 +385,8 @@
 <script src="../layouts/assets/js/demo.js"></script>
 <script src="../layouts/assets/js/pages/dashboard3.js"></script>
 <script src="../layouts/assets/plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.resize.min.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.pie.min.js"></script>
 <script src="https://gitcdn.xyz/repo/riktar/jkanban/master/dist/jkanban.min.js"></script>
+<script src="../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!--end-->
 <script>
     var KanbanTest = new jKanban({
@@ -469,6 +479,28 @@
     removeBoard.addEventListener('click',function(){
         KanbanTest.removeBoard('_done');
     });
+
+
+    //filter date script
+    //Date range as a button
+    $('.filter-date').daterangepicker(
+        {
+            ranges   : {
+                'Today'       : [moment(), moment()],
+                'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+                'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            startDate: moment().subtract(29, 'days'),
+            endDate  : moment()
+        },
+        function (start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        }
+    );
+
 </script>
 <!--incline script here-->
 <!--end-->

@@ -40,15 +40,6 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a class="nav-link" href="/home/scaletech/Development/PMS-Static/PMS-static/projects/index.html">Projects</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="nav-link" href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a class="nav-link" href="/home/scaletech/Development/PMS-Static/PMS-static/projects/milestones.html">Milestones</a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html" class="nav-link">Bugs</a>
-            </li>
         </ul>
 
         <!-- SEARCH FORM -->
@@ -186,16 +177,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Milestones</h3>
-                                    </div>
                                     <!-- /.card-header -->
                                     <div class="card-body table-responsive p-0">
-                                        <table class="table table-hover">
+                                        <!--<table class="table table-hover">
                                             <thead>
                                             <tr>
-                                                <th>Project Name</th>
-                                                <th>Milestone</th>
+                                                <th>Title</th>
+                                                <th>Team name</th>
                                                 <th>Work</th>
                                                 <th>Progress</th>
                                             </tr>
@@ -274,7 +262,286 @@
                                                 </td>
                                             </tr>
                                             </tbody>
-                                        </table>
+                                        </table>-->
+                                        <div class="card card-solid">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3>Milestones</h3>
+                                                </div>
+                                                <div class="card-tools">
+                                                    <a class=" dropdown-toggle ml-auto p-2" data-toggle="dropdown">
+                                                        <i class="fas fa-bars"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" tabindex="-1" href="#">Sort only mine</a>
+                                                        <a class="dropdown-item" tabindex="-1" href="#">Print</a>
+                                                        <a class="dropdown-item" tabindex="-1" href="#">Download PDF</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="dataTables_wrapper dt-bootstrap4">
+                                                    <table class="table table-bordered table-hover dataTable" id="project-table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th style="">Name</th>
+                                                            <th style="">Teams</th>
+                                                            <th style="">Total time/Remaining time</th>
+                                                            <th style="">Assign To</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                Milestone Title
+                                                                <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <ul>
+                                                                            <li>Members
+                                                                                <ul>
+                                                                                    <li>Ashish</li>
+                                                                                    <li>Ruchita</li>
+                                                                                    <li>Dezal</li>
+                                                                                    <li>Pawan</li>
+                                                                                    <li>Kajal</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a></li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html">Bugs</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="accordion1">
+                                                                    <div class="card"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>PMS Internal</td>
+                                                            <td>
+                                                                <small class="badge badge-primary">120-H</small>
+
+                                                                <small class="badge badge-danger">200-H</small>
+                                                            </td>
+                                                            <td class="project-state">
+                                                                <span class="text-warning">QA</span>
+                                                            </td>
+                                                            <td>
+                                                                <div data-toggle="dropdown">
+                                                                    <i class="fas fa-ellipsis-v" style="color: lightgrey"></i>
+                                                                </div>
+
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="/home/scaletech/Development/PMS-Static/PMS-static/Reports/summary.html">View report</a>
+                                                                    <a class="dropdown-item" href="#">Archive</a>
+                                                                    <a class="dropdown-item" href="#" style="color: red">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="btn  collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                Milestone Title
+                                                                <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <ul>
+                                                                            <li>Members
+                                                                                <ul>
+                                                                                    <li>Ashish</li>
+                                                                                    <li>Ruchita</li>
+                                                                                    <li>Dezal</li>
+                                                                                    <li>Pawan</li>
+                                                                                    <li>Kajal</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a></li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html">Bugs</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="accordion">
+                                                                    <div class="card"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>Laravel</td>
+                                                            <td>
+                                                                <small class="badge badge-primary">120-H</small>
+
+                                                                <small class="badge badge-success">Completed</small>
+                                                            </td>
+                                                            <td class="project-state">
+                                                                <span class="text-warning">QA</span>
+                                                            </td>
+                                                            <td>
+                                                                <div data-toggle="dropdown">
+                                                                    <i class="fas fa-ellipsis-v" style="color: lightgrey"></i>
+                                                                </div>
+
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="/home/scaletech/Development/PMS-Static/PMS-static/Reports/summary.html">View report</a>
+                                                                    <a class="dropdown-item" href="#">Archive</a>
+                                                                    <a class="dropdown-item" href="#" style="color: red">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="btn  collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                Milestone Title
+                                                                <div id="collapse3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <ul>
+                                                                            <li>Members
+                                                                                <ul>
+                                                                                    <li>Ashish</li>
+                                                                                    <li>Ruchita</li>
+                                                                                    <li>Dezal</li>
+                                                                                    <li>Pawan</li>
+                                                                                    <li>Kajal</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a></li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html">Bugs</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="accordion3">
+                                                                    <div class="card"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>PHP Team</td>
+                                                            <td>
+                                                                <small class="badge badge-primary">120-H</small>
+
+                                                                <small class="badge badge-danger">20-H</small>
+                                                            </td>
+                                                            <td class="project-state">
+                                                                <span class="text-warning">QA</span>
+                                                            </td>
+                                                            <td>
+                                                                <div data-toggle="dropdown">
+                                                                    <i class="fas fa-ellipsis-v" style="color: lightgrey"></i>
+                                                                </div>
+
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="/home/scaletech/Development/PMS-Static/PMS-static/Reports/summary.html">View report</a>
+                                                                    <a class="dropdown-item" href="#">Archive</a>
+                                                                    <a class="dropdown-item" href="#" style="color: red">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                Milestone Title
+                                                                <div id="collapse4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <ul>
+                                                                            <li>Members
+                                                                                <ul>
+                                                                                    <li>Ashish</li>
+                                                                                    <li>Ruchita</li>
+                                                                                    <li>Dezal</li>
+                                                                                    <li>Pawan</li>
+                                                                                    <li>Kajal</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a></li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html">Bugs</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="accordion4">
+                                                                    <div class="card"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>Frontend</td>
+                                                            <td>
+                                                                <small class="badge badge-primary">120-H</small>
+
+                                                                <small class="badge badge-danger">2-H</small>
+                                                            </td>
+                                                            <td class="project-state">
+                                                                <span class="text-warning">QA</span>
+                                                            </td>
+                                                            <td>
+                                                                <div data-toggle="dropdown">
+                                                                    <i class="fas fa-ellipsis-v" style="color: lightgrey"></i>
+                                                                </div>
+
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="/home/scaletech/Development/PMS-Static/PMS-static/Reports/summary.html">View report</a>
+                                                                    <a class="dropdown-item" href="#">Archive</a>
+                                                                    <a class="dropdown-item" href="#" style="color: red">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <button class="btn collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                Milestone Title
+                                                                <div id="collapse5" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                                    <div class="card-body">
+                                                                        <ul>
+                                                                            <li>Members
+                                                                                <ul>
+                                                                                    <li>Ashish</li>
+                                                                                    <li>Ruchita</li>
+                                                                                    <li>Dezal</li>
+                                                                                    <li>Pawan</li>
+                                                                                    <li>Kajal</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/tasks.html">Tasks</a></li>
+                                                                            <li><a href="/home/scaletech/Development/PMS-Static/PMS-static/projects/bugs.html">Bugs</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="accordio5">
+                                                                    <div class="card"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>team-a,team-b</td>
+                                                            <td>
+                                                                <small class="badge badge-primary">120-H</small>
+
+                                                                <small class="badge badge-success">Completed</small>
+                                                            </td>
+                                                            <td class="project-state">
+                                                                <span class="text-warning">QA</span>
+                                                            </td>
+                                                            <td>
+                                                                <div data-toggle="dropdown">
+                                                                    <i class="fas fa-ellipsis-v" style="color: lightgrey"></i>
+                                                                </div>
+
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="/home/scaletech/Development/PMS-Static/PMS-static/Reports/summary.html">View report</a>
+                                                                    <a class="dropdown-item" href="#">Archive</a>
+                                                                    <a class="dropdown-item" href="#" style="color: red">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- /.card-body -->
                                 </div>

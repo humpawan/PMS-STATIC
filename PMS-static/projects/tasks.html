@@ -415,15 +415,6 @@
                 </div>
             </div>
         </form>
-
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <button class="btn btn-success float-right create-project-btn" data-target="#create_project_modal" data-toggle="modal"
-                        type="button"><i class="fas fa-plus "></i> Create Task
-                </button>
-            </li>
-        </ul>
     </nav>
     <!-- /.navbar -->
 
@@ -537,133 +528,6 @@
                     <!-- Left col -->
                     <section class="col-lg-12 connectedSortable">
 
-                        <!-- TO DO List -->
-                        <!--<div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="ion ion-clipboard mr-1"></i>
-                                    To Do List
-                                </h3>
-                            </div>
-                            &lt;!&ndash; /.card-header &ndash;&gt;
-                            <div class="card-body">
-                                <ul class="todo-list" data-widget="todo-list">
-                                    <li>
-                                        &lt;!&ndash; drag handle &ndash;&gt;
-                                        <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        &lt;!&ndash; checkbox &ndash;&gt;
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input id="todoCheck1" name="todo1" type="checkbox" value="">
-                                            <label for="todoCheck1"></label>
-                                        </div>
-                                        &lt;!&ndash; todo text &ndash;&gt;
-                                        <span class="text">Design a nice theme</span>
-                                        &lt;!&ndash; Emphasis label &ndash;&gt;
-                                        <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
-                                        &lt;!&ndash; General tools such as edit or delete&ndash;&gt;
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input checked id="todoCheck2" name="todo2" type="checkbox" value="">
-                                            <label for="todoCheck2"></label>
-                                        </div>
-                                        <span class="text">Make the theme responsive</span>
-                                        <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input id="todoCheck3" name="todo3" type="checkbox" value="">
-                                            <label for="todoCheck3"></label>
-                                        </div>
-                                        <span class="text">Add localiztion in delete project modal</span>
-                                        <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input id="todoCheck4" name="todo4" type="checkbox" value="">
-                                            <label for="todoCheck4"></label>
-                                        </div>
-                                        <span class="text">On hit Enter in tag-search input text page is being refreshed</span>
-                                        <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input id="todoCheck5" name="todo5" type="checkbox" value="">
-                                            <label for="todoCheck5"></label>
-                                        </div>
-                                        <span class="text">Remove last name column and show change First name to Name and show full name in data</span>
-                                        <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                    <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                                        <div class="icheck-primary d-inline ml-2">
-                                            <input id="todoCheck6" name="todo6" type="checkbox" value="">
-                                            <label for="todoCheck6"></label>
-                                        </div>
-                                        <span class="text">	Remove sorting from action column</span>
-                                        <small class="badge badge-secondary"><i class="far fa-clock"></i> 1
-                                            month</small>
-                                        <div class="tools">
-                                            <i class="fas fa-edit"></i>
-                                            <i class="fas fa-trash-o"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            &lt;!&ndash; /.card-body &ndash;&gt;
-                            <div class="card-footer clearfix">
-                                <ul class="pagination pagination-sm float-right">
-                                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                                </ul>
-                            </div>
-                        </div>-->
-
                         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" id="bootstrap-css"
                               rel="stylesheet">
                         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -680,11 +544,12 @@
                                     <div class="panel-body">
                                         <div class="kanban-centered" id="TODO">
                                             <article class="kanban-entry grab">
-                                                <div align="center" class="kanban-label">
-                                                    <i class="fa fa-plus new-card-open"></i>
+                                                <div align="center" class="kanban-label new-card-open">
+                                                    <i class="fa fa-plus"></i></span>
                                                 </div>
                                             </article>
 
+                                            <div class="tasks">
                                             <article class="kanban-entry grab" draggable="true" id="item1">
                                                 <div class="kanban-entry-inner">
                                                     <div class="kanban-label">
@@ -992,11 +857,9 @@
                                                     </div>
                                                 </div>
                                             </article>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!--<div class="panel-footer">
-                                        <a href="#">Add a card...</a>
-                                    </div>-->
                                 </div>
 
                                 <div class="panel panel-primary kanban-col">
@@ -1132,59 +995,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script>
-    $(document).on('click', '.new-card-open', function () {
-        $(this).parents('.kanban-entry');
-        $(this).parents('.kanban-entry').prepend(
-            "<input type='text' "
-            + "class='form-control client-input-text'"
-            + "value='" + sClientName + "'>"
-        );
-    });
-
-    // textbox loses focus when clicked outside.
-    $(document).on('blur', '.new-card-open', function (e) {
-        $(this).hide();
-        $(this).siblings('.client-btn').show();
-        $(this).remove();
-    });
-
-    // on escape, textbox loses focus.
-    $(document).on('keyup', '.new-card-open', function (e) {
-        if (e.keyCode == nEscapeBtnKeyCode) {
-            return $(this).trigger('blur');
-        }
-    });
-
-    // on enter, value gets updated.
-    $(document).on('keypress', '.new-card-open', function (e) {
-        if (e.keyCode == nEnterBtnKeyCode) {
-            var oClientInputText = $(this);
-            var oClient = oClientInputText.parents('.pms-client-wrapper');
-            var nIdClient = oClient.data('id_client');
-            var sClientName = $.trim(oClientInputText.val());
-
-            if (sClientName !== '') {
-                $.ajax({
-                    type: 'PUT',
-                    url: '{{ route('clients.store') }}/' +nIdClient,
-                    data: {
-                        'name': sClientName
-                    },
-                    success: function (oResponse) {
-                        // TODO: get message from server. don't write it here
-                        toastr.success('Client Updated.');
-                        oClient.find('.pms-client-name').text(sClientName);
-                        oClientInputText.remove();
-                    }
-                });
-            }
-        } else if (e.keyCode == nEscapeBtnKeyCode) {
-            $(this).trigger('blur');
-        }
-    });
-</script>
-
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -1268,6 +1078,41 @@
             event.preventDefault();
         });
     }
+</script>
+
+<script type="text/javascript">
+
+    // open textbox when clicked on +.
+    $(document).on('click', '.new-card-open', function () {
+        $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" + "'>");
+        $(this).parents('.kanban-centered').find('.new-card-input-text').focus();
+    });
+
+    // textbox loses focus when clicked outside.
+    $(document).on('blur', '.new-card-input-text', function () {
+        $(this).hide();
+    });
+
+    // on escape, textbox loses focus.
+    $(document).on('keyup', '.new-card-input-text', function (e) {
+        if (e.keyCode == 27) {
+            return $(this).trigger('blur');
+        }
+    });
+
+    // on enter, save value and open new textbox.
+    $(document).on('keypress', '.new-card-input-text', function (e) {
+        if (e.keyCode == 13) {
+
+            var textbox = $(this);
+            console.log(textbox);
+            textbox.parents('.kanban-centered');
+            $.trim(textbox.val());
+
+            $('.new-card-open');
+            $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" + "'>");
+        }
+    });
 </script>
 
 </body>

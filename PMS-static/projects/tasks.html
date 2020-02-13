@@ -91,16 +91,12 @@
             position: absolute;
             display: block;
             width: 2px;
-            /*background: #f5f5f6;*/
             top: 20px;
             bottom: 20px;
-            /*margin-left: 18px;*/
         }
 
         .kanban-centered .kanban-entry {
             position: relative;
-            /*width: 50%;
-            float: right;*/
             margin: 10px 8px;
             clear: both;
             border-radius: 4px;
@@ -267,7 +263,6 @@
             position: relative;
             background: #f5f5f6;
             padding: 0.75em;
-            /*margin-left: 50px;*/
             -webkit-background-clip: padding-box;
             -moz-background-clip: padding;
             background-clip: padding-box;
@@ -275,20 +270,6 @@
             -moz-border-radius: 3px;
             border-radius: 3px;
         }
-
-        /*.kanban-centered .kanban-entry .kanban-entry-inner .kanban-label:after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 9px 9px 9px 0;
-            border-color: transparent #f5f5f6 transparent transparent;
-            left: 0;
-            top: 10px;
-            margin-left: -9px;
-        }*/
 
         .kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2, .kanban-centered .kanban-entry .kanban-entry-inner .new-card-input-text .kanban-label p {
             color: #737881;
@@ -318,7 +299,6 @@
             -ms-filter: alpha(opacity=60);
             filter: alpha(opacity=60);
         }
-
 
         .modal-static {
             position: fixed;
@@ -352,13 +332,6 @@
             padding: 15px 0 0 0;
             overflow-y: auto;
         }
-
-
-        /*.panel-heading {
-            cursor: -moz-grab;
-            cursor: -webkit-grab;
-            cursor: grab;
-        }*/
 
         .grab {
             cursor: -moz-grab;
@@ -541,14 +514,17 @@
                                         Tasks
                                         <i class="fa fa-arrow-circle-up"></i>
                                     </div>
+
+                                    <div class="kanban-centered" id="TODO">
+                                        <article class="kanban-entry grab">
+                                            <div align="center" class="kanban-label new-card-open">
+                                                <i class="fa fa-plus"></i></span>
+                                            </div>
+                                        </article>
+                                    </div>
+
                                     <div class="panel-body">
                                         <div class="kanban-centered" id="TODO">
-                                            <article class="kanban-entry grab">
-                                                <div align="center" class="kanban-label new-card-open">
-                                                    <i class="fa fa-plus"></i></span>
-                                                </div>
-                                            </article>
-
                                             <div class="tasks">
                                             <article class="kanban-entry grab" draggable="true" id="item1">
                                                 <div class="kanban-entry-inner">
@@ -1092,8 +1068,8 @@
 
         // open textbox when clicked on +.
         $(document).on('click', '.new-card-open', function () {
-            $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" +  "'>");
-            $(this).parents('.kanban-centered').find('.new-card-input-text').focus();
+            $(this).parents('.panel-primary').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text kanban-entry grab kanban-entry-inner kanban-label'" +  "'>");
+            $(this).parents('.panel-primary').find('.new-card-input-text').focus();
         });
 
         // textbox loses focus when clicked outside.
@@ -1109,7 +1085,7 @@
         });
 
         // on enter, save value and open new textbox.
-        $(document).on('keypress', '.new-card-input-text, .on-enter-input-text', function (e) {
+        $(document).on('keypress', '.new-card-input-text', function (e) {
 
             if (e.keyCode == nEnterBtnKeyCode) {
 
@@ -1119,14 +1095,18 @@
                 $.trim(textbox.val());
 
                 $('.new-card-open');
-                console.log(this);
-                $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text on-enter-input-text'" + "'>");
-                $(this).parents('.kanban-centered').find('.on-enter-input-text').focus();
+                var newTextBox = $('<input />')
+                    .attr("type", "text")
+                    .attr("id", "textbox")
+                    .attr("class", "form-control new-card-input-text kanban-entry grab kanban-entry-inner kanban-label")
+                    .attr("name", "textbox");
+                $(this).parents('.kanban-centered').find('.tasks').prepend(newTextBox);
+                $(this).after(newTextBox);
+                newTextBox.focus();
             }
         });
 
     });
-
 </script>
 
 </body>

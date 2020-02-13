@@ -1,0 +1,41 @@
+.todo-list li{
+    border-left: none;
+}
+
+.todo-list>li .text {
+    min-width: 50%;
+}
+
+.SpreadsheetTaskName-input {
+    background: transparent;
+    border-radius: 0;
+    display: block;
+    height: 100%;
+    outline: 0;
+    overflow: hidden;
+    position: absolute;
+    resize: none;
+    top: 0;
+    width: 100%;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+/**
+stop multiline edit in task textbox(li)
+ */
+[contenteditable="true"].task {
+    white-space: nowrap;
+    overflow: hidden;
+}
+[contenteditable="true"].task br {
+    display:none;
+
+}
+[contenteditable="true"].task * {
+    display:inline;
+    white-space:nowrap;
+}
+/**/

@@ -108,7 +108,6 @@ body.os-dragging * {
 .os-viewport-native-scrollbars-invisible.os-viewport::-webkit-scrollbar,
 .os-viewport-native-scrollbars-invisible#os-dummy-scrollbar-size::-webkit-scrollbar-corner,
 .os-viewport-native-scrollbars-invisible.os-viewport::-webkit-scrollbar-corner {
-    display: none !important;
     width: 0px !important;
     height: 0px !important;
     visibility: hidden !important;
@@ -493,7 +492,6 @@ THEMES:
 .os-theme-none > .os-scrollbar-horizontal,
 .os-theme-none > .os-scrollbar-vertical,
 .os-theme-none > .os-scrollbar-corner {
-    display: none !important;
 }
 .os-theme-none > .os-scrollbar-corner-resize {
     display: block !important;
@@ -592,7 +590,6 @@ THEMES:
 .os-theme-dark.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before,
 .os-theme-light.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,
 .os-theme-light.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before {
-    display: none;
 }
 .os-theme-dark > .os-scrollbar-horizontal .os-scrollbar-handle:before,
 .os-theme-light > .os-scrollbar-horizontal .os-scrollbar-handle:before {

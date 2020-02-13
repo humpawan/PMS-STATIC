@@ -290,7 +290,7 @@
             margin-left: -9px;
         }*/
 
-        .kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2, .kanban-centered .kanban-entry .kanban-entry-inner .kanban-label p {
+        .kanban-centered .kanban-entry .kanban-entry-inner .kanban-label h2, .kanban-centered .kanban-entry .kanban-entry-inner .new-card-input-text .kanban-label p {
             color: #737881;
             font-family: "Noto Sans", sans-serif;
             font-size: 12px;
@@ -1082,38 +1082,53 @@
 
 <script type="text/javascript">
 
-    // open textbox when clicked on +.
-    $(document).on('click', '.new-card-open', function () {
-        $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" + "'>");
-        $(this).parents('.kanban-centered').find('.new-card-input-text').focus();
+    //keycode for enter
+    const nEnterBtnKeyCode = 13;
+
+    //keycode for escape
+    const nEscapeBtnKeyCode = 27;
+
+    $(document).ready(function(){
+
+        // open textbox when clicked on +.
+        $(document).on('click', '.new-card-open', function () {
+            $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" +  "'>");
+            $(this).parents('.kanban-centered').find('.new-card-input-text').focus();
+        });
+
+        // textbox loses focus when clicked outside.
+        $(document).on('blur', '.new-card-textarea', function () {
+            $(this).hide();
+        });
+
+        // on escape, textbox loses focus.
+        $(document).on('keyup', '.new-card-input-text', function (e) {
+            if (e.keyCode == nEscapeBtnKeyCode) {
+                return $(this).trigger('blur');
+            }
+        });
+
+        // on enter, save value and open new textbox.
+        $(document).on('keypress', '.new-card-input-text, .on-enter-input-text', function (e) {
+
+            if (e.keyCode == nEnterBtnKeyCode) {
+
+                var textbox = $(this);
+                console.log(textbox);
+                textbox.parents('.kanban-centered');
+                $.trim(textbox.val());
+
+                $('.new-card-open');
+                console.log(this);
+                $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text on-enter-input-text'" + "'>");
+                $(this).parents('.kanban-centered').find('.on-enter-input-text').focus();
+            }
+        });
+
     });
 
-    // textbox loses focus when clicked outside.
-    $(document).on('blur', '.new-card-input-text', function () {
-        $(this).hide();
-    });
-
-    // on escape, textbox loses focus.
-    $(document).on('keyup', '.new-card-input-text', function (e) {
-        if (e.keyCode == 27) {
-            return $(this).trigger('blur');
-        }
-    });
-
-    // on enter, save value and open new textbox.
-    $(document).on('keypress', '.new-card-input-text', function (e) {
-        if (e.keyCode == 13) {
-
-            var textbox = $(this);
-            console.log(textbox);
-            textbox.parents('.kanban-centered');
-            $.trim(textbox.val());
-
-            $('.new-card-open');
-            $(this).parents('.kanban-centered').find('.tasks').prepend("<input type='text' " + "class='form-control new-card-input-text'" + "'>");
-        }
-    });
 </script>
 
 </body>
+
 </html>

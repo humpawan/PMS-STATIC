@@ -1,3 +1,5 @@
+const nEnterBtnKeyCode = 13;
+const nEscBtnKeyCode = 27;
 //date picker all
 $(function () {
 
@@ -185,45 +187,42 @@ $(function () {
     );
 });
 //input box task
-$(function () {
-    //Loop through all Labels with class 'editable'.
-    $(".editable").each(function () {
-        //Reference the Label.
-        var label = $(this);
+$(".editable").each(function () {
+    //Reference the Label.
+    var label = $(this);
 
-        //Add a TextBox next to the Label.
-        label.after("<input type = 'text'  class='add-more' value='' style = 'display:none' />");
-        //Reference the TextBox.
-        var textbox = $(this).next();
+    //Add a TextBox next to the Label.
+    label.after("<input type = 'text'  class='form-control add-more' value='' style = 'display:none' />");
+    //Reference the TextBox.
+    var textbox = $(this).next();
 
-        //Set the name attribute of the TextBox.
-        textbox[0].name = this.id.replace("lbl", "txt");
+    //Set the name attribute of the TextBox.
+    textbox[0].name = this.id.replace("lbl", "txt");
 
-        //Assign the value of Label to TextBox.
-        textbox.val(label.html());
+    //Assign the value of Label to TextBox.
+    textbox.val(label.html());
 
-        //When Label is clicked, hide Label and show TextBox.
-        label.click(function () {
-            $(this).hide();
-            $(this).next().show().focus();
-        });
+    //When Label is clicked, hide Label and show TextBox.
+    label.click(function () {
+        $(this).hide();
+        $(this).next().show().focus();
+    });
 
-        //When focus is lost from TextBox, hide TextBox and show Label.
-        textbox.focusout(function () {
-            $(this).hide();
-            $(this).prev().html($(this).val());
-            $(this).prev().show();
-        });
+    //When focus is lost from TextBox, hide TextBox and show Label.
+    textbox.focusout(function () {
+        $(this).hide();
+        $(this).prev().html($(this).val());
+        $(this).prev().show();
     });
 });
 //task list new task
 $(document).on('keypress', '.add-more', function (e) {
-    if (e.keyCode == 13) {
-        $(".after-add-more").after("<div class='external-event'> " +
-            "<span id='lblName' class='text edit-able'>Enter New Task</span></div>").focusin();
-        $(".edit-able").each(function () {
+    if  (e.keyCode == nEnterBtnKeyCode) {
+        $(".after-add-more").after("<div class='external-event after-add-more'> " +
+            "<span id='lblName' class='text edit-ables add-more'>Enter New Task</span></div>");
+        $(".edit-ables").each(function () {
             var label = $(this);
-            label.after("<input type = 'text'   value='' style = 'display:none' />");
+            label.after("<input type = 'text' class='form-control add-more'  value='' style = 'display:none' />");
             var textbox = $(this).next();
             textbox[0].name = this.id.replace("lbl", "txt");
             textbox.val(label.html());

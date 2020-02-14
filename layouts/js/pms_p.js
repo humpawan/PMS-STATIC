@@ -186,55 +186,21 @@ $(function () {
         }
     );
 });
-//input box task
-$(".editable").each(function () {
-    //Reference the Label.
-    var label = $(this);
 
-    //Add a TextBox next to the Label.
-    label.after("<input type = 'text'  class='form-control add-more' value='' style = 'display:none' />");
-    //Reference the TextBox.
-    var textbox = $(this).next();
-
-    //Set the name attribute of the TextBox.
-    textbox[0].name = this.id.replace("lbl", "txt");
-
-    //Assign the value of Label to TextBox.
-    textbox.val(label.html());
-
-    //When Label is clicked, hide Label and show TextBox.
-    label.click(function () {
-        $(this).hide();
-        $(this).next().show().focus();
+//Add Input Fields
+$(document).ready(function(){
+    $(document).on('click', '.add-task',function(e) {
+        e.preventDefault();
+        addTaskInput();
     });
-
-    //When focus is lost from TextBox, hide TextBox and show Label.
-    textbox.focusout(function () {
-        $(this).hide();
-        $(this).prev().html($(this).val());
-        $(this).prev().show();
+    $(document).on('keypress', '.add-task-box', function (e) {
+        if (e.keyCode === nEnterBtnKeyCode) {
+            addTaskInput();
+        }
     });
-});
-//task list new task
-$(document).on('keypress', '.add-more', function (e) {
-    if  (e.keyCode == nEnterBtnKeyCode) {
-        $(".after-add-more").after("<div class='external-event after-add-more'> " +
-            "<span id='lblName' class='text edit-ables add-more'>Enter New Task</span></div>");
-        $(".edit-ables").each(function () {
-            var label = $(this);
-            label.after("<input type = 'text' class='form-control add-more'  value='' style = 'display:none' />");
-            var textbox = $(this).next();
-            textbox[0].name = this.id.replace("lbl", "txt");
-            textbox.val(label.html());
-            label.click(function () {
-                $(this).hide();
-                $(this).next().show().focus();
-            });
-            textbox.focusout(function () {
-                $(this).hide();
-                $(this).prev().html($(this).val());
-                $(this).prev().show();
-            });
-        });
+    function addTaskInput() {
+        $(".new-task").append('<div class="external-event add-task-box store-task" contenteditable="true">' +
+            'Add New Task' +
+            '</div>');
     }
 });

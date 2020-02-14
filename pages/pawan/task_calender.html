@@ -38,8 +38,9 @@
     <link rel="stylesheet" href="../../layouts/assets/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="../../layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="../../layouts/css/pms_p.css">
     <link rel="stylesheet" href="../../layouts/assets/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://www.riccardotartaglia.it/jkanban/dist/jkanban.min.css" rel="stylesheet">
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -189,27 +190,23 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">Task List</h4>
-                                    <button class="card-tools btn-dark add-task"><i class="fas fa-plus"></i> Task</button>
+                                    <button class="card-tools btn btn-sm btn-success add-task"><i class="fas fa-plus"></i> Task</button>
                                 </div>
                                 <div class="card-body">
-                                    <!-- the events -->
                                     <div id="external-events">
-                                        <div class="wrapper"></div>
-                                        <div class="external-event after-add-more">
-                                            <span id="lblName" class="text editable">Launch</span>
+                                        <div class="new-task"></div>
+                                        <div class="external-event add-task-box store-task" contenteditable="true">
+                                            Go home
                                         </div>
-<!--                                        <div class="external-event after-add-more">-->
-<!--                                            <span class="text  editable">Go home</span>-->
-<!--                                        </div>-->
-<!--                                        <div class="external-event after-add-more">-->
-<!--                                            <span class="text  editable">Do homework</span>-->
-<!--                                        </div>-->
-<!--                                        <div class="external-event after-add-more">-->
-<!--                                            <span class="text editable">Work on UI design</span>-->
-<!--                                        </div>-->
-<!--                                        <div class="external-event after-add-more">-->
-<!--                                            <span class="text editable">Sleep tight</span>-->
-<!--                                        </div>-->
+                                        <div class="external-event add-task-box store-task"  contenteditable="true">
+                                            Do homework
+                                        </div>
+                                        <div class="external-event add-task-box store-task"  contenteditable="true">
+                                            Work on UI design
+                                        </div>
+                                        <div class="external-event add-task-box store-task"  contenteditable="true">
+                                            Sleep tight
+                                        </div>
                                         <div class="checkbox">
                                             <label for="drop-remove">
                                                 <input type="hidden" id="drop-remove" checked>
@@ -267,10 +264,10 @@
 
 <!-- OPTIONAL SCRIPTS -->
 <!-- jQuery -->
-<script src="../../layouts/assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="../../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- jQuery UI -->
+<script src="../../layouts/assets/plugins/jquery/jquery.min.js"></script>
 <script src="../../layouts/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../layouts/assets/js/adminlte.min.js"></script>
@@ -306,27 +303,5 @@
 <script src="../../layouts/js/pms_p.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!--incline script here-->
-<script>
-    //Add Input Fields
-    $(document).ready(function() {
-        var max_fields = 10; //Maximum allowed input fields
-        var wrapper    = $(".wrapper"); //Input fields wrapper
-        var add_button = $(".add-task"); //Add button class or ID
-        var x = 1; //Initial input field is set to 1
-
-        //When user click on add input button
-        $(add_button).click(function(e){
-            e.preventDefault();
-            //Check maximum allowed input fields
-            if(x < max_fields){
-                x++; //input field increment
-                //add input field
-                $(wrapper).append('<div ><span class="text">' +
-                    '<input type="text" class="form-control external-event text" placeholder="Add new task"/>' +
-                    '</span></div>');
-            }
-        });
-    });
-</script>
 <!--end-->
 </body>

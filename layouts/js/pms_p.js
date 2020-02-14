@@ -199,8 +199,16 @@ $(document).ready(function(){
         }
     });
     function addTaskInput() {
-        $(".new-task").append('<div class="external-event add-task-box store-task" contenteditable="true">' +
-            'Add New Task' +
-            '</div>');
+        const taskInputExist = document.getElementById('exist-task').innerText;
+        if(taskInputExist !== '')
+        {
+            $('.new-task').prepend(
+                '<div class="external-event add-task-box store-task" id="task-input" contenteditable="true">' +
+                '</div>'
+            );
+        }
+        else {
+            alert('please enter task on 1st input');
+        }
     }
 });

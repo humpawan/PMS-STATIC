@@ -20,7 +20,7 @@
     <link href="../../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
     <!-- fullCalendar -->
     <link rel="stylesheet" href="../../layouts/assets/plugins/fullcalendar/main.min.css">
-    <link rel="stylesheet" href="../layouts/assets/plugins/fullcalendar-interaction/main.min.css">
+    <link rel="stylesheet" href="../../layouts/assets/plugins/fullcalendar-interaction/main.min.css">
     <link rel="stylesheet" href="../../layouts/assets/plugins/fullcalendar-daygrid/main.min.css">
     <link rel="stylesheet" href="../../layouts/assets/plugins/fullcalendar-timegrid/main.min.css">
     <link rel="stylesheet" href="../../layouts/assets/plugins/fullcalendar-bootstrap/main.min.css">
@@ -193,19 +193,9 @@
                                     <button class="card-tools btn btn-sm btn-success add-task"><i class="fas fa-plus"></i> Task</button>
                                 </div>
                                 <div class="card-body">
-                                    <div id="external-events">
-                                        <div class="new-task"></div>
-                                        <div class="external-event add-task-box store-task" contenteditable="true">
+                                    <div id="external-events" class="new-task">
+                                        <div class="external-event add-task-box store-task" id="exist-task" contenteditable="true">
                                             Go home
-                                        </div>
-                                        <div class="external-event add-task-box store-task"  contenteditable="true">
-                                            Do homework
-                                        </div>
-                                        <div class="external-event add-task-box store-task"  contenteditable="true">
-                                            Work on UI design
-                                        </div>
-                                        <div class="external-event add-task-box store-task"  contenteditable="true">
-                                            Sleep tight
                                         </div>
                                         <div class="checkbox">
                                             <label for="drop-remove">

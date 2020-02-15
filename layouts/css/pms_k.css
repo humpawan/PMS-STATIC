@@ -39,3 +39,8 @@ stop multiline edit in task textbox(li)
     white-space:nowrap;
 }
 /**/
+
+.todo-list>li {
+     margin-bottom: -1px !important;
+}
+

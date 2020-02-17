@@ -73,44 +73,6 @@ $(function () {
                 start          : new Date(y, m, 1),
                 backgroundColor: '#f56954', //red
                 borderColor    : '#f56954' //red
-            },
-            {
-                title          : 'Long Event',
-                start          : new Date(y, m, d - 5),
-                end            : new Date(y, m, d - 2),
-                backgroundColor: '#f39c12', //yellow
-                borderColor    : '#f39c12' //yellow
-            },
-            {
-                title          : 'Meeting',
-                start          : new Date(y, m, d, 10, 30),
-                allDay         : false,
-                backgroundColor: '#0073b7', //Blue
-                borderColor    : '#0073b7' //Blue
-            },
-            {
-                title          : 'Lunch',
-                start          : new Date(y, m, d, 12, 0),
-                end            : new Date(y, m, d, 14, 0),
-                allDay         : false,
-                backgroundColor: '#00c0ef', //Info (aqua)
-                borderColor    : '#00c0ef' //Info (aqua)
-            },
-            {
-                title          : 'Birthday Party',
-                start          : new Date(y, m, d + 1, 19, 0),
-                end            : new Date(y, m, d + 1, 22, 30),
-                allDay         : false,
-                backgroundColor: '#00a65a', //Success (green)
-                borderColor    : '#00a65a' //Success (green)
-            },
-            {
-                title          : 'Click for Google',
-                start          : new Date(y, m, 28),
-                end            : new Date(y, m, 29),
-                url            : 'http://google.com/',
-                backgroundColor: '#3c8dbc', //Primary (light-blue)
-                borderColor    : '#3c8dbc' //Primary (light-blue)
             }
         ],
         editable  : true,
@@ -140,7 +102,7 @@ $(function () {
             'background-color': currColor,
             'border-color'    : currColor
         })
-    })
+    });
     $('#add-new-event').click(function (e) {
         e.preventDefault()
         //Get value and make sure it is not null
@@ -148,7 +110,6 @@ $(function () {
         if (val.length == 0) {
             return
         }
-
         //Create events
         var event = $('<div />')
         event.css({
@@ -165,7 +126,6 @@ $(function () {
         //Remove event from text input
         $('#new-event').val('')
     });
-
     //Date range as a button
     $('#daterange-btn').daterangepicker(
         {
@@ -183,19 +143,21 @@ $(function () {
         function (start, end) {
             $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
         }
-    );
+    )
 });
 
 //Add Input Fields
 const nEnterBtnKeyCode = 13;
 $(document).ready(function(){
     // add task on button click
-    $(document).on('click', '#add-task-btn', function () {
+    $(document).on('click', '#add-task-btn', function (e) {
+        e.preventDefault();
         addNewTaskObject();
     });
     // add task on keypress
     $(document).on('keypress', '.input-task', function (e) {
         if (e.keyCode === nEnterBtnKeyCode) {
+            e.preventDefault();
             addNewTaskObject();
         }
     });

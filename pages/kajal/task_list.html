@@ -31,6 +31,18 @@
             padding: 20px 0;
         }
 
+        .modal-content{
+            margin-top: 261px;
+            margin-left: 561px;
+            min-height: 582px;
+        }
+        .margin-left{
+            margin-left: -14px;
+        }
+        textarea{
+            padding-top: 10px;
+            padding-left: 12px;
+        }
     </style>
     <!--end-->
 </head>
@@ -61,9 +73,6 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <!--                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#create-model"><i class="fas fa-plus "></i>-->
-                    <!--                        create Task-->
-                    <!--                    </button>-->
                     <button class="btn btn-success float-right" id="addToDo" type="button">
                         <i class="fas fa-plus "></i>
                         create Task
@@ -71,25 +80,6 @@
                 </li>
             </ul>
         </div>
-        <!-- Add filter code -->
-
-        <!--        <div class="sub-header">-->
-        <!--            <div class="form-inline">-->
-        <!--                <div class="form-group">-->
-        <!--                    <ul class="navbar-nav">-->
-        <!--                        <li class="nav-item d-none d-sm-inline-block">-->
-        <!--                            <div class="input-group">-->
-        <!--                                <button type="button" class="btn btn-default  filter-date">-->
-        <!--                                    <i class="far fa-calendar-alt"></i> Filter-By-->
-
-        <!--                                    <i class="fas fa-caret-down"></i>-->
-        <!--                                </button>-->
-        <!--                            </div>-->
-        <!--                        </li>-->
-        <!--                    </ul>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
     </nav>
     <!--end nav-bar-->
     <!--model for create task-->
@@ -102,7 +92,6 @@
                         <span aria-hidden="true" class="resetData">&times;</span>
                     </button>
                 </div>
-
                 <form class="form validation" method="post">
                     <div class="modal-body">
                         <div class="form-group">
@@ -261,11 +250,49 @@
                                 <button class="btn btn-default" id="add_task_btn">
                                     <i class="fa fa-plus"></i> Add Task
                                 </button>
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                    Launch Large Modal
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+<!--model for details-->
+    <div class="modal fade right" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title">
+                        <i class="fas fa-check"></i> Mark complete
+                    </p>
+
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <div class="modal-body">
+                    <label>
+                        <textarea class="form-control" cols="90" rows="1"></textarea>
+                    </label>
+                    <p>Assignee</p>
+                    <p>Due date</p>
+                    <p>Projects</p>
+                    <p>Priority</p>
+                    <p>Description</p>
+                    <ul class="todo-list ui-sortable sub-task-list list-group list-group-flush ui-sortable"
+                        data-widget="todo-list">
+
+                    </ul>
+                    <p class="btn margin-left" id="add-sub-task-btn">
+                        <i class="fa fa-plus"></i> Add subtask
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-between">
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!--end-->
                 <div class="card">
                     <div class="card-body">
                         <div class="container">
@@ -335,11 +362,8 @@
 <!-- AdminLTE for demo purposes -->
 
 <!--<script src="../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>-->
-
-
 <script src="../../layouts/js/pms_k.js"></script>
 <script src="../../layouts/dist/js/pages/dashboard.js"></script>
-
 <!--end-->
 <!--incline script here-->
 <!--end-->

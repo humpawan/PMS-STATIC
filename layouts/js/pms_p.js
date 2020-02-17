@@ -152,13 +152,13 @@ $(document).ready(function(){
     // add task on button click
     $(document).on('click', '#add-task-btn', function (e) {
         e.preventDefault();
-        addNewTaskObject();
+        newTaskInput();
     });
     // add task on keypress
     $(document).on('keypress', '.input-task', function (e) {
         if (e.keyCode === nEnterBtnKeyCode) {
             e.preventDefault();
-            addNewTaskObject();
+            newTaskInput();
         }
     });
     // hide input box if blank
@@ -169,7 +169,7 @@ $(document).ready(function(){
     });
 });
 
-function addNewTaskObject(calenderTask) {
+function newTaskInput(calenderTask) {
     const inputTask = $('<div>')
         .attr("class", "external-event input-task hide-input-box")
         .attr("contenteditable", true);

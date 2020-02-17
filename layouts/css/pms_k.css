@@ -46,7 +46,17 @@ stop multiline edit in task textbox(li)
      margin-bottom: -1px !important;
 }
 
-.vl {
-    border-left: 6px solid grey;
-    height: 500px;
+/*.ul > li {*/
+/*    display:inline-block;*/
+/*    padding: 5px 10px;*/
+/*}*/
+
+/*.ul > li + li {*/
+/*    border-left: 1px solid;*/
+/*}*/
+
+.SpreadsheetTaskRow-nameCell{
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-right: -1px;
 }

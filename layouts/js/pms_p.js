@@ -1,5 +1,4 @@
-const nEnterBtnKeyCode = 13;
-const nEscBtnKeyCode = 27;
+
 //date picker all
 $(function () {
 
@@ -188,27 +187,35 @@ $(function () {
 });
 
 //Add Input Fields
+const nEnterBtnKeyCode = 13;
 $(document).ready(function(){
-    $(document).on('click', '.add-task',function(e) {
-        e.preventDefault();
-        addTaskInput();
+    // add task on button click
+    $(document).on('click', '#add-task-btn', function () {
+        addNewTaskObject();
     });
-    $(document).on('keypress', '.add-task-box', function (e) {
+    // add task on keypress
+    $(document).on('keypress', '.input-task', function (e) {
         if (e.keyCode === nEnterBtnKeyCode) {
-            addTaskInput();
+            addNewTaskObject();
         }
     });
-    function addTaskInput() {
-        const taskInputExist = document.getElementById('exist-task').innerText;
-        if(taskInputExist !== '')
-        {
-            $('.new-task').prepend(
-                '<div class="external-event add-task-box store-task" id="task-input" contenteditable="true">' +
-                '</div>'
-            );
+    // hide input box if blank
+    $(document).on('blur', '.hide-input-box', function () {
+        if ($(this).text() === '') {
+            $(this).remove();
         }
-        else {
-            alert('please enter task on 1st input');
-        }
-    }
+    });
 });
+
+function addNewTaskObject(calenderTask) {
+    const inputTask = $('<div>')
+        .attr("class", "external-event input-task hide-input-box")
+        .attr("contenteditable", true);
+    if (calenderTask) {
+        calenderTask.after(inputTask);
+    } else {
+        $(".external-event-list").prepend(inputTask);
+    }
+    inputTask.focus();
+}
+

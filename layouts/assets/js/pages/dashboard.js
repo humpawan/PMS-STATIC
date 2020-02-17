@@ -54,7 +54,7 @@ $(function () {
         'SA': 400, //Saudi Arabia
         'CA': 1000, //Canada
         'DE': 500, //Germany
-        'FR': 760, //France
+        'FR': 760, //Francegit
         'CN': 300, //China
         'AU': 700, //Australia
         'BR': 600, //Brazil

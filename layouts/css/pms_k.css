@@ -55,8 +55,3 @@ stop multiline edit in task textbox(li)
 /*    border-left: 1px solid;*/
 /*}*/
 
-.SpreadsheetTaskRow-nameCell{
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    margin-right: -1px;
-}

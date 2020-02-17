@@ -35,7 +35,9 @@ stop multiline edit in task textbox(li)
 
 }
 [contenteditable="true"].task * {
+  /**
     display:inline;
+   */
     white-space:nowrap;
 }
 /**/
@@ -44,3 +46,7 @@ stop multiline edit in task textbox(li)
      margin-bottom: -1px !important;
 }
 
+.vl {
+    border-left: 6px solid grey;
+    height: 500px;
+}

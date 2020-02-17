@@ -18,26 +18,6 @@ $(document).ready(function(){
         }
     });
 
-    // $( function() {
-    //     $( "#task_move_id" ).sortable();
-    //     $( "#task_move_id" ).disableSelection();
-    // } );
-    //
-    // $(".to_do_task_list").on('mouseenter', 'li', function () {
-    //     $( ".to-do-task" ).draggable();
-    // });
-
-    // $( ".to-do-task" ).droppable({
-    //     drop: function( event, ui ) {
-    //         $( this )
-    //             .find( "append-draggable-class" )
-    //             .html( "Dropped!" );
-    //     }
-    // });
-    // $( function() {
-    //     $( ".to-do-task" ).draggable();
-    // });
-
 });
 
 function addNewTaskObject(currentTask) {

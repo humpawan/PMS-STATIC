@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../layouts/assets/plugins/summernote/summernote-bs4.css">
     <!--end-->
     <!--inline css code here-->
     <style>
@@ -30,14 +31,35 @@
             overflow-x: auto;
             padding: 20px 0;
         }
-
         .modal-content{
-            margin-top: 261px;
+            margin-top: -29px;
             margin-left: 561px;
-            min-height: 582px;
+            min-height: 95%;
+            height: 100%;
+        }
+        .modal-header{
+            padding-top: 0.7rem;
+            padding-left: 1rem;
+            padding-bottom: 0.4rem;
+        }
+        .modal-footer{
+            padding: 1.4rem;
         }
         .margin-left{
             margin-left: -14px;
+        }
+        .border{
+            padding: 4px;
+        }
+        .padding{
+            margin: 10px;
+        }
+        .comments{
+            padding: .75rem 1.25rem;
+            background-color: #d3d0d0;
+            border: 1px solid rgba(0,0,0,.125);
+            border-left: none;
+            border-right: none;
         }
         textarea{
             padding-top: 10px;
@@ -251,7 +273,7 @@
                                     <i class="fa fa-plus"></i> Add Task
                                 </button>
                                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                                    Launch Large Modal
+                                    Task Sub-task
                                 </button>
                             </div>
                         </div>
@@ -260,14 +282,19 @@
 
 <!--model for details-->
     <div class="modal fade right" id="modal-lg">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-full-height modal-right modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p class="modal-title">
+                    <p class="modal-title border">
                         <i class="fas fa-check"></i> Mark complete
                     </p>
-
-                    <i class="fas fa-thumbs-up"></i>
+                    <p class="modal-title right">
+                        <i class="fas fa-paperclip padding"></i>
+                        <i class="fas fa-copy padding"></i>
+                        <i class="fas fa-thumbs-up padding"></i>
+                        <i class="fas fa-ellipsis-h padding"></i>
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </p>
                 </div>
                 <div class="modal-body">
                     <label>
@@ -280,14 +307,33 @@
                     <p>Description</p>
                     <ul class="todo-list ui-sortable sub-task-list list-group list-group-flush ui-sortable"
                         data-widget="todo-list">
-
                     </ul>
                     <p class="btn margin-left" id="add-sub-task-btn">
                         <i class="fa fa-plus"></i> Add subtask
                     </p>
                 </div>
-                <div class="modal-footer justify-content-between">
-
+                <div class="user-panel  comments d-flex">
+                    <div class="image">
+                        <img alt="User Image"
+                             class="img-circle elevation-2"
+                             src="../../layouts/assets/img/avatar04.png">
+                    </div>
+                    <div class="info">
+                        <a class="d-block" href="../../profile/index.html">Pawan garg</a>
+                    </div>
+                </div>
+                <div class="user-panel comments d-flex">
+                    <div class="image">
+                        <img alt="User Image"
+                             class="img-circle elevation-2"
+                             src="../../layouts/assets/img/avatar04.png">
+                    </div>
+                    <div class="info pad">
+                        <label>
+                            <textarea class="textarea" placeholder="Place some text here"
+                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -360,12 +406,18 @@
 <!-- AdminLTE App -->
 <script src="../../layouts/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-
+<script src="../../layouts/assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!--<script src="../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>-->
 <script src="../../layouts/js/pms_k.js"></script>
 <script src="../../layouts/dist/js/pages/dashboard.js"></script>
 <!--end-->
 <!--incline script here-->
+<script>
+    $(function () {
+        // Summernote
+        $('.textarea').summernote()
+    })
+</script>
 <!--end-->
 </body>
 

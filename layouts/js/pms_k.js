@@ -35,5 +35,11 @@ function addNewTaskObject(currentTask) {
         $(".to_do_task_list").prepend(newTask);
     }
     newTask.focus();
+
+
+
+
+
+
 }
 

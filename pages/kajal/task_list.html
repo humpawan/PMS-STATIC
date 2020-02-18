@@ -13,10 +13,17 @@
     <link href="../../layouts/css/pms_k.css" rel="stylesheet">
     <link href="../../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
           rel="stylesheet">
+    <link rel="stylesheet" href="../../layouts/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link href="../../layouts/assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+
+
+
+<!--    <link rel="stylesheet"-->
+<!--          href="../../layouts/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker3.min.css">-->
+<!--    <link href="../../layouts/assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet">-->
     <!--end-->
     <!--inline css code here-->
     <style>
@@ -64,10 +71,7 @@
                     <!--                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#create-model"><i class="fas fa-plus "></i>-->
                     <!--                        create Task-->
                     <!--                    </button>-->
-                    <button class="btn btn-success float-right" id="addToDo" type="button">
-                        <i class="fas fa-plus "></i>
-                        create Task
-                    </button>
+
                 </li>
             </ul>
         </div>
@@ -102,6 +106,7 @@
                         <span aria-hidden="true" class="resetData">&times;</span>
                     </button>
                 </div>
+
 
                 <form class="form validation" method="post">
                     <div class="modal-body">
@@ -171,6 +176,8 @@
                     </a>
                 </li>
             </ul>
+
+
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false"
                 data-widget="treeview"
                 role="menu">
@@ -252,7 +259,10 @@
             </div>
         </div>
 
+
+
         <section class="content">
+
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body">
@@ -266,19 +276,34 @@
                     </div>
                 </div>
 
+
                 <div class="card">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 border-right">Task Name</div>
-                                <div class="col-md-3 border-right">Assignee</div>
-                                <div class="col-md-3 border-right">Due Date</div>
-                            </div>
-                        </div>
+                    <div class="card-body set-custom-padding">
+                        <ul class="todo-list ui-sortable to_do_task_list list-group list-group-flush ui-sortable"
+                            data-widget="todo-list">
+                            <li class="task to-do-task list-group-item"
+                                contenteditable="true" value="task_one">
+                                <div class="col-md-7 set-custom-border">
+                                    Task Name
+                                </div>
+                                <div class="col-md-1 set-custom-border">
+                                    Assignee
+                                </div>
+                                <div class="col-md-1 set-custom-border">
+                                    Due Date
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
+
+
                 <div class="card">
+
                     <div class="card-header">
                         <h5 class="card-title">To Do</h5>
 
@@ -291,34 +316,192 @@
                             </button>
                         </div>
                     </div>
+
                     <div class="card-body">
+
                         <ul class="todo-list ui-sortable to_do_task_list list-group list-group-flush ui-sortable"
                             data-widget="todo-list">
+                            <li class="task to-do-task list-group-item"
+                                contenteditable="true" value="task_one">
 
-                            <li class="task to-do-task list-group-item SpreadsheetTaskRow-nameCell"
-                                contenteditable="true" value="task_one">
-                                <span class="handle">
+                                <div class="col-md-7 set-custom-border">  <span
+                                        class="handle">
                                   <i class="fas fa-ellipsis-v"></i>
                                   <i class="fas fa-ellipsis-v"></i>
                                 </span>
-                                Task One
+                                    Task One
+                                </div>
+                                <div class="col-md-1 set-custom-border" contenteditable="false">
+                                    <img alt="message user image" class="direct-chat-img display-user-list"
+                                         src="../../layouts/dist/img/user1-128x128.jpg"
+                                         rel="popover"
+                                    >
+                                </div>
+                                <div class="col-md-1 set-custom-border ">
+                                    <div class="form-group">
+                                        <div class="input-group date">
+                                            <p class="card-text datepicker" style="color: #ff3824">
+                                                Feb 19</p>
+                                        </div>
+                                    </div>
+                                </div>
+                              <div class="col-md-3">
+                              </div>
                             </li>
-                            <li class="task to-do-task list-group-item SpreadsheetTaskRow-nameCell"
+                            <li class="task to-do-task list-group-item"
                                 contenteditable="true" value="task_one">
-                                <span class="handle">
+
+                                <div class="col-md-7 set-custom-border">  <span
+                                        class="handle">
                                   <i class="fas fa-ellipsis-v"></i>
                                   <i class="fas fa-ellipsis-v"></i>
                                 </span>
-                                Task Two
+                                    Task One
+                                </div>
+                                <div class="col-md-1 set-custom-border" contenteditable="false">
+                                    <img alt="message user image" class="direct-chat-img display-user-list"
+                                         src="../../layouts/dist/img/user1-128x128.jpg"
+                                         rel="popover">
+                                </div>
+                                <div class="col-md-1 set-custom-border ">
+                                    <div class="form-group">
+                                        <div class="input-group date">
+                                            <p class="card-text datepicker"   style="color: #ff3824">
+                                                Feb 19</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                </div>
                             </li>
-                            <li class="task to-do-task list-group-item SpreadsheetTaskRow-nameCell"
+                            <li class="task to-do-task list-group-item"
                                 contenteditable="true" value="task_one">
-                                <span class="handle">
+
+                                <div class="col-md-7 set-custom-border">  <span
+                                        class="handle">
                                   <i class="fas fa-ellipsis-v"></i>
                                   <i class="fas fa-ellipsis-v"></i>
                                 </span>
-                                Task three
+                                    Task One
+                                </div>
+                                <div class="col-md-1 set-custom-border" contenteditable="false">
+                                    <img alt="message user image" class="direct-chat-img display-user-list"
+                                         src="../../layouts/dist/img/user1-128x128.jpg"
+                                         rel="popover"
+                                    >
+                                </div>
+                                <div class="col-md-1 set-custom-border ">
+                                    <div class="form-group">
+                                        <div class="input-group date">
+
+                                            <!--                                            <i class="far fa-calendar-alt mr-1 pt-1"></i>-->
+                                            <p class="card-text datepicker"  style="color: #ff3824">
+                                                Feb 19</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                </div>
                             </li>
+
+<!--                            <li class="task to-do-task list-group-item"-->
+<!--                                contenteditable="true" value="task_one">-->
+
+<!--                                <div class="col-md-7 set-custom-border">  <span-->
+<!--                                        class="handle">-->
+<!--                                  <i class="fas fa-ellipsis-v"></i>-->
+<!--                                  <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </span>-->
+<!--                                    Task One-->
+<!--                                </div>-->
+<!--                                <div class="col-md-3 set-custom-border">-->
+<!--                                    <img alt="message user image" class="direct-chat-img dropdown-toggle"-->
+<!--                                         src="../../layouts/dist/img/user1-128x128.jpg" data-toggle="dropdown">-->
+
+
+<!--                                </div>-->
+
+
+<!--                                <div class="col-md-2 set-last-child-padding">-->
+<!--                                    <div class="form-group">-->
+
+<!--                                        <div class="input-group date">-->
+<!--                                            <div class="input-group-addon">-->
+<!--                                                <i class="fa fa-calendar" id="datepicker"></i>-->
+<!--                                            </div>-->
+<!--                                            &lt;!&ndash;                                            <input type="text" class="form-control pull-right" >&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; /.input group &ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                            </li>-->
+<!--                            <li class="task to-do-task list-group-item"-->
+<!--                                contenteditable="true" value="task_one">-->
+
+<!--                                <div class="col-md-7 set-custom-border">  <span-->
+<!--                                        class="handle">-->
+<!--                                  <i class="fas fa-ellipsis-v"></i>-->
+<!--                                  <i class="fas fa-ellipsis-v"></i>-->
+<!--                                </span>-->
+<!--                                    Task One-->
+<!--                                </div>-->
+<!--                                <div class="col-md-3 set-custom-border">-->
+<!--                                    <img alt="message user image" class="direct-chat-img dropdown-toggle"-->
+<!--                                         src="../../layouts/dist/img/user1-128x128.jpg" data-toggle="dropdown">-->
+
+
+<!--                                </div>-->
+
+
+<!--                                <div class="col-md-2 set-last-child-padding">-->
+<!--                                    <div class="form-group">-->
+
+<!--                                        <div class="input-group date">-->
+<!--                                            <div class="input-group-addon">-->
+<!--                                                <i class="fa fa-calendar" id="datepicker"></i>-->
+<!--                                            </div>-->
+<!--                                            &lt;!&ndash;                                            <input type="text" class="form-control pull-right" >&ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; /.input group &ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                            </li>-->
+
+                            <!--                            <li class="task to-do-task list-group-item"-->
+                            <!--                                contenteditable="true" value="task_one">-->
+
+                            <!--                                <div class="col-md-7 set-custom-border">  <span-->
+                            <!--                                        class="handle">-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                </span>-->
+                            <!--                                    Task One-->
+                            <!--                                </div>-->
+                            <!--                                <div class="col-md-2 set-custom-border"> <span-->
+                            <!--                                        class="handle">-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                </span>-->
+                            <!--                                    Task Two-->
+                            <!--                                </div>-->
+                            <!--                                <div class="col-md-2 set-custom-border"> <span-->
+                            <!--                                        class="handle">-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                </span>-->
+                            <!--                                    Task Two-->
+                            <!--                                </div>-->
+                            <!--                                <div class="col-md-1 set-last-child-padding"> <span class="handle">-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                  <i class="fas fa-ellipsis-v"></i>-->
+                            <!--                                </span>-->
+                            <!--                                    Task Two-->
+                            <!--                                </div>-->
+
+                            <!--                            </li>-->
+
                         </ul>
                     </div>
                 </div>
@@ -356,8 +539,46 @@
 <script src="../../layouts/js/pms_k.js"></script>
 <script src="../../layouts/dist/js/pages/dashboard.js"></script>
 
+<script src="../../layouts/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- bootstrap color picker -->
+<!--<script src="../../layouts/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>-->
+<!--<script src="../../layouts/assets/plugins/moment/moment.min.js"></script>-->
+
+<!--<script src="../../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>-->
+<!--<script src="../../layouts/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>-->
+<!--<script src="../../layouts/assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>-->
+
+<script>
+    $(function () {
+
+        //Date picker
+        $('.datepicker').datepicker({
+            autoclose: true
+        });
+
+        $('.display-user-list').popover({
+            title: "",
+            html : true,
+            content : "<div >" +
+                "<div class='parent-div-user'>" + "<span class='item-title'>Kajal   </span></div><br>" +
+                "<div class='parent-div-user'>" + "<span class='item-title'>dezal   </span></div><br>" +
+                "<div class='parent-div-user'>" + "<span class='item-title'>pawan   </span></div><br>" +
+                "<div class='parent-div-user'>" + "<span class='item-title'>kajal   </span></div><br>" +
+                "<div class='parent-div-user'>" + "<span class='item-title'>dezal  </span></div><br>" +
+
+                "</div>"
+
+        });
+
+//        $('[data-toggle="popover"]').popover();
+
+    });
+</script>
 <!--end-->
 <!--incline script here-->
 <!--end-->
+
 </body>
 
+</html>

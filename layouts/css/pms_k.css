@@ -44,14 +44,48 @@ stop multiline edit in task textbox(li)
 
 .todo-list>li {
      margin-bottom: -1px !important;
+     display: flex;padding: 0;
 }
 
-/*.ul > li {*/
-/*    display:inline-block;*/
-/*    padding: 5px 10px;*/
-/*}*/
+.set-custom-border{
+    border-right: 1px solid #e7e7e7;padding: 10px;
+}
 
-/*.ul > li + li {*/
-/*    border-left: 1px solid;*/
-/*}*/
+.set-last-child-padding{
+    padding: 10px;
+}
 
+.set-custom-padding{
+    padding: 0px;
+}
+.datepicker-orient-top{
+    top: 141px !important;
+}
+
+.bs-popover-right>.arrow::before{
+    display: none;
+}
+
+.popover .arrow::after, .popover .arrow::before {
+    display: none;
+}
+
+.item-title{
+    display: flex;
+}
+
+.parent-div-user{
+    cursor: pointer;
+    display: flex;
+    padding: 2px 15px;
+}
+
+[contenteditable="faslse"].direct-chat-img {
+    display:none;
+}
+.bs-popover-right{
+    height: 100px;
+    overflow-y: scroll;
+    width: 30%;
+    position: absolute;
+}

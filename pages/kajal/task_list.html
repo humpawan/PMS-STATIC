@@ -31,37 +31,67 @@
             overflow-x: auto;
             padding: 20px 0;
         }
-        .modal-content{
+
+        .modal-content {
             margin-top: -29px;
             margin-left: 561px;
             min-height: 95%;
             height: 100%;
         }
-        .modal-header{
+
+        .modal-header {
             padding-top: 0.7rem;
             padding-left: 1rem;
             padding-bottom: 0.4rem;
         }
-        .modal-footer{
+
+        .modal-footer {
             padding: 1.4rem;
         }
-        .margin-left{
+
+        .margin-left {
             margin-left: -14px;
         }
-        .border{
+
+        .border {
             padding: 4px;
         }
-        .padding{
+
+        .padding {
             margin: 10px;
         }
-        .comments{
-            padding: .75rem 1.25rem;
-            background-color: #d3d0d0;
-            border: 1px solid rgba(0,0,0,.125);
-            border-left: none;
-            border-right: none;
+
+        .padding-dropdown {
+            padding-top: 10px;
+            padding-left: 475px;
         }
-        textarea{
+
+        .dropdown-menu {
+            top: 11px;
+            left: auto !important;
+            right: 0 !important;
+        }
+
+        .myInput {
+            border-style: none;
+        }
+        .myInput:hover {
+            border-style: solid;
+        }
+        .myInput:focus {
+            border-style: solid;
+        }
+        .myTextarea {
+            border-style: none;
+            margin-left: -15px;
+        }
+        .myTextarea:hover {
+            border-style: solid;
+        }
+        .myTextarea:focus {
+            border-style: solid;
+        }
+        textarea {
             padding-top: 10px;
             padding-left: 12px;
         }
@@ -104,50 +134,6 @@
         </div>
     </nav>
     <!--end nav-bar-->
-    <!--model for create task-->
-    <div class="modal fade" id="create-model">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create Task</h5>
-                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true" class="resetData">&times;</span>
-                    </button>
-                </div>
-                <form class="form validation" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Task Name</label>
-                            <input class="form-control validate[required] text-input" name="name"
-                                   placeholder="Project name" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label>Tags</label>
-                            <select class="form-control create-project-select2" name="id_client" style="width: 100%;">
-                                <option>Select-tag</option>
-                                <option>TAG-name</option>
-                                <option>TAG-name</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Teams</label>
-                            <select class="form-control create-project-select2" name="id_client" style="width: 100%;">
-                                <option>Select-team</option>
-                                <option>Team-name</option>
-                                <option>Team-name</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-success btn-block" type="submit">Create
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--end-->
-    <!--sidebar code here-->
     <!--sidebar code here-->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a class="brand-link" href="../../dashboard/index.html">
@@ -250,7 +236,116 @@
 
         </div>
     </aside>
-
+<!--modal box sub-task-->
+<div class="modal fade right" id="modal-lg">
+    <div class="modal-dialog modal-full-height modal-right modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title border">
+                    <i class="fas fa-check"></i> Mark complete
+                </div>
+                <div class="dropdown modal-title">
+                                <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
+                                        <i class="fas fa-paperclip padding-dropdown"></i>
+                                </span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Attach file</a>
+                        <a class="dropdown-item" href="#">Your computer</a>
+                        <a class="dropdown-item" href="#">Dropbox</a>
+                    </div>
+                </div>
+                <div class="modal-title right">
+                    <i class="fas fa-copy padding"></i>
+                    <i class="fas fa-thumbs-up padding"></i>
+                    <i class="fas fa-ellipsis-h padding"></i>
+                    <i class="fas fa-arrow-circle-right" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+            </div>
+            <div class="modal-body card" style="box-shadow: none;">
+                <table>
+                    <thead>
+                    <textarea class="form-control myTextarea" cols="90" rows="1"
+                              placeholder="Write task name..."></textarea>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Assignee</td>
+                        <td class="form-inline"><i class="fa fa-user"></i>
+                            <input type="text" class="form-control myInput" placeholder="Unassigned"></td>
+                    </tr>
+                    <tr>
+                        <td>Due date</td>
+                        <td class="form-inline"><i class="fa fa-calendar"></i>
+                            <input type="text" onfocus="(this.type='date')" class="form-control myInput" placeholder="No due date"></td>
+                    </tr>
+                    <tr>
+                        <td>Projects</td>
+                        <td class="form-inline"><i class="fa fa-file"></i>
+                            Project name<span> Task</span></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td class="form-inline"><input type="text" class="form-control myInput" placeholder="Add more details to this task"></td>
+                    </tr>
+                    <tr>
+                        <td class="form-inline">
+                            <ul class="todo-list ui-sortable sub-task-list list-group list-group-flush ui-sortable"
+                                data-widget="todo-list">
+                            </ul>
+                        </td>
+                        <td class="form-inline" id="add-sub-task-btn">
+                            <i class="fa fa-plus"></i> Add subtask
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <div class="card-footer card-comments">
+                                    <div class="card-comment">
+                                        <img class="img-circle img-sm" src="../../layouts/assets/img/avatar04.png"
+                                             alt="User Image">
+                                        <div class="comment-text">
+                                                <span class="username">
+                                                  Maria Gonzales
+                                                  <span class="text-muted float-right">8:03 PM Today</span>
+                                                </span>
+                                            It is a long established fact that a reader will be distracted
+                                            by the readable content of a page when looking at its layout.
+                                        </div>
+                                    </div>
+                                    <div class="card-comment">
+                                        <img class="img-circle img-sm" src="../../layouts/assets/img/avatar04.png"
+                                             alt="User Image">
+                                        <div class="comment-text">
+                                                <span class="username">
+                                                  Luna Stark
+                                                  <span class="text-muted float-right">8:03 PM Today</span>
+                                                </span>
+                                            It is a long established fact that a reader will be distracted
+                                            by the readable content of a page when looking at its layout.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <form action="#" method="post">
+                                        <img class="img-fluid img-circle img-sm"
+                                             src="../../layouts/assets/img/avatar04.png" alt="Alt Text">
+                                        <div class="img-push">
+                                            <input type="text" class="form-control form-control-sm textarea"
+                                                   placeholder="Press enter to post comment">
+                                        </div>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-->
     <!--end-->
     <!--main page content-->
     <div class="content-wrapper">
@@ -262,7 +357,6 @@
                 </div>
             </div>
         </div>
-
         <section class="content">
             <div class="container-fluid">
                 <div class="card">
@@ -272,73 +366,14 @@
                                 <button class="btn btn-default" id="add_task_btn">
                                     <i class="fa fa-plus"></i> Add Task
                                 </button>
-                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                <button type="button" class="btn btn-default" data-toggle="modal"
+                                        data-target="#modal-lg">
                                     Task Sub-task
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-<!--model for details-->
-    <div class="modal fade right" id="modal-lg">
-        <div class="modal-dialog modal-full-height modal-right modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="modal-title border">
-                        <i class="fas fa-check"></i> Mark complete
-                    </p>
-                    <p class="modal-title right">
-                        <i class="fas fa-paperclip padding"></i>
-                        <i class="fas fa-copy padding"></i>
-                        <i class="fas fa-thumbs-up padding"></i>
-                        <i class="fas fa-ellipsis-h padding"></i>
-                        <i class="fas fa-arrow-circle-right"></i>
-                    </p>
-                </div>
-                <div class="modal-body">
-                    <label>
-                        <textarea class="form-control" cols="90" rows="1"></textarea>
-                    </label>
-                    <p>Assignee</p>
-                    <p>Due date</p>
-                    <p>Projects</p>
-                    <p>Priority</p>
-                    <p>Description</p>
-                    <ul class="todo-list ui-sortable sub-task-list list-group list-group-flush ui-sortable"
-                        data-widget="todo-list">
-                    </ul>
-                    <p class="btn margin-left" id="add-sub-task-btn">
-                        <i class="fa fa-plus"></i> Add subtask
-                    </p>
-                </div>
-                <div class="user-panel  comments d-flex">
-                    <div class="image">
-                        <img alt="User Image"
-                             class="img-circle elevation-2"
-                             src="../../layouts/assets/img/avatar04.png">
-                    </div>
-                    <div class="info">
-                        <a class="d-block" href="../../profile/index.html">Pawan garg</a>
-                    </div>
-                </div>
-                <div class="user-panel comments d-flex">
-                    <div class="image">
-                        <img alt="User Image"
-                             class="img-circle elevation-2"
-                             src="../../layouts/assets/img/avatar04.png">
-                    </div>
-                    <div class="info pad">
-                        <label>
-                            <textarea class="textarea" placeholder="Place some text here"
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!--end-->
                 <div class="card">
                     <div class="card-body">
                         <div class="container">
@@ -350,7 +385,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">To Do</h5>
@@ -370,10 +404,6 @@
 
                             <li class="task to-do-task list-group-item SpreadsheetTaskRow-nameCell"
                                 contenteditable="true" value="task_one">
-<!--                                <span class="handle">-->
-<!--                                  <i class="fas fa-ellipsis-v"></i>-->
-<!--                                  <i class="fas fa-ellipsis-v"></i>-->
-<!--                                </span>-->
                                 Task One
                             </li>
                         </ul>
@@ -410,14 +440,23 @@
 <!--<script src="../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>-->
 <script src="../../layouts/js/pms_k.js"></script>
 <script src="../../layouts/dist/js/pages/dashboard.js"></script>
+<script src="../../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!--end-->
 <!--incline script here-->
 <script>
-    $(function () {
-        // Summernote
-        $('.textarea').summernote()
-    })
+    $('.textarea').summernote({
+        toolbar: [
+            ["style", ["style"]],
+            ["font", ["bold", "underline"]],
+            ["fontname", ["fontname"]],
+            //["color", ["color"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            //["insert", ["link", "picture", "video"]],
+            // ["view", ["fullscreen", "codeview", "help"]]
+            ["view", [ "codeview"]]
+        ],
+    });
 </script>
-<!--end-->
 </body>
 

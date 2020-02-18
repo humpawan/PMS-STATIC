@@ -1,4 +1,3 @@
-
 //date picker all
 $(function () {
 
@@ -180,4 +179,3 @@ function newTaskInput(calenderTask) {
     }
     inputTask.focus();
 }
-

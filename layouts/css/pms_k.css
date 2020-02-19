@@ -35,9 +35,6 @@ stop multiline edit in task textbox(li)
 
 }
 [contenteditable="true"].task * {
-  /**
-    display:inline;
-   */
     white-space:nowrap;
 }
 /**/
@@ -58,34 +55,19 @@ stop multiline edit in task textbox(li)
 .set-custom-padding{
     padding: 0px;
 }
-.datepicker-orient-top{
-    top: 141px !important;
-}
-
-.bs-popover-right>.arrow::before{
-    display: none;
-}
-
-.popover .arrow::after, .popover .arrow::before {
-    display: none;
-}
-
-.item-title{
-    display: flex;
-}
-
-.parent-div-user{
-    cursor: pointer;
-    display: flex;
-    padding: 2px 15px;
-}
 
 [contenteditable="faslse"].direct-chat-img {
     display:none;
 }
-.bs-popover-right{
-    height: 100px;
-    overflow-y: scroll;
-    width: 30%;
-    position: absolute;
+
+.task-panel {
+    padding: 10px;
 }
+
+.tasks {
+    min-height: 565px;
+    max-height: 565px;
+    overflow-y: auto;
+}
+
+

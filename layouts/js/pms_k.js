@@ -5,6 +5,11 @@ $(document).ready(function(){
         addNewTaskObject();
     });
 
+        $('.datepicker').datepicker({
+            autoclose: true,
+            container:'.user-date-picker'
+        });
+
 
     $(document).on('keypress', '.to-do-task', function (e) {
         if (e.keyCode === nEnterBtnKeyCode) {
@@ -17,7 +22,36 @@ $(document).ready(function(){
             $(this).remove();
         }
     });
+    var toggle = true;
+    $(".down-arrow").on("click", function(e){
+        if(toggle){
+            $('.support-support-type').show();
+            $(".support-support-type").attr('size', 3); // show all 3 options
+            toggle = false;
+        }
+        else{
+            $('.support-support-type-two').hide();
+            $('.support-support-type').hide();
+            $("select.support-support-type").attr('size', 1); // show only the selected option
+            toggle = true;
+        }
+    });
+    var toggle = true;
+    $(".down-arrow-two").on("click", function(){
+        if(toggle){
 
+            $('.support-support-type-two').show();
+            $(".support-support-type-two").attr('size', 3); // show all 3 options
+            toggle = false;
+        }
+        else{
+            $('.support-support-type').hide();
+         //   $('.support_support_type').hide();
+            $('.support-support-type-two').hide();
+            $("select.support-support-type-two").attr('size', 1); // show only the selected option
+            toggle = true;
+        }
+    });
 });
 
 function addNewTaskObject(currentTask) {
@@ -35,9 +69,6 @@ function addNewTaskObject(currentTask) {
         $(".to_do_task_list").prepend(newTask);
     }
     newTask.focus();
-
-
-
 
 
 

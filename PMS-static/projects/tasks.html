@@ -470,23 +470,6 @@
         // open textarea when clicked on +.
         $(document).on('click', '.new-card-open', function () {
 
-            /*$(this).parents('.col-md-3').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-                                                                "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " +
-                                                                "<div class=\"form-group\">\n" +
-                                                                "<div class='input-group date'>\n" +
-                                                                "<div class='assignedTo'>\n" +
-                                                                "<i class='fa fa-user mr-3 pt-2' data-container='body' data-html='true'\n" +
-                                                                "data-content='Assigned To - xyz'\n" +
-                                                                "data-placement='bottom' data-toggle='popover'\n" +
-                                                                "data-trigger='focus'\n" +
-                                                                "tabindex='0'>\n" +
-                                                                "</i>\n" +
-                                                                "</div>\n" +
-                                                                "<i class='far fa-calendar-alt mr-2 pt-2'></i>\n" +
-                                                                "<input type='text' class='form-control pull-right datepicker'>\n" +
-                                                                "</div>\n" +
-                                                                "</div>" + "'>");*/
-
             $(this).parents('.col-md-3').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
                 "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " + "'>");
 
@@ -509,14 +492,13 @@
         $(document).on('keypress', '.new-card-textarea', function (e) {
 
             if (e.keyCode === nEnterBtnKeyCode) {
-
+                e.preventDefault();
                 var textarea = $(this);
                 console.log(textarea);
                 $.trim(textarea.val());
                 console.log(textarea.val());
 
                 if (textarea.val() !== '' ) {
-                    $('.new-card-open');
                     var newTextArea = $('<textarea />')
                         .attr("id", "item10")
                         .attr("rows","2")
@@ -524,13 +506,26 @@
                         .attr("draggable","true")
                         .attr("style","resize:none;")
                         .attr("class", "form-control new-card-textarea mb-3 card card-body");
-                    console.log(this);
                     $(this).parents('.col-md-3').find('.tasks').prepend(newTextArea);
                     $(this).after(newTextArea);
                     newTextArea.focus();
                 }
             }
         });
+
+        function newTaskInput(calenderTask) {
+            const inputTask = $('<div>')
+                .attr("class", "external-event input-task hide-input-box")
+                .attr("contenteditable", true);
+            const addIcon = $('<i>')
+                .attr("class", "fa fa-edit");
+            if (calenderTask) {
+                calenderTask.after(inputTask);
+            } else {
+                $(".external-event-list").prepend(inputTask).after(addIcon);
+            }
+            inputTask.focus();
+        }
 
         //Date picker
         $('.datepicker').datepicker({

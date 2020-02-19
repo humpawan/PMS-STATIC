@@ -121,3 +121,21 @@ body {
     border-style: solid;
 }
 
+.input-icons i {
+    position: absolute;
+}
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.icon {
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+}
+.input-field {
+    width: 100%;
+    padding-left: 36px;
+    padding-top: 7px;
+    text-align: left;
+}

@@ -7,19 +7,18 @@
     <title>Project-task</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <!--style code here-->
-    <link href="../../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-    <link href="../../layouts/assets/css/adminlte.min.css" rel="stylesheet">
-    <link href="../../layouts/css/pms_k.css" rel="stylesheet">
-    <link href="../../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
-          rel="stylesheet">
-    <link href="../../layouts/assets/css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../../layouts/assets/plugins/icheck-bootstrap/icheck-bootstrap.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="../../layouts/assets/plugins/summernote/summernote-bs4.css">
+    <link href="../../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
     <!--end-->
     <!--inline css code here-->
+    <link href="../../layouts/assets/css/adminlte.min.css" rel="stylesheet">
+    <link href="../../layouts/assets/css/style.css" rel="stylesheet">
+    <link href="../../layouts/css/pms_k.css" rel="stylesheet">
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -185,7 +184,6 @@
                     <div class="modal-title right">
                         <i class="fas fa-copy padding"></i>
                         <i class="fas fa-thumbs-up padding"></i>
-                        <i class="fas fa-ellipsis-h padding"></i>
                         <i class="fas fa-arrow-circle-right" data-dismiss="modal" aria-label="Close"></i>
                     </div>
                 </div>
@@ -200,26 +198,30 @@
                         <tbody>
                         <tr>
                             <td>Assignee</td>
-                            <td class="form-inline">
-                                <div class="form-control myInput" contenteditable="true">
-                                    <i class="fa fa-user"></i> Unassigned
-                                </div>
+                            <td class="form-inline input-icons">
+                                <i class="fa fa-user icon"></i>
+                                <label>
+                                    <input class="input-field form-control myInput" type="text" placeholder="Unassigned">
+                                </label>
                             </td>
                         </tr>
                         <tr>
                             <td>Due date</td>
-                            <td class="form-inline">
-                                <div class="form-control myInput" contenteditable="true">
-                                    <i class="fa fa-calendar"></i> No due date
-                                </div>
+                            <td class="form-inline input-icons">
+                                <i class="fa fa-calendar icon"></i>
+                                <label>
+                                    <input type="text" placeholder="No due date"
+                                           onfocus="(this.type='date')" class="input-field form-control myInput">
+                                </label>
                             </td>
                         </tr>
                         <tr>
                             <td>Projects</td>
-                            <td class="form-inline">
-                                <div class="form-control myInput" contenteditable="true">
-                                    <i class="fa fa-file"></i> Project name
-                                </div>
+                            <td class="form-inline input-icons">
+                                <i class="fa fa-file icon"></i>
+                                <label>
+                                    <input type="text" class="input-field form-control myInput" placeholder="Project name">
+                                </label>
                             </td>
                         </tr>
                         <tr>
@@ -246,7 +248,7 @@
                         <tr>
                             <td>
                                 <div class="form-inline" id="add-sub-task-btn">
-                                    <i class="fa fa-plus"></i> Add subtask
+                                   <span> <i class="fa fa-plus"></i> <span>Add subtask</span></span>
                                 </div>
                             </td>
                         </tr>
@@ -383,6 +385,7 @@
 <script src="../../layouts/js/pms_k.js"></script>
 <script src="../../layouts/dist/js/pages/dashboard.js"></script>
 <script src="../../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../../layouts/assets/plugins/icheck-bootstrap/icheck.js"></script>
 <!--end-->
 <!--incline script here-->
 </body>

@@ -71,6 +71,5 @@ function addNewTaskObject(currentTask) {
     newTask.focus();
 
 
-
 }
 

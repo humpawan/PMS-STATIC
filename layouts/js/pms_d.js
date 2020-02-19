@@ -7,14 +7,14 @@ $(document).ready(function () {
     // open textarea when clicked on +.
     $(document).on('click', '.new-card-open', function () {
 
-        $(this).parents('.col-md-3').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
+        $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
             "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " + "'>");
 
-        $(this).parents('.col-md-3').find('.new-card-textarea').focus();
+        $(this).parents('.task-list').find('.new-card-textarea').focus();
     });
 
     // textarea loses focus when clicked outside.
-    $(document).on('blur', '.new-card-', function () {
+    $(document).on('blur', '.new-card-textarea', function () {
         $(this).hide();
     });
 
@@ -55,24 +55,34 @@ $(document).ready(function () {
                     + "</div>"
                     + "</div>"
                 );
+
+                datepicker();
+                assignedTo();
+
                 $(this).val('');
             }
         }
     });
 
+    datepicker();
+    assignedTo();
+});
 
-    //Date picker
+//Date picker
+function datepicker() {
     $('.datepicker').datepicker({
         autoclose: true
     });
+}
 
-    // popover - Assigned To
+// popover - Assigned To
+function assignedTo() {
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
+}
 
-});
-
+// kanban jquery
 $(function () {
     var kanbanCol = $('.task-panel');
     kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');

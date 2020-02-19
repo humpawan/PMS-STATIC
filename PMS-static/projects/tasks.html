@@ -20,16 +20,14 @@
     <link href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
     <!-- bootstrap datepicker -->
     <link rel="stylesheet" href="../../plugins/bootstrap-datepicker.min.css">
-    <!-- summernote -->
-    <link href="../../plugins/summernote/summernote-bs4.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="../../layouts/css/pms_d.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <!--css-->
-    <link href="../../layouts/css/pms_d.css" rel="stylesheet">
 
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body>
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -147,63 +145,70 @@
             </nav>
             <!-- /.sidebar-menu -->
         </div>
+        <!-- /.sidebar -->
     </aside>
+
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
 
-            </div>
+            </div><!-- /.container-fluid -->
         </div>
+        <!-- /.content-header -->
 
+        <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
+                <!-- Main row -->
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-3">
                         Tasks
                         <div class="task-list">
-                            <button class="btn btn-block btn-default new-card-open">
+                            <button class="btn btn-block btn-default mt-3 new-card-open">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <div id="todo" class="task-panel">
-                                <div class="tasks">
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item1">
-                                            <h5 class="card-title mb-3">Project Setup</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+
+                            <div class="task-panel">
+                                <div id="TODO">
+                                    <div class="tasks">
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item1">
+                                                <h5 class="card-title mb-3">Project Setup</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-1" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-1 pt-1 datepicker" style="color: grey"></i>
+                                                        <p class="card-text"></p>
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item2">
-                                            <h5 class="card-title mb-3">Staging</h5>
-
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item2">
+                                                <h5 class="card-title mb-3">Staging</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
+                                                        <input type="text" class="form-control pull-right datepicker">
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
@@ -213,66 +218,52 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        In Progress
-                        <div class="task-list">
-                            <button class="btn btn-block btn-default new-card-open">
+                    <div class="col-md-3">
+                        <div>In progress</div>
+                        <div class="task-list col-md-12">
+                            <button class="btn btn-block btn-default mt-3 new-card-open">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <div id="todo" class="task-panel">
-                                <div class="tasks">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        In Review
-                        <div class="task-list">
-                            <button class="btn btn-block btn-default new-card-open">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                            <div id="todo" class="task-panel">
-                                <div class="tasks">
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item1">
-                                            <h5 class="card-title mb-3">Project Setup</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+                            <div class="task-panel">
+                                <div id="DOING">
+                                    <div class="tasks">
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item3">
+                                                <h5 class="card-title mb-3">Learning</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-1" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-1 pt-1 datepicker" style="color: grey"></i>
+                                                        <p class="card-text"></p>
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item2">
-                                            <h5 class="card-title mb-3">Staging</h5>
-
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item4">
+                                                <h5 class="card-title mb-3">API</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
+                                                        <input type="text" class="form-control pull-right datepicker">
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
@@ -282,52 +273,74 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        In UAT
-                        <div class="task-list">
-                            <button class="btn btn-block btn-default new-card-open">
+                    <div class="col-md-3">
+                        <div>Done</div>
+                        <div class="task-list col-md-12">
+                            <button class="btn btn-block btn-default mt-3 new-card-open">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <div id="todo" class="task-panel">
-                                <div class="tasks">
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item1">
-                                            <h5 class="card-title mb-3">Project Setup</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+
+                            <div class="task-panel">
+                                <div id="DONE">
+
+                                    <div class="tasks">
+
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item5">
+                                                <h5 class="card-title mb-3">git</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
+                                                        <input type="text" class="form-control pull-right datepicker">
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item2">
-                                            <h5 class="card-title mb-3">Staging</h5>
-
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item6">
+                                                <h5 class="card-title mb-3">Job Meeting</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-1" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-1 pt-1 datepicker" style="color: grey"></i>
+                                                        <p class="card-text"></p>
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item7">
+                                                <h5 class="card-title mb-3">PMS</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
+                                                        <input type="text" class="form-control pull-right datepicker">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -337,52 +350,52 @@
                         </div>
                     </div>
 
-                    <div class="col">
-                        Done
-                        <div class="task-list">
-                            <button class="btn btn-block btn-default new-card-open">
+                    <div class="col-md-3">
+                        <div>Not Approved</div>
+                        <div class="task-list col-md-12">
+                            <button class="btn btn-block btn-default mt-3 new-card-open">
                                 <i class="fa fa-plus"></i>
                             </button>
-                            <div id="todo" class="task-panel">
-                                <div class="tasks">
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item1">
-                                            <h5 class="card-title mb-3">Project Setup</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+
+                            <div class="task-panel">
+                                <div id="NotApproved">
+                                    <div class="tasks">
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item8">
+                                                <h5 class="card-title mb-3">Deployment</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
+                                                        <input type="text" class="form-control pull-right datepicker">
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="card">
-                                        <div class="card-body" draggable="true" id="item2">
-                                            <h5 class="card-title mb-3">Staging</h5>
-
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey"
-                                                           data-container="body" data-html="true"
-                                                           data-content="Assigned To - xyz"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
+                                        <div class="card">
+                                            <div class="card-body" draggable="true" id="item9">
+                                                <h5 class="card-title mb-3">Client call</h5>
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <div class="assignedTo">
+                                                            <i class="fa fa-user mr-3 pt-1" style="color: grey" data-container="body"
+                                                               data-content="Assigned To - xyz<form><input type='text' value='xyz'></form>" data-html="true"
+                                                               data-placement="bottom" data-toggle="popover"
+                                                               data-trigger="focus"
+                                                               tabindex="0">
+                                                            </i>
+                                                        </div>
+                                                        <i class="far fa-calendar-alt mr-1 pt-1 datepicker" style="color: grey"></i>
+                                                        <p class="card-text"></p>
                                                     </div>
-                                                    <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                    <input type="text" class="form-control pull-right datepicker">
                                                 </div>
                                             </div>
                                         </div>
@@ -391,15 +404,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- /.content -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container-fluid -->
+        </section><!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2020.</strong>
-        All rights reserved.
+        <strong>Copyright &copy; 2020.</strong> All rights reserved.
     </footer>
 </div>
 <!-- ./wrapper -->
@@ -424,8 +435,6 @@
 <script src="../../plugins/bootstrap-datepicker.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-
-
 <!-- overlayScrollbars -->
 <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
@@ -434,128 +443,8 @@
 <script src="../../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-
 <!--js-->
 <script src="../../layouts/js/pms_d.js"></script>
-<!-- Page Script -->
-<script type="text/javascript">
-
-    // keyCode for Enter and Escape
-    var nEnterBtnKeyCode = 13;
-    var nEscapeBtnKeyCode = 27;
-
-    $(document).ready(function () {
-
-        // open textarea when clicked on +.
-        $(document).on('click', '.new-card-open', function () {
-
-            $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-                "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " + "'>");
-
-            $(this).parents('.task-list').find('.new-card-textarea').focus();
-        });
-
-        // textarea loses focus when clicked outside.
-        $(document).on('blur', '.new-card-', function () {
-            $(this).hide();
-        });
-
-        // on escape, textarea loses focus.
-        $(document).on('keyup', '.new-card-textarea', function (e) {
-            if (e.keyCode == nEscapeBtnKeyCode) {
-                return $(this).trigger('blur');
-            }
-        });
-
-        // on enter, open new textarea.
-        $(document).on('keypress', '.new-card-textarea', function (e) {
-
-            if (e.keyCode === nEnterBtnKeyCode) {
-                e.preventDefault();
-                var textarea = $(this);
-                taskVal = $.trim(textarea.val());
-
-
-                if (taskVal !== '') {
-                    $(this).after(
-                        "<div class='card'>"
-                        + "<div class='card-body' draggable='true' id='item1'>"
-                        + "<h5 class='card-title mb-3'>" + taskVal + "</h5>"
-                        + "<div class='form-group'>"
-                        + "<div class='input-group date'>"
-                        + "<div class='assignedTo'>"
-                        + "<i class='fa fa-user mr-3 pt-2' style='color: grey' "
-                        + "data-container='body' data-html='true' "
-                        + "data-content='Assigned To - xyz' data-placement='bottom' data-toggle='popover' data-trigger='focus' "
-                        + "tabindex='0' data-original-title='' title=''>"
-                        + "</i>"
-                        + "</div>"
-                        + "<i class='far fa-calendar-alt mr-2 pt-2' style='color: grey'></i>"
-                        + "<input type='text' class='form-control pull-right datepicker'>"
-                        + "</div>"
-                        + "</div>"
-                        + "</div>"
-                        + "</div>"
-                    );
-
-                    $(this).val('');
-                }
-            }
-        });
-
-        //Date picker
-        $('.datepicker').datepicker({
-            autoclose: true
-        });
-
-        // popover - Assigned To
-        $(function () {
-            $('[data-toggle="popover"]').popover();
-        });
-
-    });
-</script>
-
-<script>
-
-    $(function () {
-        var kanbanCol = $('.task-panel');
-        kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
-
-        var kanbanColCount = parseInt(kanbanCol.length);
-        $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
-
-        draggableInit();
-    });
-
-    function draggableInit() {
-        var sourceId;
-
-        $('[draggable=true]').bind('dragstart', function (event) {
-            sourceId = $(this).parent().attr('id');
-            event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
-        });
-
-        $('.task-panel').bind('dragover', function (event) {
-            event.preventDefault();
-        });
-
-        $('.task-panel').bind('drop', function (event) {
-            var children = $(this).children();
-            var targetId = children.attr('id');
-
-            if (sourceId != targetId) {
-                var elementId = event.originalEvent.dataTransfer.getData("text/plain");
-
-                setTimeout(function () {
-                    var element = document.getElementById(elementId);
-                    children.prepend(element);
-                });
-            }
-            event.preventDefault();
-        });
-    }
-</script>
 
 </body>
 

@@ -429,9 +429,9 @@
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- jQuery UI 1.11.4 -->
+<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
@@ -461,9 +461,9 @@
 <!-- Page Script -->
 <script type="text/javascript">
 
-    // keycode for Enter and Escape
-    const nEnterBtnKeyCode = 13;
-    const nEscapeBtnKeyCode = 27;
+    // keyCode for Enter and Escape
+    var nEnterBtnKeyCode = 13;
+    var nEscapeBtnKeyCode = 27;
 
     $(document).ready(function () {
 
@@ -494,11 +494,20 @@
             if (e.keyCode === nEnterBtnKeyCode) {
                 e.preventDefault();
                 var textarea = $(this);
-                console.log(textarea);
                 $.trim(textarea.val());
                 console.log(textarea.val());
 
                 if (textarea.val() !== '' ) {
+                    var userIcon = $('<i>')
+                        .attr("class", "fa fa-user mr-3 pt-1")
+                        .attr("style", "color:grey");
+
+                    var calendarIcon = $('<i>')
+                        .attr("class", "far fa-calendar-alt")
+                        .attr("style", "color:grey");
+
+                    $(this).parents('.col-md-3').find('.new-card-textarea').after(calendarIcon).after(userIcon);
+
                     var newTextArea = $('<textarea />')
                         .attr("id", "item10")
                         .attr("rows","2")
@@ -506,26 +515,13 @@
                         .attr("draggable","true")
                         .attr("style","resize:none;")
                         .attr("class", "form-control new-card-textarea mb-3 card card-body");
+
                     $(this).parents('.col-md-3').find('.tasks').prepend(newTextArea);
                     $(this).after(newTextArea);
                     newTextArea.focus();
                 }
             }
         });
-
-        function newTaskInput(calenderTask) {
-            const inputTask = $('<div>')
-                .attr("class", "external-event input-task hide-input-box")
-                .attr("contenteditable", true);
-            const addIcon = $('<i>')
-                .attr("class", "fa fa-edit");
-            if (calenderTask) {
-                calenderTask.after(inputTask);
-            } else {
-                $(".external-event-list").prepend(inputTask).after(addIcon);
-            }
-            inputTask.focus();
-        }
 
         //Date picker
         $('.datepicker').datepicker({

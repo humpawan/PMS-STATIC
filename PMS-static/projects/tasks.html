@@ -24,24 +24,10 @@
     <link href="../../plugins/summernote/summernote-bs4.css" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!--css-->
+    <link href="../../layouts/css/pms_d.css" rel="stylesheet">
 
 </head>
-<style type="text/css">
-    /*.task-panel {
-        padding: 15px 0 0 0;
-        overflow-y: auto;
-    }*/
-
-    .task-panel {
-        padding: 10px;
-    }
-
-    .tasks {
-        min-height: 565px;
-        max-height: 565px;
-        overflow-y: auto;
-    }
-</style>
 
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -458,124 +444,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
-<!-- Page Script -->
-<script type="text/javascript">
-
-    // keyCode for Enter and Escape
-    var nEnterBtnKeyCode = 13;
-    var nEscapeBtnKeyCode = 27;
-
-    $(document).ready(function () {
-
-        // open textarea when clicked on +.
-        $(document).on('click', '.new-card-open', function () {
-
-            $(this).parents('.col-md-3').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-                "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " + "'>");
-
-            $(this).parents('.col-md-3').find('.new-card-textarea').focus();
-        });
-
-        // textarea loses focus when clicked outside.
-        $(document).on('blur', '.new-card-', function () {
-            $(this).hide();
-        });
-
-        // on escape, textarea loses focus.
-        $(document).on('keyup', '.new-card-textarea', function (e) {
-            if (e.keyCode == nEscapeBtnKeyCode) {
-                return $(this).trigger('blur');
-            }
-        });
-
-        // on enter, open new textarea.
-        $(document).on('keypress', '.new-card-textarea', function (e) {
-
-            if (e.keyCode === nEnterBtnKeyCode) {
-                e.preventDefault();
-                var textarea = $(this);
-                $.trim(textarea.val());
-                console.log(textarea.val());
-
-                if (textarea.val() !== '' ) {
-                    var userIcon = $('<i>')
-                        .attr("class", "fa fa-user mr-3 pt-1")
-                        .attr("style", "color:grey");
-
-                    var calendarIcon = $('<i>')
-                        .attr("class", "far fa-calendar-alt")
-                        .attr("style", "color:grey");
-
-                    $(this).parents('.col-md-3').find('.new-card-textarea').after(calendarIcon).after(userIcon);
-
-                    var newTextArea = $('<textarea />')
-                        .attr("id", "item10")
-                        .attr("rows","2")
-                        .attr("cols","10")
-                        .attr("draggable","true")
-                        .attr("style","resize:none;")
-                        .attr("class", "form-control new-card-textarea mb-3 card card-body");
-
-                    $(this).parents('.col-md-3').find('.tasks').prepend(newTextArea);
-                    $(this).after(newTextArea);
-                    newTextArea.focus();
-                }
-            }
-        });
-
-        //Date picker
-        $('.datepicker').datepicker({
-            autoclose: true
-        });
-
-        // popover - Assigned To
-        $(function () {
-            $('[data-toggle="popover"]').popover();
-        });
-
-    });
-</script>
-
-<script>
-
-    $(function () {
-        var kanbanCol = $('.task-panel');
-        kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
-
-        var kanbanColCount = parseInt(kanbanCol.length);
-        $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
-
-        draggableInit();
-    });
-
-    function draggableInit() {
-        var sourceId;
-
-        $('[draggable=true]').bind('dragstart', function (event) {
-            sourceId = $(this).parent().attr('id');
-            event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
-        });
-
-        $('.task-panel').bind('dragover', function (event) {
-            event.preventDefault();
-        });
-
-        $('.task-panel').bind('drop', function (event) {
-            var children = $(this).children();
-            var targetId = children.attr('id');
-
-            if (sourceId != targetId) {
-                var elementId = event.originalEvent.dataTransfer.getData("text/plain");
-
-                setTimeout(function () {
-                    var element = document.getElementById(elementId);
-                    children.prepend(element);
-                });
-            }
-            event.preventDefault();
-        });
-    }
-</script>
+<!--js-->
+<script src="../../layouts/js/pms_d.js"></script>
 
 </body>
 

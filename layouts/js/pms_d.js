@@ -8,7 +8,7 @@ $(document).ready(function () {
     $(document).on('click', '.new-card-open', function () {
 
         $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-            "class='form-control new-card-textarea mb-3 card card-body'" + "style='resize: none;' " + "'>");
+            "class='form-control new-card-textarea mt-3'" + "style='resize: none;' " + "'>");
 
         $(this).parents('.task-list').find('.new-card-textarea').focus();
     });
@@ -33,11 +33,19 @@ $(document).ready(function () {
             var textarea = $(this);
             taskVal = $.trim(textarea.val());
 
-
             if (taskVal !== '') {
+
+                var i=10;
+                $('.card-body').each(function(){
+                    i++;
+                    var newID='item'+i;
+                    $(this).attr('id',newID);
+                    $(this).val(i);
+                });
+
                 $(this).after(
                     "<div class='card'>"
-                    + "<div class='card-body' draggable='true' id='item1'>"
+                    + "<div class='card-body' draggable='true' id='newID'>"
                     + "<h5 class='card-title mb-3'>" + taskVal + "</h5>"
                     + "<div class='form-group'>"
                     + "<div class='input-group date'>"
@@ -58,6 +66,7 @@ $(document).ready(function () {
 
                 datepicker();
                 assignedTo();
+                draggable();
 
                 $(this).val('');
             }
@@ -90,10 +99,10 @@ $(function () {
     var kanbanColCount = parseInt(kanbanCol.length);
     $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
 
-    draggableInit();
+    draggable();
 });
 
-function draggableInit() {
+function draggable() {
     var sourceId;
 
     $('[draggable=true]').bind('dragstart', function (event) {

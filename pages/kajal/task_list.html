@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../../layouts/assets/plugins/summernote/summernote-bs4.css">
     <link href="../../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
     <link href="../../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../layouts/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../../layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!--end-->
     <!--inline css code here-->
     <link href="../../layouts/assets/css/adminlte.min.css" rel="stylesheet">
@@ -160,31 +162,36 @@
         </div>
     </aside>
     <!--modal box sub-task-->
-    <div class="modal fade right" id="modal-lg">
+    <div class="modal right fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-full-height modal-right modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="was-validated border">
-                        <div class="modal-title custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                            <label class="custom-control-label" for="customControlValidation1">Mark complete</label>
-                            <!--                        <div class="invalid-feedback">Completed</div>-->
+                    <div class="border">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="Mark-complete">
+                            <label for="Mark-complete">
+                                Mark complete
+                            </label>
                         </div>
                     </div>
                     <div class="dropdown modal-title">
-                    <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
-                            <i class="fas fa-paperclip padding-dropdown"></i>
-                    </span>
+                        <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
+                                <i class="fas fa-paperclip padding-dropdown"></i>
+                        </span>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Attach file</a>
                             <a class="dropdown-item" href="#">Your computer</a>
                             <a class="dropdown-item" href="#">Dropbox</a>
                         </div>
-                    </div>
-                    <div class="modal-title right">
-                        <i class="fas fa-copy padding"></i>
-                        <i class="fas fa-thumbs-up padding"></i>
-                        <i class="fas fa-arrow-circle-right" data-dismiss="modal" aria-label="Close"></i>
+                        <span>
+                            <i class="fas fa-copy padding"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-thumbs-up padding"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-arrow-circle-right" data-dismiss="modal" aria-label="Close"></i>
+                        </span>
                     </div>
                 </div>
                 <div class="modal-body card" style="box-shadow: none;">
@@ -256,41 +263,34 @@
                     </table>
                 </div>
                 <div class="modal-footer card-comments">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <img class="img-circle img-sm" src="../../layouts/assets/img/avatar04.png"
-                                     alt="User Image">
-                                <div class="comment-text">
-                                    <span class="username">
-                                      Maria Gonzales
-                                      <span class="text-muted float-right">8:03 PM Today</span>
-                                    </span>
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form action="#" method="post">
-                                    <img class="img-fluid img-circle img-sm"
-                                         src="../../layouts/assets/img/avatar04.png" alt="Alt Text">
-                                    <div class="img-push">
-                                        <input type="text" class="form-control form-control-sm textarea"
-                                               placeholder="Press enter to post comment">
-                                    </div>
-                                </form>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <img class="img-circle img-sm" src="../../layouts/assets/img/avatar04.png"
+                         alt="User Image">
+                    <div class="comment-text">
+                        <span class="username">
+                          Maria Gonzales
+                          <span class="text-muted float-right">8:03 PM Today</span>
+                        </span>
+                        It is a long established fact that a reader will be distracted
+                        by the readable content of a page when looking at its layout.
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="modal-footer card-comments">
+                        <form action="#" method="post">
+                            <img class="img-fluid img-circle img-sm"
+                                 src="../../layouts/assets/img/avatar04.png" alt="Alt Text">
+                            <div class="img-push">
+                                <label class="form-check">
+                                    <textarea type="text" class="form-control textarea" placeholder="Press enter to post comment"></textarea>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--end-->
+    <!--end modal box-->
     <!--main page content-->
     <div class="content-wrapper">
         <section class="content-header">
@@ -373,7 +373,7 @@
 <!--scripts here-->
 <script src="../../layouts/assets/plugins/jquery/jquery.min.js"></script>
 <script src="../../layouts/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-
+<script src="../../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>-->
 <!-- Bootstrap 4 -->
 <script src="../../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -388,5 +388,14 @@
 <script src="../../layouts/assets/plugins/icheck-bootstrap/icheck.js"></script>
 <!--end-->
 <!--incline script here-->
+<script>
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+        theme: 'bootstrap4'
+    })
+</script>
 </body>
 

@@ -74,7 +74,7 @@ function addNewSubTask(currentSubTask) {
     newSubTask.focus();
 }
 
-
+//text area expand on task name
 const textarea = document.querySelector('textarea');
 textarea.addEventListener('keydown', autosize);
 
@@ -85,3 +85,18 @@ function autosize(){
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
     },0);
 }
+
+//editor js
+$('.textarea').summernote({
+    toolbar: [
+        ["style", ["style"]],
+        ["font", ["bold", "underline"]],
+        ["fontname", ["fontname"]],
+        //["color", ["color"]],
+        ["para", ["ul", "ol", "paragraph"]],
+        ["table", ["table"]],
+        //["insert", ["link", "picture", "video"]],
+        // ["view", ["fullscreen", "codeview", "help"]]
+        ["view", ["codeview"]]
+    ],
+});

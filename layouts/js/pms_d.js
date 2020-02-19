@@ -7,8 +7,8 @@ $(document).ready(function () {
     // open textarea when clicked on +.
     $(document).on('click', '.new-card-open', function () {
 
-        $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='2' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-            "class='form-control new-card-textarea mt-3'" + "style='resize: none;' " + "'>");
+        $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='3' " + "cols='10' " + "draggable='true' " + "id='item10' " +
+            "class='form-control new-card-textarea mt-2 mb-3'" + "style='resize: none;' " + "'>");
 
         $(this).parents('.task-list').find('.new-card-textarea').focus();
     });
@@ -36,7 +36,7 @@ $(document).ready(function () {
             if (taskVal !== '') {
 
                 var i=10;
-                $('.card-body').each(function(){
+                $('.card').each(function(){
                     i++;
                     var newID='item'+i;
                     $(this).attr('id',newID);
@@ -44,8 +44,8 @@ $(document).ready(function () {
                 });
 
                 $(this).after(
-                    "<div class='card'>"
-                    + "<div class='card-body' draggable='true' id='newID'>"
+                    "<div class='card' draggable='true' id='newID'>"
+                    + "<div class='card-body'>"
                     + "<h5 class='card-title mb-3'>" + taskVal + "</h5>"
                     + "<div class='form-group'>"
                     + "<div class='input-group date'>"
@@ -116,6 +116,7 @@ function draggable() {
 
     $('.task-panel').bind('drop', function (event) {
         var children = $(this).children();
+
         var targetId = children.attr('id');
 
         if (sourceId != targetId) {

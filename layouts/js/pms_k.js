@@ -100,3 +100,7 @@ $('.textarea').summernote({
         ["view", ["codeview"]]
     ],
 });
+
+//Datemask dd/mm/yyyy
+$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
+$('[data-mask]').inputmask();

@@ -162,8 +162,9 @@
         </div>
     </aside>
     <!--modal box sub-task-->
-    <div class="modal right fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-full-height modal-right modal-lg">
+    <div class="modal right fade" id="modal-lg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-full-height modal-lg modal-notify modal-info modal-right">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="border">
@@ -198,14 +199,14 @@
                     <table>
                         <thead>
                         <label>
-                        <textarea class="form-control myTextarea" cols="90" rows="1"
+                        <textarea class="form-control myTextarea textarea-auto-resize" cols="90" rows="1"
                                   placeholder="Write task name..."></textarea>
                         </label>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Assignee</td>
-                            <td class="form-inline input-icons">
+                            <td class="text-left">Assignee</td>
+                            <td class="form-inline input-icons text-center">
                                 <i class="fa fa-user icon"></i>
                                 <label>
                                     <input class="input-field form-control myInput" type="text" placeholder="Unassigned">
@@ -217,10 +218,10 @@
                             <td class="form-inline input-icons">
                                 <i class="fa fa-calendar icon"></i>
                                 <label>
-                                    <input type="text" placeholder="No due date"
-                                            class="input-field form-control myInput" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
 <!--                                    <input type="text" placeholder="No due date"-->
-<!--                                           onfocus="(this.type='date')" class="input-field form-control myInput">-->
+<!--                                            class="input-field form-control myInput" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>-->
+                                    <input type="text" placeholder="No due date"
+                                           onfocus="(this.type='date')" class="input-field form-control myInput">
                                 </label>
                             </td>
                         </tr>
@@ -229,6 +230,11 @@
                             <td class="form-inline input-icons">
                                 <i class="fa fa-file icon"></i>
                                 <label>
+<!--                                    <select class="input-field form-control myInput select2" multiple="multiple" data-placeholder="Project name" style="width: 100%; border: none">-->
+<!--                                        <option>Alabama</option>-->
+<!--                                        <option>Alaska</option>-->
+<!--                                        <option>California</option>-->
+<!--                                    </select>-->
                                     <input type="text" class="input-field form-control myInput" placeholder="Project name">
                                 </label>
                             </td>
@@ -237,7 +243,7 @@
                             <td>Description</td>
                             <td class="form-inline">
                                 <label>
-                                    <textarea type="text" cols="27" rows="1" class="form-control myInput"
+                                    <textarea class="form-control myInput textarea-description-auto-resize" cols="27" rows="1"
                                               placeholder="Add more details to this task"></textarea>
                                 </label>
                             </td>
@@ -278,15 +284,9 @@
                 </div>
                 <div class="card">
                     <div class="modal-footer card-comments">
-                        <form action="#" method="post">
-                            <img class="img-fluid img-circle img-sm"
-                                 src="../../layouts/assets/img/avatar04.png" alt="Alt Text">
-                            <div class="img-push">
-                                <label class="form-check">
-                                    <textarea type="text" class="form-control textarea" placeholder="Press enter to post comment"></textarea>
-                                </label>
-                            </div>
-                        </form>
+                        <label class="form-check text-lg">
+                            <textarea type="text" class="form-control textarea" placeholder="Press enter to post comment"></textarea>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -319,8 +319,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card">
                     <div class="card-body">
                         <div class="container">
                             <div class="row">

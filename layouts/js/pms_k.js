@@ -75,9 +75,10 @@ function addNewSubTask(currentSubTask) {
 }
 
 //text area expand on task name
-const textarea = document.querySelector('textarea');
+const textarea = document.querySelector('.textarea-auto-resize');
+const textarea1 = document.querySelector('.textarea-description-auto-resize');
 textarea.addEventListener('keydown', autosize);
-
+textarea1.addEventListener('keydown', autosize);
 function autosize(){
     const el = this;
     setTimeout(function(){
@@ -101,6 +102,7 @@ $('.textarea').summernote({
     ],
 });
 
+$('.select2').select2()
 //Datemask dd/mm/yyyy
 $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
 $('[data-mask]').inputmask();

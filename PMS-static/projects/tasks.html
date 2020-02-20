@@ -166,6 +166,7 @@
                     <div class="col-md-3">
                         Tasks
                         <div class="task-list">
+                            <!--  TODO: use new-task instead of new-card-open class -->
                             <button class="btn btn-block btn-default mt-3 mb-3 new-card-open">
                                 <i class="fa fa-plus"></i>
                             </button>
@@ -173,11 +174,13 @@
                             <div class="task-panel">
                                 <div id="todo">
                                     <div class="tasks">
-                                        <div class="card" draggable="true" id="item1">
+                                        <div class="card task" draggable="true" id="">
                                             <div class="card-body">
-                                                <h5 class="card-title mb-3">Project Setup</h5>
+                                                <h5 class="card-title mb-3 task-title">
+                                                    Project Setup
+                                                </h5>
                                                 <div class="form-group">
-                                                    <div class="input-group date">
+                                                    <div class="input-group">
                                                         <div class="assignedTo">
                                                             <i class="fa fa-user mr-3 pt-1" style="color: grey" data-container="body"
                                                                data-content="Assigned To - xyz" data-html="true"
@@ -187,7 +190,6 @@
                                                             </i>
                                                         </div>
                                                         <i class="far fa-calendar-alt mr-1 pt-1 datepicker" style="color: grey"></i>
-                                                        <p class="card-text"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -207,7 +209,7 @@
                                                             </i>
                                                         </div>
                                                         <i class="far fa-calendar-alt mr-2 pt-2" style="color: grey"></i>
-                                                        <input type="text" class="form-control pull-right datepicker">
+                                                        <input type="text" name="task-date" class="form-control pull-right datepicker task-date">
                                                     </div>
                                                 </div>
                                             </div>
@@ -447,11 +449,12 @@
 <script src="../../layouts/js/pms_d.js"></script>
 
 <script>
-    /*$( function() {
-        $( "div.card" ).sortable({
+    $( function() {
+        $( ".tasks" ).sortable({
+            //TODO add specific class as a selector inseted div
             connectWith: "div"
         });
-    } );*/
+    } );
 </script>
 
 </body>

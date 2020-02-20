@@ -158,7 +158,7 @@
             <div class="container-fluid">
                 <!-- Main row -->
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col">
                         Tasks
                         <div class="task-list">
                             <button class="btn btn-block btn-default mt-3 mb-3 new-task">
@@ -219,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col">
                        In progress
                         <div class="task-list">
                             <button class="btn btn-block btn-default mt-3 mb-3 new-task">
@@ -278,90 +278,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        Done
-                        <div class="task-list">
-                            <button class="btn btn-block btn-default mt-3 mb-3 new-task">
-                                <i class="fa fa-plus"></i>
-                            </button>
-
-                            <div class="task-panel">
-                                <div class="tasks">
-                                    <div class="card task">
-                                        <div class="card-body">
-                                            <h5 class="card-title mb-3">git</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
-                                                           data-content="Assigned To - xyz" data-html="true"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
-                                                    </div>
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
-                                                    </div>
-                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card task">
-                                        <div class="card-body">
-                                            <h5 class="card-title mb-3">Job Meeting</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
-                                                           data-content="Assigned To - xyz" data-html="true"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
-                                                    </div>
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
-                                                    </div>
-                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card task">
-                                        <div class="card-body">
-                                            <h5 class="card-title mb-3">PMS</h5>
-                                            <div class="form-group">
-                                                <div class="input-group date">
-                                                    <div class="assignedTo">
-                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
-                                                           data-content="Assigned To - xyz" data-html="true"
-                                                           data-placement="bottom" data-toggle="popover"
-                                                           data-trigger="focus"
-                                                           tabindex="0">
-                                                        </i>
-                                                    </div>
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
-                                                    </div>
-                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        Not Approved
+                    <div class="col">
+                        In review
                         <div class="task-list">
                             <button class="btn btn-block btn-default mt-3 mb-3 new-task">
                                 <i class="fa fa-plus"></i>
@@ -395,6 +313,147 @@
                                     <div class="card task">
                                         <div class="card-body">
                                             <h5 class="card-title mb-3">Client call</h5>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <div class="assignedTo">
+                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                           data-content="Assigned To - xyz" data-html="true"
+                                                           data-placement="bottom" data-toggle="popover"
+                                                           data-trigger="focus"
+                                                           tabindex="0">
+                                                        </i>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
+                                                    </div>
+                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        In UAT
+                        <div class="task-list">
+                            <button class="btn btn-block btn-default mt-3 mb-3 new-task">
+                                <i class="fa fa-plus"></i>
+                            </button>
+
+                            <div class="task-panel">
+                                <div class="tasks">
+                                    <div class="card task">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">Coordination</h5>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <div class="assignedTo">
+                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                           data-content="Assigned To - xyz" data-html="true"
+                                                           data-placement="bottom" data-toggle="popover"
+                                                           data-trigger="focus"
+                                                           tabindex="0">
+                                                        </i>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
+                                                    </div>
+                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card task">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">Pages</h5>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <div class="assignedTo">
+                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                           data-content="Assigned To - xyz" data-html="true"
+                                                           data-placement="bottom" data-toggle="popover"
+                                                           data-trigger="focus"
+                                                           tabindex="0">
+                                                        </i>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
+                                                    </div>
+                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        Done
+                        <div class="task-list">
+                            <button class="btn btn-block btn-default mt-3 mb-3 new-task">
+                                <i class="fa fa-plus"></i>
+                            </button>
+
+                            <div class="task-panel">
+                                <div class="tasks">
+                                    <div class="card task">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">git</h5>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <div class="assignedTo">
+                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                           data-content="Assigned To - xyz" data-html="true"
+                                                           data-placement="bottom" data-toggle="popover"
+                                                           data-trigger="focus"
+                                                           tabindex="0">
+                                                        </i>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
+                                                    </div>
+                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card task">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">Meeting</h5>
+                                            <div class="form-group">
+                                                <div class="input-group date">
+                                                    <div class="assignedTo">
+                                                        <i class="fa fa-user mr-3 pt-2" style="color: grey" data-container="body"
+                                                           data-content="Assigned To - xyz" data-html="true"
+                                                           data-placement="bottom" data-toggle="popover"
+                                                           data-trigger="focus"
+                                                           tabindex="0">
+                                                        </i>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt" style="color: grey"></i></span>
+                                                    </div>
+                                                    <input type="text" name="task-date" placeholder="Date" class="form-control pull-right datepicker task-date" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card task">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">PMS</h5>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">

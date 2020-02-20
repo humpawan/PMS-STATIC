@@ -2,7 +2,6 @@
 var nEnterBtnKeyCode = 13;
 var nEscapeBtnKeyCode = 27;
 
-
 $(document).ready(function ()
 {
     initDatepicker();
@@ -10,7 +9,8 @@ $(document).ready(function ()
     initDateInputMask();
     initTaskSortable();
 });
-//
+
+// opens textarea when clicked on +.
 $(document).on('click', '.new-task', function () {
 
     $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='3' " + "cols='10' " +
@@ -64,37 +64,44 @@ $(document).on('keypress', '.new-task-textarea', function (e) {
                 + "</div>"
             );
             $(this).val('');
+
             initDatepicker();
             initPopOver();
-
-
         }
     }
 });
 
-//Datemask dd/mm/yyyy
+// Sortable jquery
+function initTaskSortable(){
+    $(".tasks").sortable({
+        connectWith: "div"
+    });
+}
+
+// Date input mask
 function initDateInputMask(){
     $('#datemask').inputmask('dd/mm/yyyy', {'placeholder': 'dd/mm/yyyy'});
 }
 
+// Date picker
 function initDatepicker() {
     $('.datepicker').datepicker({
         autoclose: true
     });
 }
 
-// // popover - Assigned To
+// popover - Assigned To
 function initPopOver() {
     var showPopover = function() {
         $(this).popover('toggle');
     };
 
-    $('[data-toggle="popover"]').click(showPopover);
+    var hidePopover = function() {
+        $(this).popover('hide');
+    };
+
+    $('[data-toggle="popover"]').popover({
+        trigger: 'manual'
+    }).click(showPopover).hover(hidePopover);
 }
 
-function initTaskSortable(){
-    // Sortable jquery
-    $(".tasks").sortable({
-        connectWith: "div"
-    });
-}

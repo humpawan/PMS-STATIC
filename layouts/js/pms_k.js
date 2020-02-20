@@ -101,8 +101,6 @@ $('.textarea').summernote({
         ["view", ["codeview"]]
     ],
 });
-
-$('.select2').select2()
-//Datemask dd/mm/yyyy
-$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-$('[data-mask]').inputmask();
+$('.select2').select2({
+    theme: 'bootstrap4'
+});

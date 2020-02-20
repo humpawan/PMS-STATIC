@@ -5,28 +5,28 @@ var nEscapeBtnKeyCode = 27;
 $(document).ready(function () {
 
     // open textarea when clicked on +.
-    $(document).on('click', '.new-card-open', function () {
+    $(document).on('click', '.new-task', function () {
 
-        $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='3' " + "cols='10' " + "draggable='true' " + "id='item10' " +
-            "class='form-control new-card-textarea mt-2 mb-3'" + "style='resize: none;' " + "'>");
+        $(this).parents('.task-list').find('.tasks').prepend("<textarea rows='3' " + "cols='10' " +
+            "class='form-control new-task-textarea mt-2 mb-3'" + "style='resize: none;' " + "'>");
 
-        $(this).parents('.task-list').find('.new-card-textarea').focus();
+        $(this).parents('.task-list').find('.new-task-textarea').focus();
     });
 
     // textarea loses focus when clicked outside.
-    $(document).on('blur', '.new-card-textarea', function () {
+    $(document).on('blur', '.new-task-textarea', function () {
         $(this).hide();
     });
 
-    // on escape, textarea loses focus.
-    $(document).on('keyup', '.new-card-textarea', function (e) {
+    // on escape, textarea is closed.
+    $(document).on('keyup', '.new-task-textarea', function (e) {
         if (e.keyCode == nEscapeBtnKeyCode) {
             return $(this).trigger('blur');
         }
     });
 
-    // on enter, open new textarea.
-    $(document).on('keypress', '.new-card-textarea', function (e) {
+    // on enter, open new card.
+    $(document).on('keypress', '.new-task-textarea', function (e) {
 
         if (e.keyCode === nEnterBtnKeyCode) {
             e.preventDefault();
@@ -34,19 +34,10 @@ $(document).ready(function () {
             taskVal = $.trim(textarea.val());
 
             if (taskVal !== '') {
-
-                var i=10;
-                $('.card').each(function(){
-                    i++;
-                    var newID='item'+i;
-                    $(this).attr('id',newID);
-                    $(this).val(i);
-                });
-
                 $(this).after(
-                    "<div class='card' draggable='true' id='newID'>"
+                    "<div class='card task'>"
                     + "<div class='card-body'>"
-                    + "<h5 class='card-title mb-3'>" + taskVal + "</h5>"
+                    + "<h5 class='card-title task-title mb-3'>" + taskVal + "</h5>"
                     + "<div class='form-group'>"
                     + "<div class='input-group date'>"
                     + "<div class='assignedTo'>"
@@ -56,8 +47,11 @@ $(document).ready(function () {
                     + "tabindex='0' data-original-title='' title=''>"
                     + "</i>"
                     + "</div>"
-                    + "<i class='far fa-calendar-alt mr-2 pt-2' style='color: grey'></i>"
-                    + "<input type='text' class='form-control pull-right datepicker'>"
+                    + "<div class='input-group-prepend'>"
+                    + "<span class='input-group-text'><i class='far fa-calendar-alt' style='color: grey'></i></span>"
+                    + "</div>"
+                    + "<input type='text' name='task-date' class='form-control pull-right datepicker task-date' data-inputmask-alias='datetime' "
+                    + "data-inputmask-inputformat='mm/dd/yyyy' data-mask placeholder='Date'>"
                     + "</div>"
                     + "</div>"
                     + "</div>"
@@ -66,7 +60,6 @@ $(document).ready(function () {
 
                 datepicker();
                 assignedTo();
-                draggable();
 
                 $(this).val('');
             }
@@ -76,6 +69,16 @@ $(document).ready(function () {
     datepicker();
     assignedTo();
 });
+
+// Sortable jquery
+$( function() {
+    $( ".tasks" ).sortable({
+        connectWith: "div"
+    });
+});
+
+//Datemask dd/mm/yyyy
+$('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
 
 //Date picker
 function datepicker() {
@@ -88,45 +91,5 @@ function datepicker() {
 function assignedTo() {
     $(function () {
         $('[data-toggle="popover"]').popover();
-    });
-}
-
-// kanban jquery
-$(function () {
-    var kanbanCol = $('.task-panel');
-    kanbanCol.css('max-height', (window.innerHeight - 150) + 'px');
-
-    var kanbanColCount = parseInt(kanbanCol.length);
-    $('.container-fluid').css('min-width', (kanbanColCount * 350) + 'px');
-
-    draggable();
-});
-
-function draggable() {
-    var sourceId;
-
-    $('[draggable=true]').bind('dragstart', function (event) {
-        sourceId = $(this).parent().attr('id');
-        event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
-    });
-
-    $('.task-panel').bind('dragover', function (event) {
-        event.preventDefault();
-    });
-
-    $('.task-panel').bind('drop', function (event) {
-        var children = $(this).children();
-
-        var targetId = children.attr('id');
-
-        if (sourceId != targetId) {
-            var elementId = event.originalEvent.dataTransfer.getData("text/plain");
-
-            setTimeout(function () {
-                var element = document.getElementById(elementId);
-                children.prepend(element);
-            });
-        }
-        event.preventDefault();
     });
 }

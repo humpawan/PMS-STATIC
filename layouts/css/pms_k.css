@@ -87,9 +87,8 @@ body {
 }
 
 .dropdown-menu {
-    top: 4px;
     left: auto !important;
-    right: 91px !important;
+    right: 125px !important;
 }
 
 .myInput {

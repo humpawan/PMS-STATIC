@@ -161,3 +161,7 @@ textarea {
     box-shadow: none;
     resize: none; /*remove the resize handle on the bottom right*/
 }
+.datepicker{
+    top: 224px!important;
+    right: 406px!important;
+}

@@ -104,3 +104,5 @@ $('.textarea').summernote({
 $('.select2').select2({
     theme: 'bootstrap4'
 });
+
+$('#date-picker').datepicker();

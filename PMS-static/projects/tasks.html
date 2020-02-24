@@ -26,11 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!--summernote-->
     <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
-
-    <meta name="csrf-token">
-    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
+    <!--Select2-->
     <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
@@ -161,17 +157,11 @@
         <div class="modal-dialog modal-full-height modal-lg modal-notify modal-info modal-right">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="border">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="Mark-complete">
-                            <label for="Mark-complete">
-                                Mark complete
-                            </label>
-                        </div>
-                    </div>
+                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-check mr-1"></i>Mark Complete</button>
+
                     <div class="dropdown modal-title">
                         <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
-                                <i class="fas fa-paperclip padding padding-dropdown"></i>
+                                <i class="fas fa-paperclip mr-3" style="color: grey" data-toggle="tooltip" data-placement="bottom" title="Attachments"></i>
                         </span>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Attach file</a>
@@ -179,13 +169,19 @@
                             <a class="dropdown-item" href="#">Dropbox</a>
                         </div>
                         <span>
-                            <i class="fas fa-copy padding"></i>
+                            <i class="fas fa-list mr-3" style="color: grey" data-toggle="tooltip" data-placement="bottom" title="Subtasks"></i>
                         </span>
                         <span>
-                            <i class="fas fa-thumbs-up padding"></i>
+                            <i class="fas fa-copy mr-3" style="color: grey" data-toggle="tooltip" data-placement="bottom" title="Copy task link"></i>
                         </span>
                         <span>
-                            <i class="fas fa-arrow-circle-right padding" data-dismiss="modal" aria-label="Close"></i>
+                            <i class="fas fa-thumbs-up mr-3" style="color: grey" data-toggle="tooltip" data-placement="bottom" title="Like"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-ellipsis-h mr-3" style="color: grey" data-toggle="tooltip" data-placement="bottom" title="More actions"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-times" data-dismiss="modal" aria-label="Close"  style="color: grey"></i>
                         </span>
                     </div>
                 </div>
@@ -218,7 +214,6 @@
                                   </span>
                                 </div>
                                 <input type="text" class="form-control float-right" id="date-picker" placeholder="No due date" data-provide="datepicker">
-                                <!--                                <input type="date" class="form-control float-right" >-->
                             </div>
                         </div>
                         <div class="col-6"></div>
@@ -227,7 +222,6 @@
                         </div>
                         <div class="col-3"><br>
                             <select class="select2" data-placeholder="Project name" data-allow-clear="true">
-                                <option></option>
                                 <option>Alabama</option>
                                 <option>Alaska</option>
                                 <option>California</option>
@@ -283,11 +277,6 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-default" data-toggle="modal"
-                data-target="#modal-lg">
-           Modal
-        </button>
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -304,9 +293,9 @@
                                 <div class="tasks">
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3 task-title">
-                                                Project Setup
-                                            </h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3 task-title">Project Setup</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="assignedTo">
@@ -328,7 +317,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Staging</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Staging</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -364,7 +355,9 @@
                                 <div class="tasks">
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Learning</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Learning</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -387,7 +380,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">API</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">API</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -422,7 +417,9 @@
                                 <div class="tasks">
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Deployment</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Deployment</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -445,7 +442,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Client call</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Client call</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -481,7 +480,9 @@
                                 <div class="tasks">
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Coordination</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Coordination</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -503,7 +504,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Pages</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Pages</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -538,7 +541,9 @@
                                 <div class="tasks">
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">git</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">git</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -561,7 +566,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">Meeting</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">Meeting</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -583,7 +590,9 @@
 
                                     <div class="card task">
                                         <div class="card-body">
-                                            <h5 class="card-title mb-3">PMS</h5>
+                                            <a data-toggle="modal" data-target="#modal-lg">
+                                                <h5 class="card-title mb-3">PMS</h5>
+                                            </a>
                                             <div class="form-group">
                                                 <div class="input-group date">
                                                     <div class="assignedTo">
@@ -645,7 +654,6 @@
 <script src="../../plugins/icheck-bootstrap/icheck.js"></script>
 <!--custom file input-->
 <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-
 <!-- Select2 -->
 <script src="../../plugins/select2/js/select2.full.min.js"></script>
 <!--js-->

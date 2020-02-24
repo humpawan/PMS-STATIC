@@ -165,3 +165,8 @@ textarea {
 .modal-footer-extra{
     box-shadow: none;
 }
+
+.mouse{
+
+    cursor: pointer;
+}

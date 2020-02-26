@@ -101,6 +101,7 @@ $('.textarea').summernote({
         ["view", ["codeview"]]
     ],
 });
+
 $('.select2').select2({
     theme: 'bootstrap4'
 });

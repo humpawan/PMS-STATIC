@@ -2,26 +2,32 @@
 <html lang="">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="csrf-token">
     <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <!--style code here-->
-    <link rel="stylesheet"
-          href="../layouts/assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../layouts/assets/css/adminlte.min.css">
-    <link rel="stylesheet"
-          href="../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="../layouts/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../layouts/assets/plugins/icheck-bootstrap/icheck-bootstrap.css">
+    <link href="../layouts/assets/plugins/daterangepicker/datepicker.min.css" rel="stylesheet">
     <!--end-->
-
     <!--inline css code here-->
-
+    <link href="../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../layouts/assets/css/adminlte.min.css" rel="stylesheet">
+    <link href="../layouts/assets/css/style.css" rel="stylesheet">
+    <!--end-->
+    <!--inline css code here-->
+    <style>
+        .dropdown-menu {
+            margin-top: 5rem;
+        }
+    </style>
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -35,18 +41,16 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="javascript:void(0)" class="nav-link">
+                    <a class="nav-link" href="javascript:void(0)">
                         Project
                     </a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <input type="search" class="form-control">
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#modal-sm"><i class="fas fa-plus "></i>
-                       create project
+                    <button class="btn btn-success float-right" data-target="#modal-sm" data-toggle="modal"
+                            type="button"><i class="fas fa-plus "></i>
+                        create project
                     </button>
                 </li>
             </ul>
@@ -55,30 +59,85 @@
     <!--end nav-bar-->
     <!--model for create project-->
     <div class="modal fade" id="modal-sm">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Add Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                         <span aria-hidden="true" class="resetData">&times;</span>
                     </button>
                 </div>
 
-                <form class="form validation" method="post">
+                <form>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Project Name</label>
-                            <input type="text" class="form-control validate[required] text-input"
-                                   name="name" placeholder="Project name">
+                            <input class="form-control" placeholder="Project name" type="text">
                         </div>
                         <div class="form-group">
-                            <label>Client</label>
-                            <select class="form-control create-project-select2"  name="id_client" style="width: 100%;">
-                            </select>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Select Milestone</label>
+                                    <div class="input-group">
+                                        <select class="select2 form-control"
+                                                data-allow-clear="true"
+                                                data-placeholder="Select Client">
+                                            <option></option>
+                                            <option>C-1</option>
+                                            <option>C-2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label>Select Milestone</label>
+                                    <div class="input-group">
+                                        <select class="select2 form-control"
+                                                data-allow-clear="true"
+                                                data-placeholder="Select Workflow">
+                                            <option></option>
+                                            <option>A-1</option>
+                                            <option>B-2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label>Start date</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-clock"></i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control text-input" id="datepicker" placeholder="Start date"
+                                           type="text">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Due date</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                    </div>
+                                    <input class="form-control" data-provide="datepicker" placeholder="Start date"
+                                           type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="icheck-primary d-inline">
+                                <input type="checkbox" id="checkboxPrimary3">
+                                <label for="checkboxPrimary3">
+                                    Is private
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success btn-block">Create
+                        <button class="btn btn-success btn-block" type="submit">Create
                         </button>
                     </div>
                 </form>
@@ -90,7 +149,7 @@
     <!--sidebar code here-->
     <!--sidebar code here-->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="../dashboard/index.html" class="brand-link">
+        <a class="brand-link" href="../dashboard/index.html">
             <img alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  src="../layouts/assets/img/AdminLTELogo.png"
@@ -100,20 +159,20 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../layouts/assets/img/avatar04.png"
+                    <img alt="User Image"
                          class="img-circle elevation-2"
-                         alt="User Image">
+                         src="../layouts/assets/img/avatar04.png">
                 </div>
                 <div class="info">
-                    <a href="../profile/index.html" class="d-block">Pawan garg</a>
+                    <a class="d-block" href="../profile/index.html">Pawan garg</a>
                 </div>
             </div>
 
             <!-- Sidebar Menu -->
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-item">
-                    <a href="../timer/index.html" class="nav-link">
+                    <a class="nav-link" href="../timer/index.html">
                         <i class="nav-icon fas fa-clock-o"></i>
                         <p>
                             Timer
@@ -121,11 +180,11 @@
                     </a>
                 </li>
             </ul>
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-header">Analyze</li>
                 <li class="nav-item">
-                    <a href="../dashboard/index.html" class="nav-link">
+                    <a class="nav-link" href="../dashboard/index.html">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboards
@@ -133,7 +192,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../report/index.html" class="nav-link">
+                    <a class="nav-link" href="../report/index.html">
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
                             Reports
@@ -141,11 +200,11 @@
                     </a>
                 </li>
             </ul>
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-header">Manage</li>
                 <li class="nav-item has-treeview">
-                    <a href="../project/index.html" class="nav-link">
+                    <a class="nav-link" href="../project/index.html">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Projects
@@ -153,7 +212,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../team/index.html" class="nav-link">
+                    <a class="nav-link" href="../team/index.html">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Teams
@@ -161,7 +220,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../client/index.html" class="nav-link">
+                    <a class="nav-link" href="../client/index.html">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Clients
@@ -169,7 +228,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../tag/index.html" class="nav-link">
+                    <a class="nav-link" href="../tag/index.html">
                         <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Tags
@@ -191,758 +250,165 @@
     <!--main page content-->
     <div class="content-wrapper">
         <section class="content-header">
-            <div class="form-inline">
-                <div class="form-group">
-                    <label>
-                        <select data-column="2" class="form-control filter-select">
-                            <option value="">Select status</option>
-                            <option value="1">active</option>
-                            <option value="0">inactive</option>
-                        </select>
-                    </label>
+        </section>
+        <!--content-->
+        <section class="content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title p-1">
+                        <label>
+                            <select class="form-control filter-select" data-column="2">
+                                <option value="">Clients</option>
+                                <option value="1">C-1</option>
+                                <option value="0">C-2</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="card-title p-1">
+                        <label>
+                            <select class="form-control filter-select" data-column="2">
+                                <option value="">Select status</option>
+                                <option value="1">active</option>
+                                <option value="0">inactive</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="card-tools">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Search..." type="search">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="dataTables_wrapper dt-bootstrap4">
+                        <table class="table table-bordered table-hover dataTable" id="project-table">
+                            <thead>
+                            <tr>
+                                <th style="">Project name</th>
+                                <th style="">Client</th>
+                                <th style="">Team member</th>
+                                <th style="">Total Hour Spent</th>
+                                <th style="">Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Project-name<br/>
+                                    <small>
+                                        Created 01.01.2019
+                                    </small>
+                                </td>
+                                <td>client-name</td>
+                                <td class="project-state">
+                                    Pawan, kajal, Dezal
+                                </td>
+                                <td>200h</td>
+                                <td class="project-state">
+                                    <span class="badge badge-primary">Active</span>
+                                </td>
+                                <td class="project-actions text-left">
+                                    <a class="btn" href="details.html">
+                                        <i class='fa fa-fw fa-eye'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Project-name<br/>
+                                    <small>
+                                        Created 01.01.2019
+                                    </small>
+                                </td>
+                                <td>client-name</td>
+                                <td class="project-state">
+                                    Pawan, kajal, Dezal
+                                </td>
+                                <td>20h</td>
+                                <td class="project-state">
+                                    <span class="badge badge-danger">On-hold</span>
+                                </td>
+                                <td class="project-actions text-left">
+                                    <a class="btn" href="details.html">
+                                        <i class='fa fa-fw fa-eye'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Project-name<br/>
+                                    <small>
+                                        Created 01.01.2019
+                                    </small>
+                                </td>
+                                <td>client-name</td>
+                                <td class="project-state">
+                                    Pawan, kajal, Dezal
+                                </td>
+                                <td>250h</td>
+                                <td class="project-state">
+                                    <span class="badge badge-success">Completed</span>
+                                </td>
+                                <td class="project-actions text-left">
+                                    <a class="btn" href="details.html">
+                                        <i class='fa fa-fw fa-eye'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Project-name<br/>
+                                    <small>
+                                        Created 01.01.2019
+                                    </small>
+                                </td>
+                                <td>client-name</td>
+                                <td class="project-state">
+                                    Pawan, kajal, Dezal
+                                </td>
+                                <td>200h</td>
+                                <td class="project-state">
+                                    <span class="badge badge-primary">Active</span>
+                                </td>
+                                <td class="project-actions text-left">
+                                    <a class="btn" href="details.html">
+                                        <i class='fa fa-fw fa-eye'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </section>
-        <div class="card card-solid">
-            <div class="card-body">
-                <div class="dataTables_wrapper dt-bootstrap4">
-                    <table class="table table-bordered table-hover dataTable" id="project-table">
-                        <thead>
-                        <tr>
-                            <th style="">project name</th>
-                            <th style="">client</th>
-                            <th style="">status</th>
-                            <th style="">team-member</th>
-                            <th>action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr><tr>
-                            <td>Project-name<br/>
-                                <small>
-                                    Created 01.01.2019
-                                </small>
-                            </td>
-                            <td>client-name</td>
-                            <td class="project-state">
-                                <span class="btn btn-success">Active</span>
-                            </td>
-                            <td class="project-state">
-                                team-member
-                            </td>
-                            <td class="project-actions text-left">
-                                <a class="btn" href="details.html">
-                                    <i class='fa fa-fw fa-eye'></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#edit-model">
-                                    <i class="fa fa-fw fa-edit"></i>
-                                </a>
-                                <a class="btn btn-sm" href="#" data-toggle="modal"
-                                   data-target="#delete-model">
-                                    <i class="fa fa-fw fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-             </div>
-        </div>
     </div>
 </div>
-    <!--end main page content-->
-    <!--delete model-->
-    <div class="modal fade" id="delete-model">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Delete Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="resetData">&times;</span>
-                    </button>
-                </div>
-                <form name="delete_project_form" method="post" id="delete_project_form">
-                    <div class="modal-body">
-                        <p>This project will be permanently removed from all time entries</p>
-                        <input type="hidden" name="id_project" id="id_project" value="">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button"  class="btn btn-danger btn-block destroy-project-btn">Delete
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+<!--end main page content-->
+<!--footer page here-->
+<footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.0.1
     </div>
-    <!--end-->
-<!--edit model-->
-    <div class="modal fade" id="edit-model">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="resetData">&times;</span>
-                    </button>
-                </div>
-
-                <form class="form validation" method="post">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Project Name</label>
-                            <input type="text" class="form-control validate[required] text-input"
-                                   name="name" placeholder="Project name">
-                        </div>
-                        <div class="form-group">
-                            <label>Client</label>
-                            <select class="form-control create-project-select2"  name="id_client" style="width: 100%;">
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success btn-block">Update
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-<!--end-->
-
-    <!--footer page here-->
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0.1
-        </div>
-        <strong>Copyright</strong>
-        2020
-    </footer>
-    <aside class="control-sidebar control-sidebar-dark"></aside>
-    <!--end footer page-->
+    <strong>Copyright</strong>
+    2020
+</footer>
+<aside class="control-sidebar control-sidebar-dark"></aside>
+<!--end footer page-->
 </div>
 <!--end page content-->
 
 <!--scripts here-->
-<script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../layouts/assets/js/adminlte.js"></script>
-<script src="../layouts/assets/plugins/chart.js/Chart.bundle.js"></script>
-<!-- jQuery -->
 <script src="../layouts/assets/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
+<script src="../layouts/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../layouts/assets/plugins/icheck-bootstrap/icheck.js"></script>
+<script src="../layouts/assets/plugins/daterangepicker/datepicker.js"></script>
 <script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="../layouts/assets/js/adminlte.js"></script>
-
-<!-- OPTIONAL SCRIPTS -->
-<script src="../layouts/assets/plugins/chart.js/Chart.min.js"></script>
-<script src="../layouts/assets/js/demo.js"></script>
-<script src="../layouts/assets/js/pages/dashboard3.js"></script>
-<script src="../layouts/assets/plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.resize.min.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.pie.min.js"></script>
+<script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../layouts/dist/js/adminlte.min.js"></script>
+<script src="../layouts/js/pms_p.js"></script>
+<script>
+    $('#datepicker').datepicker({
+        autoclose: true
+    })
+</script>
 <!--end-->
 
 <!--incline script here-->

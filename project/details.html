@@ -2,31 +2,35 @@
 <html lang="">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="csrf-token">
     <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--style code here-->
-    <link rel="stylesheet"
-          href="../layouts/assets/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../layouts/assets/css/adminlte.min.css">
-    <link rel="stylesheet"
-          href="../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="../layouts/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../layouts/assets/plugins/chart.js/Chart.css" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet">
     <link href="../layouts/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/daterangepicker/datepicker.min.css" rel="stylesheet">
+    <!--end-->
+    <!--inline css code here-->
+    <link href="../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../layouts/assets/css/adminlte.min.css" rel="stylesheet">
+    <link href="../layouts/assets/css/style.css" rel="stylesheet">
     <!--end-->
 
     <!--inline css code here-->
-
+    <style>
+        .dropdown-menu {
+            margin-top: 5rem;
+        }
+    </style>
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
-<!--page content here-->
+
+<!--page wrapper here-->
 <div class="wrapper wrapper-without-filter">
     <!--Page nav-bar code here-->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -36,18 +40,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="details.html" class="nav-link">
+                    <a class="nav-link" href="details.html">
                         Project
                     </a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../pages/kajal/task_list.html"  class="nav-link">Tasks</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="bug_index.html" class="nav-link">Bugs</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="milestone_index.html" class="nav-link">milestones</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -64,9 +59,8 @@
     <!--end nav-bar-->
 
     <!--sidebar code here-->
-    <!--sidebar code here-->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="../dashboard/index.html" class="brand-link">
+        <a class="brand-link" href="../dashboard/index.html">
             <img alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  src="../layouts/assets/img/AdminLTELogo.png"
@@ -76,32 +70,40 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../layouts/assets/img/avatar04.png"
+                    <img alt="User Image"
                          class="img-circle elevation-2"
-                         alt="User Image">
+                         src="../layouts/assets/img/avatar04.png">
                 </div>
                 <div class="info">
-                    <a href="../profile/index.html" class="d-block">Pawan garg</a>
+                    <a class="d-block" href="../profile/index.html">Pawan garg</a>
                 </div>
             </div>
 
             <!-- Sidebar Menu -->
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-item">
-                    <a href="../timer/index.html" class="nav-link">
+                    <a class="nav-link" href="../timer/index.html">
                         <i class="nav-icon fas fa-clock-o"></i>
                         <p>
                             Timer
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../timer/timesheet.html">
+                        <i class="nav-icon fas fa-clock-o"></i>
+                        <p>
+                            Timesheet
+                        </p>
+                    </a>
+                </li>
             </ul>
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-header">Analyze</li>
                 <li class="nav-item">
-                    <a href="../dashboard/index.html" class="nav-link">
+                    <a class="nav-link" href="../dashboard/index.html">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboards
@@ -109,7 +111,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../report/index.html" class="nav-link">
+                    <a class="nav-link" href="../report/index.html">
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
                             Reports
@@ -117,11 +119,11 @@
                     </a>
                 </li>
             </ul>
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false" data-widget="treeview"
+                role="menu">
                 <li class="nav-header">Manage</li>
                 <li class="nav-item has-treeview">
-                    <a href="../project/index.html" class="nav-link">
+                    <a class="nav-link" href="../project/index.html">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Projects
@@ -129,7 +131,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../team/index.html" class="nav-link">
+                    <a class="nav-link" href="../team/index.html">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Teams
@@ -137,7 +139,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../client/index.html" class="nav-link">
+                    <a class="nav-link" href="../client/index.html">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
                             Clients
@@ -145,7 +147,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../tag/index.html" class="nav-link">
+                    <a class="nav-link" href="../tag/index.html">
                         <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Tags
@@ -164,145 +166,542 @@
         </div>
     </aside>
     <!--end-->
+
+    <!--Add member modal-->
+    <!-- modal box for milestone -->
+    <div class="modal fade" id="modal-member">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Memeber</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal"
+                            type="button">
+                        <span aria-hidden="true" class="resetData">&times;</span>
+                    </button>
+                </div>
+
+                <form class="form validation" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Search member</label>
+                            <div class="input-group">
+                                <select class="select2 form-control"
+                                        data-allow-clear="true"
+                                        data-placeholder="Search member"
+                                        multiple="true" placeholder="Search member">
+                                    <option></option>
+                                    <option>Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <select
+                                        class="select2 form-control"
+                                        data-allow-clear="true"
+                                        data-placeholder="Select role"
+                                        placeholder="Search member"
+                                        placeholder="Select role">
+                                    <option></option>
+                                    <option>Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success btn-block" type="submit">Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+    <!--end-->
+
+    <!--Add milestone modal-->
+    <!-- modal box for milestone -->
+    <div class="modal fade" id="modal-milestone">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Milestone</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal"
+                            type="button">
+                        <span aria-hidden="true" class="resetData">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-8">
+                                    <label>Project Name</label>
+                                    <input class="form-control validate[required] text-input"
+                                           disabled
+                                           name="name" placeholder="Project name" type="text">
+                                </div>
+                                <div class="col-4">
+                                    <label>Select status</label>
+                                    <select class="form-control">
+                                        <option>Select status</option>
+                                        <option>Active</option>
+                                        <option>Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Milestone Name</label>
+                            <input class="form-control" name="name" placeholder="Enter milestone name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Start date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                        </div>
+                                        <input class="form-control text-input" id="datepicker" placeholder="Start date"
+                                               type="text">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label>Due date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="far fa-clock"></i>
+                                                    </span>
+                                        </div>
+                                        <input class="form-control" data-provide="datepicker" placeholder="Start date"
+                                               type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" placeholder="Enter description" type="text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" type="submit">Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+    <!--end-->
+
+    <!--Add release modal-->
+    <!-- modal box for milestone -->
+    <div class="modal fade" id="modal-release">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Release</h5>
+                    <button aria-label="Close" class="close" data-dismiss="modal"
+                            type="button">
+                        <span aria-hidden="true" class="resetData">&times;</span>
+                    </button>
+                </div>
+
+                <form class="form validation" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Project Name</label>
+                            <input class="form-control validate[required] text-input"
+                                   disabled
+                                   name="name" placeholder="Project name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Select Milestone</label>
+                                    <div class="input-group">
+                                        <select
+                                                class="select2 form-control"
+                                                data-allow-clear="true"
+                                                data-placeholder="Select milestone"
+                                                placeholder="Select milestone">
+                                            <option></option>
+                                            <option>Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>California</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label>Release date</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                                                                    <span class="input-group-text"><i
+                                                                                            class="far fa-clock"></i></span>
+                                        </div>
+                                        <input class="form-control" data-provide="datepicker"
+                                               id="date-picker" placeholder="Start date"
+                                               type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input class="form-control validate[required] text-input"
+                                           name="name"
+                                           placeholder="Normal" type="text">
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-control validate[required] text-input"
+                                           name="name"
+                                           placeholder="Local" type="text">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+
+                        </div>
+                        <div class="form-group">
+                            <label>Release description</label>
+                            <textarea class="form-control validate[required] text-input"
+                                      name="name"
+                                      placeholder="Enter description"
+                                      type="text"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success btn-block" type="submit">Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+    <!--end-->
+
     <!--main page content-->
     <div class="content-wrapper">
         <section class="content-header">
         </section>
         <!--content-->
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text-primary"><i class="fas fa-paint-brush"></i> Project-name</h3>
-                        <p class="text-muted">Project Descriptions</p>
-                        <br>
-                        <div class="text-muted">
-                            <p class="text-sm">Client Company
-                                <b class="d-block">Deveint Inc</b>
-                            </p>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card">
+                        <div class="card-body" style="padding: 55px;">
+                            <img alt="User Image" class="img-lg"
+                                 src="../layouts/assets/img/project.png" style="width:130px; height:130px;">
+                            <h2 class="text-primary" style="padding:35px;">PMS</h2>
                         </div>
-                        <div class="text-muted">
-                            <p class="text-sm">Total milestone
-                                <b class="d-block">name-1,name-2,name-3</b>
-                            </p>
-                        </div>
-
-                        <h5 class="mt-5 text-muted">Project urls</h5>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i>
-                                    Functional-requirements.docx</a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i>
-                                    Email-from-flatbal.mln</a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i> Logo.png</a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i>
-                                    Contract-10_12_2014.docx</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header border-transparent">
-                        <h3 class="card-title">
-                            Project Member
-                        </h3>
-
-                        <div class="card-tools">
-                            <form class="form-inline" method="post" id="add_member_form">
-                                <input type="hidden" name="id_project" value="">
-                                <input type="hidden" name="id_project_role" value="1">
-                                <div class="form-group mx-sm-3 input-group-lg">
-                                    <label>
-                                        <select class="form-control select-member">
-                                            <option selected>Select Member</option>
-                                            <option>Alaska</option>
-                                            <option>California</option>
-                                            <option>Delaware</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option>Washington</option>
-                                        </select>
-                                    </label>
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist"
+                                style="border-bottom:none; ">
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-manage" aria-selected="true" class="nav-link active"
+                                       data-toggle="pill" href="#custom-content-above-manage"
+                                       id="custom-content-above-manage-tab" role="tab">Manage</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-milestone" aria-selected="false" class="nav-link"
+                                       data-toggle="pill" href="#custom-content-above-milestone"
+                                       id="custom-content-above-milestone-tab"
+                                       role="tab">Milestones</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-release" aria-selected="false" class="nav-link"
+                                       data-toggle="pill" href="#custom-content-above-release"
+                                       id="custom-content-above-release-tab" role="tab">Releases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-qa" aria-selected="false" class="nav-link"
+                                       data-toggle="pill" href="#custom-content-above-qa"
+                                       id="custom-content-above-qa-tab" role="tab">QA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-team" aria-selected="false" class="nav-link"
+                                       data-toggle="pill" href="#custom-content-above-team"
+                                       id="custom-content-above-team-tab" role="tab">Team</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="custom-content-above-task" aria-selected="false" class="nav-link"
+                                       data-toggle="pill" href="#custom-content-above-task"
+                                       id="custom-content-above-task-tab" role="tab">Tasks</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-content-above-tabContent">
+                                <div aria-labelledby="custom-content-above-manage-tab" class="tab-pane fade show active" id="custom-content-above-manage"
+                                     role="tabpanel">
+                                    <div class="card-header border-transparent">
+                                        <div class="card-title">
+                                            Project member
+                                        </div>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary" data-target="#modal-member" data-toggle="modal"
+                                                    type="button">
+                                                <i class="fas fa-plus "></i>
+                                                Add member
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table m-0">
+                                                <thdead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Role</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thdead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="User Image"
+                                                             class="img-circle img-sm"
+                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                                        <span>Ashish Makwana</span>
+                                                    </td>
+                                                    <td>Team Lead</td>
+                                                    <td>Active</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="User Image"
+                                                             class="img-circle img-sm"
+                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                                        <span>Ruchita Sheth</span></td>
+                                                    <td>Developer</td>
+                                                    <td>Active</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="User Image"
+                                                             class="img-circle img-sm"
+                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                                        <span>Mehul Patel</span></td>
+                                                    <td>Frontend Designer</td>
+                                                    <td>Active</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img alt="User Image"
+                                                             class="img-circle img-sm"
+                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                                        <span>Hiren Gohiya</span></td>
+                                                    <td>QA</td>
+                                                    <td>Active</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-success">
-                                    <i class="fas fa-plus "></i>
-                                   Add member
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table m-0">
-                                <thdead>
-                                    <tr>
-                                        <th>name</th>
-                                        <th>role</th>
-                                    </tr>
-                                </thdead>
-                                <tbody>
-                                <tr>
-                                    <td><a href="javascrip:void(0)">Ashish Makwana</a></td>
-                                    <td>Team Lead</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="javascrip:void(0)">Ruchita Sheth</a></td>
-                                    <td>Developer</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="javascrip:void(0)">Mehul Patel</a></td>
-                                    <td>Frontend Designer</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="javascrip:void(0)">Hiren Gohiya</a></td>
-                                    <td>QA</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                                <div aria-labelledby="custom-content-above-milestone-tab" class="tab-pane fade" id="custom-content-above-milestone"
+                                     role="tabpanel">
+                                    <div class="card-header border-transparent">
+                                        <div class="card-title">
+                                            Project milestone
+                                        </div>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary" data-target="#modal-milestone" data-toggle="modal"
+                                                    type="button"><i class="fas fa-plus "></i>
+                                                Add milestone
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table m-0">
+                                                <thdead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Name</th>
+                                                        <th>Start Date</th>
+                                                        <th>Due Date</th>
+                                                        <th>Progress</th>
+                                                        <th>Deployement</th>
+                                                        <th>Release</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thdead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        M2
+                                                    </td>
+                                                    <td>Milestone 2020-01 W1</td>
+                                                    <td>2020-02-14</td>
+                                                    <td>2020-02-14</td>
+                                                    <td>80%</td>
+                                                    <td>-</td>
+                                                    <td>V2</td>
+                                                    <td>Hold</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        M1
+                                                    </td>
+                                                    <td>Milestone 2020-01 W2</td>
+                                                    <td>2020-02-14</td>
+                                                    <td>2020-02-14</td>
+                                                    <td>85%</td>
+                                                    <td>-</td>
+                                                    <td>V1</td>
+                                                    <td>Completed</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-labelledby="custom-content-above-release-tab" class="tab-pane fade" id="custom-content-above-release"
+                                     role="tabpanel">
+                                    <div class="card-header border-transparent">
+                                        <div class="card-title">
+                                            Project release
+                                        </div>
+                                        <div class="card-tools">
+                                            <button class="btn btn-primary" data-target="#modal-release" data-toggle="modal"
+                                                    type="button"><i class="fas fa-plus"></i>
+                                                Add release
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table m-0">
+                                                <thdead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Version</th>
+                                                        <th>Released On</th>
+                                                        <th>Milestone</th>
+                                                        <th>Description</th>
+                                                        <th>Type</th>
+                                                        <th>Deployement</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thdead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        R3
+                                                    </td>
+                                                    <td>V1.1.0</td>
+                                                    <td>2020-02-28</td>
+                                                    <td>M2</td>
+                                                    <td>TSE Backup</td>
+                                                    <td>Hotfit</td>
+                                                    <td>Staging</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        R1
+                                                    </td>
+                                                    <td>V2.1.0</td>
+                                                    <td>2029-02-28</td>
+                                                    <td>M4</td>
+                                                    <td>Birdhub</td>
+                                                    <td>Regular</td>
+                                                    <td>Staging</td>
+                                                    <td><i class="fa fa-window-close"></i>
+                                                        <i class="fas fa-edit"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div aria-labelledby="custom-content-above-qa-tab" class="tab-pane fade" id="custom-content-above-qa"
+                                     role="tabpanel">
+                                    Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis
+                                    tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque
+                                    tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum
+                                    consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra.
+                                    Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut
+                                    nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet
+                                    accumsan ex sit amet facilisis.
+                                </div>
+                                <div aria-labelledby="custom-content-above-team-tab" class="tab-pane fade" id="custom-content-above-team"
+                                     role="tabpanel">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus
+                                    ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non
+                                    magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper
+                                    ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam
+                                    id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                    turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et
+                                    varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut
+                                    porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a
+                                    nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac
+                                    condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta
+                                    consectetur.
+                                </div>
+                                <div aria-labelledby="custom-content-above-task-tab" class="tab-pane fade" id="custom-content-above-task"
+                                     role="tabpanel">
+                                    Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis
+                                    tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque
+                                    tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum
+                                    consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra.
+                                    Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut
+                                    nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet
+                                    accumsan ex sit amet facilisis.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        <span class="info-box-text text-center text-muted">Tasks in progress </span>
-                        <span class="info-box-number text-center text-muted mb-0">0</span>
-                    </div>
-                </div>
-
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        <span class="info-box-text text-center text-muted">Open bugs</span>
-                        <span class="info-box-number text-center text-muted mb-0">0</span>
-                    </div>
-                </div>
-
-                <div class="info-box bg-light">
-                    <div class="info-box-content">
-                        <span class="info-box-text text-center text-muted">Current milestone</span>
-                        <span class="info-box-number text-center text-muted mb-0">Name</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!--end content-->
+        </section>
     </div>
-    <!--end main page content-->
+    <!-- end -->
+
     <!--footer page here-->
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
@@ -311,40 +710,22 @@
         <strong>Copyright</strong>
         2020
     </footer>
-    <aside class="control-sidebar control-sidebar-dark"></aside>
     <!--end footer page-->
 </div>
-<!--end page content-->
-
+<!--end wrapper content-->
 <!--scripts here-->
-<script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../layouts/assets/js/adminlte.js"></script>
-<script src="../layouts/assets/plugins/chart.js/Chart.bundle.js"></script>
-<!-- jQuery -->
 <script src="../layouts/assets/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
+<script src="../layouts/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../layouts/assets/plugins/daterangepicker/datepicker.js"></script>
 <script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="../layouts/assets/js/adminlte.js"></script>
 <script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
-<!-- OPTIONAL SCRIPTS -->
-<script src="../layouts/assets/plugins/chart.js/Chart.min.js"></script>
-<script src="../layouts/assets/js/demo.js"></script>
-<script src="../layouts/assets/js/pages/dashboard3.js"></script>
-<script src="../layouts/assets/plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.resize.min.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="../layouts/assets/plugins/flot-old/jquery.flot.pie.min.js"></script>
-<!--end-->
-
-<!--incline script here-->
-<script type="application/javascript">
-    //Initialize Select2 Elements
-    $(".select-member").select2({
-        tags: true,
-        theme: 'bootstrap4'
-    });
+<script src="../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../layouts/dist/js/adminlte.min.js"></script>
+<script src="../layouts/js/pms_p.js"></script>
+<script>
+    $('#datepicker').datepicker({
+        autoclose: true
+    })
 </script>
 <!--end-->
 </body>

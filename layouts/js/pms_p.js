@@ -179,3 +179,7 @@ function newTaskInput(calenderTask) {
     }
     inputTask.focus();
 }
+
+$('.select2').select2({
+    theme: 'bootstrap4'
+});

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PMS | Projects</title>
+    <title>PMS | QA</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -85,16 +85,17 @@
                     role="menu">
 
                     <li class="nav-item has-treeview">
-                        <a class="nav-link" href="../Timer/index.html">
+                        <a class="nav-link" href="../timer/index.html">
                             <i class="nav-icon far fa-clock"></i>
                             <p>
                                 Timer
                             </p>
                         </a>
                     </li>
+
                     <li class="nav-item has-treeview">
                         <a class="nav-link"
-                           href="../Reports/summary.html">
+                           href="../reports/summary.html">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p>
                                 Reports
@@ -344,7 +345,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Add Test Run</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <button type="button" class="close" onclick="closeAddTestRun()" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
@@ -358,11 +359,11 @@
                                                             <div class="form-group">
                                                                 <label for="select">Select Milestone</label>
                                                                 <select class="form-control select2bs4" id="select">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
+                                                                    <option>Milestone 1</option>
+                                                                    <option>Milestone 2</option>
+                                                                    <option>Milestone 3</option>
+                                                                    <option>Milestone 4</option>
+                                                                    <option>Milestone 5</option>
                                                                 </select>
                                                             </div>
                                                             <label for="assignTo">Assign To</label>
@@ -372,7 +373,7 @@
                                                             <textarea class="form-control" id="description" placeholder="Description" rows="3"></textarea>
 
                                                             <div class="form-check mt-3">
-                                                                <input type="radio" class="form-check-input" id="check1" name="check1" value="">
+                                                                <input type="radio" checked class="form-check-input" id="check1" name="check1" value="">
                                                                 <label class="form-check-label" for="check1">Include all test cases</label>
                                                                 <p>Select this option to include all test cases in this test run.
                                                                     If new test cases are added to the repository, they are also automatically included in this run.
@@ -380,17 +381,49 @@
                                                             </div>
 
                                                             <div class="form-check mt-3">
-                                                                <input type="radio" class="form-check-input" id="check2" name="check1" value="">
+                                                                <input type="radio" class="form-check-input" id="check2" name="check1" value="" data-toggle="modal" data-target="#specific_test_cases">
                                                                 <label class="form-check-label" for="check2">Specific test cases</label>
+
                                                                 <p>
                                                                     You can alternatively select the test cases to include in this test run. N
                                                                     ew test cases are not automatically added to this run in this case.
                                                                 </p>
                                                             </div>
+
+                                                            <div class="modal fade" id="specific_test_cases" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Specific Test Cases</h5>
+                                                                            <button type="button" class="close" onclick="closeSpecificTestCases()" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <form>
+                                                                                <div class="form-group">
+                                                                                    <label>Select</label>
+                                                                                    <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                                                                                        <option>Organizations</option>
+                                                                                        <option>Super Admin</option>
+                                                                                        <option>License View</option>
+                                                                                        <option>Pheonix Incoming</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default" onclick="closeSpecificTestCases()">Close</button>
+                                                                            <button type="button" class="btn btn-primary">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-default" onclick="closeAddTestRun()">Close</button>
                                                         <button type="button" class="btn btn-primary">Submit</button>
                                                     </div>
                                                 </div>
@@ -406,23 +439,23 @@
                                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                                             <i class="fas fa-minus"></i>
                                                         </button>
-                                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                                                        </button>
+                                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                                                     </div>
                                                 </div>
                                                 <!-- /.card-header -->
                                                 <div class="card-body">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run
-                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
-                                                            </div>
-                                                            <div class="card-text">
-                                                                <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                                <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                                <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+                                                            <div class="card-title">Test Run</div>
 
+                                                            <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
+                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
+                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+
+                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+
+                                                            <div class="card-text">
                                                                 <p>By <i>Hiren Ghoniya</i></p>
                                                                 <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
@@ -431,15 +464,16 @@
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run
-                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
-                                                            </div>
-                                                            <div class="card-text">
-                                                                <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                                <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                                <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+                                                            <div class="card-title">Test Run</div>
 
+                                                            <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
+                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
+                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+
+                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+
+                                                            <div class="card-text">
                                                                 <p>By <i>Hiren Ghoniya</i></p>
                                                                 <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
@@ -448,15 +482,16 @@
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run
-                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
-                                                            </div>
-                                                            <div class="card-text">
-                                                                <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                                <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                                <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+                                                            <div class="card-title">Test Run</div>
 
+                                                            <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
+                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
+                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+
+                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+
+                                                            <div class="card-text">
                                                                 <p>By <i>Hiren Ghoniya</i></p>
                                                                 <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
@@ -465,15 +500,16 @@
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run
-                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
-                                                            </div>
-                                                            <div class="card-text">
-                                                                <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                                <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                                <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+                                                            <div class="card-title">Test Run</div>
 
+                                                            <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
+                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
+                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
+
+                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+
+                                                            <div class="card-text">
                                                                 <p>By <i>Hiren Ghoniya</i></p>
                                                                 <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
@@ -601,7 +637,7 @@
                                                         </div>
 
                                                         <div class="card-body">
-                                                            <button class="btn btn-default new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
@@ -612,7 +648,7 @@
                                                                             <div class="card-title">Should be visible in sidebar.</div>
                                                                             <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                             <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                            <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                            <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -622,7 +658,7 @@
                                                                         <div class="card-title">Cannot accessible without permission.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -637,7 +673,7 @@
                                                             <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-default d-inline-block new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
@@ -647,7 +683,7 @@
                                                                         <div class="card-title">Cannot accessible without permission.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div class="card mt-2">
@@ -655,7 +691,7 @@
                                                                         <div class="card-title">User can view this.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -670,7 +706,7 @@
                                                             <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-default d-inline-block new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
@@ -680,7 +716,7 @@
                                                                         <div class="card-title">Should be visible in sidebar.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                                 <div class="card mt-2">
@@ -688,7 +724,7 @@
                                                                         <div class="card-title">User can accessible.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -703,7 +739,7 @@
                                                             <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-default new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
@@ -713,7 +749,7 @@
                                                                         <div class="card-title">Cannot accessible without permission.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
 
@@ -729,7 +765,7 @@
                                                                         <div class="card-title">User</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
 
@@ -745,7 +781,7 @@
                                                                         <div class="card-title">Admin</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
 
@@ -754,7 +790,7 @@
                                                                         <div class="card-title">Nav bar is not proper.</div>
                                                                         <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
                                                                         <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" style="color: grey"></i>
+                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -850,12 +886,22 @@
 <script>
     // select2
     $(function () {
+        //Initialize Select2 Elements
         $('.select2').select2()
 
         $('.select2bs4').select2({
             theme: 'bootstrap4'
         })
     });
+
+    //modal close
+    function closeSpecificTestCases() {
+        $('#specific_test_cases').modal('hide');
+    }
+
+    function closeAddTestRun() {
+        $('#add_test_run').modal('hide');
+    }
 
     // opens new case textarea when clicked on 'Add case' button.
     $(document).on('click', '.new-case', function () {
@@ -909,6 +955,7 @@
             }
         }
     });
+
 </script>
 
 </body>

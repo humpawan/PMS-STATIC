@@ -3,3 +3,42 @@
     max-height: 565px;
     overflow-y: auto;
 }
+
+/*QA*/
+
+.h5-badge {
+    margin-bottom: -1.5rem;
+}
+
+/*Timer*/
+
+.timer-input {
+    border: none;
+    font-size: 20px;
+}
+
+.timer-mode {
+    color: #00A000;
+}
+
+.icon {
+    color: grey;
+}
+
+.icon-check {
+    color: #00A000;
+}
+
+.textarea-resize {
+    resize: none;
+}
+
+.p-margin {
+    margin-bottom: 0px;
+}
+
+.dataTable {
+    caption-side: top;
+    color: black;
+    font-size: 22px;
+}

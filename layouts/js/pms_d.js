@@ -1,3 +1,5 @@
+// QA/index.html
+
 // keyCode for Enter and Escape
 var nEnterBtnKeyCode = 13;
 var nEscapeBtnKeyCode = 27;
@@ -176,4 +178,22 @@ $('.select2').select2()
 $('.select2bs4').select2({
     theme: 'bootstrap4'
 })
+
+
+// timer/index.html
+
+//Timepicker
+$('#timepicker').datetimepicker({
+    format: 'LT'
+});
+
+//Switch
+$("input[data-bootstrap-switch]").each(function(){
+    $(this).bootstrapSwitch('state', $(this).prop('checked'));
+});
+
+//Tooltip
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+});
 

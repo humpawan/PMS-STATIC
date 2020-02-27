@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../../layouts/css/pms_d.css">
     <!-- summernote -->
     <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
     <!-- Select2 -->
@@ -48,10 +50,11 @@
 
         <div class="col-md-2">
             <div>
-                <select class="form-control select2bs4">
-                    <option selected="selected">PMS</option>
-                    <option>Posbill</option>
-                    <option>Slotino</option>
+                <select class="form-control select2" data-placeholder="Projects">
+                    <option></option>
+                    <option value="pms">PMS</option>
+                    <option value="posbill">Posbill</option>
+                    <option value="slotino">Slotino</option>
                 </select>
             </div>
         </div>
@@ -168,13 +171,27 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header p-2">
+                            <div class="card-header p-0 border-bottom-0">
+                                <ul class="nav nav-tabs" id="nav_tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#milestone" role="tab">Milestones</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#test_runs" role="tab">Test Runs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#test_cases" role="tab">Test Cases</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!--<div class="card-header">
                                 <ul class="nav nav-pills">
                                     <li class="nav-item"><a class="nav-link active" href="#milestone" data-toggle="tab">Milestones</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#test_runs" data-toggle="tab">Test Runs</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#test_cases" data-toggle="tab">Test Cases</a></li>
                                 </ul>
-                            </div><!-- /.card-header -->
+                            </div>-->
 
                             <div class="card-body">
                                 <div class="tab-content">
@@ -183,7 +200,7 @@
                                         <div class="post">
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <button class="btn btn-outline-info col-md-1">Open</button>
+                                                    <h5 class="h5-badge"><span class="badge bg-info">Open</span></h5>
 
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -198,9 +215,9 @@
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 6</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                             <div class="card-text">
-                                                                <p style="margin-bottom: 0px">3 test runs available</p>
+                                                                <p class="p-margin">3 test runs available</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -210,7 +227,7 @@
 
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <button class="btn btn-outline-info col-md-1">Upcoming</button>
+                                                    <h5 class="h5-badge"><span class="badge bg-secondary">Upcoming</span></h5>
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                                             <i class="fas fa-minus"></i>
@@ -225,7 +242,7 @@
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 7</div>
                                                             <div class="card-text">
-                                                                <p style="margin-bottom: 0px">3 test runs available</p>
+                                                                <p class="p-margin">3 test runs available</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -233,7 +250,7 @@
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 8</div>
                                                             <div class="card-text">
-                                                                <p style="margin-bottom: 0px">3 test runs available</p>
+                                                                <p class="p-margin">3 test runs available</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -243,7 +260,7 @@
 
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <button class="btn btn-outline-info col-md-1">Completed</button>
+                                                    <h5 class="h5-badge"><span class="badge bg-success">Completed</span></h5>
 
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -258,31 +275,31 @@
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 5</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                         </div>
                                                     </div>
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 4</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                         </div>
                                                     </div>
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 3</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                         </div>
                                                     </div>
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 2</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                         </div>
                                                     </div>
                                                     <div class="card ml-5">
                                                         <div class="card-body">
                                                             <div class="card-title font-weight-bold">Milestone 1</div>
-                                                            <i class="fas fa-check-circle fa-2x float-right" style="color: grey"></i>
+                                                            <i class="fas fa-check-circle fa-2x float-right icon-check"></i>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -297,10 +314,11 @@
                                             <div class="form-group">
                                                 <label>Status</label>
                                                 <div>
-                                                    <select class="form-control select2bs4">
-                                                        <option selected="selected">PMS</option>
-                                                        <option>Posbill</option>
-                                                        <option>Slotino</option>
+                                                    <select class="form-control select2" data-placeholder="Projects">
+                                                        <option></option>
+                                                        <option value="pms">PMS</option>
+                                                        <option value="posbill">Posbill</option>
+                                                        <option value="slotino">Slotino</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -310,12 +328,13 @@
                                             <div class="form-group">
                                                 <label>Group by month</label>
                                                 <div>
-                                                    <select class="form-control select2bs4">
-                                                        <option selected="selected">January</option>
-                                                        <option>February</option>
-                                                        <option>March</option>
-                                                        <option>April</option>
-                                                        <option>May</option>
+                                                    <select class="form-control select2" data-placeholder="Group by month">
+                                                        <option></option>
+                                                        <option value="january">January</option>
+                                                        <option value="february">February</option>
+                                                        <option value="march">March</option>
+                                                        <option value="april">April</option>
+                                                        <option value="may">May</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -325,115 +344,26 @@
                                             <div class="form-group">
                                                 <label>Filter by member</label>
                                                 <div>
-                                                    <select class="form-control select2bs4">
-                                                        <option selected="selected">Rakesh</option>
-                                                        <option>Ashish</option>
-                                                        <option>Ruchita</option>
-                                                        <option>Hiren</option>
-                                                        <option>Gopal</option>
+                                                    <select class="form-control select2" data-placeholder="Members">
+                                                        <option></option>
+                                                        <option value="rakesh">Rakesh</option>
+                                                        <option value="ashish">Ashish</option>
+                                                        <option value="ruchita">Ruchita</option>
+                                                        <option value="hiren">Hiren</option>
+                                                        <option value="gopal">Gopal</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <button class="btn btn-success mt-4 float-right" data-toggle="modal" data-target="#add_test_run">
+                                        <a class="btn btn-success btn-sm float-right" href="add_test_run.html">
                                             <i class="fas fa-plus mr-2"></i>Add Test Run
-                                        </button>
-
-                                        <div class="modal fade" id="add_test_run" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Add Test Run</h5>
-                                                        <button type="button" class="close" onclick="closeAddTestRun()" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                            <div class="form-group">
-                                                                <label for="name">Name</label>
-                                                                <input type="text" class="form-control" id="name" placeholder="Name">
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="select">Select Milestone</label>
-                                                                <select class="form-control select2bs4" id="select">
-                                                                    <option>Milestone 1</option>
-                                                                    <option>Milestone 2</option>
-                                                                    <option>Milestone 3</option>
-                                                                    <option>Milestone 4</option>
-                                                                    <option>Milestone 5</option>
-                                                                </select>
-                                                            </div>
-                                                            <label for="assignTo">Assign To</label>
-                                                            <input type="text" class="form-control" id="assignTo" placeholder="Assign To">
-
-                                                            <label for="description" class="mt-3">Description</label>
-                                                            <textarea class="form-control" id="description" placeholder="Description" rows="3"></textarea>
-
-                                                            <div class="form-check mt-3">
-                                                                <input type="radio" checked class="form-check-input" id="check1" name="check1" value="">
-                                                                <label class="form-check-label" for="check1">Include all test cases</label>
-                                                                <p>Select this option to include all test cases in this test run.
-                                                                    If new test cases are added to the repository, they are also automatically included in this run.
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="form-check mt-3">
-                                                                <input type="radio" class="form-check-input" id="check2" name="check1" value="" data-toggle="modal" data-target="#specific_test_cases">
-                                                                <label class="form-check-label" for="check2">Specific test cases</label>
-
-                                                                <p>
-                                                                    You can alternatively select the test cases to include in this test run. N
-                                                                    ew test cases are not automatically added to this run in this case.
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="modal fade" id="specific_test_cases" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-                                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title">Specific Test Cases</h5>
-                                                                            <button type="button" class="close" onclick="closeSpecificTestCases()" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <form>
-                                                                                <div class="form-group">
-                                                                                    <label>Select</label>
-                                                                                    <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                                                                                        <option>Organizations</option>
-                                                                                        <option>Super Admin</option>
-                                                                                        <option>License View</option>
-                                                                                        <option>Pheonix Incoming</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-default" onclick="closeSpecificTestCases()">Close</button>
-                                                                            <button type="button" class="btn btn-primary">Submit</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" onclick="closeAddTestRun()">Close</button>
-                                                        <button type="button" class="btn btn-primary">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
 
                                         <div class="post">
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <button class="btn btn-outline-info col-md-1">Open</button>
+                                                    <h5 class="h5-badge"><span class="badge bg-info">Open</span></h5>
 
                                                     <div class="card-tools">
                                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -446,72 +376,72 @@
                                                 <div class="card-body">
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run</div>
+                                                            <div class="card-title">Test Run
+                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            </div>
 
                                                             <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
-
-                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            <i class="fas fa-edit float-right mr-3 icon"></i>
+                                                            <a href="test_run_detail.html"><i class="fas fa-eye float-right mr-3 icon"></i></a>
 
                                                             <div class="card-text">
-                                                                <p>By <i>Hiren Ghoniya</i></p>
-                                                                <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
+                                                                <p class="p-margin">By <i>Hiren Ghoniya</i></p>
+                                                                <p class="p-margin" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run</div>
+                                                            <div class="card-title">Test Run
+                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            </div>
 
                                                             <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
-
-                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            <i class="fas fa-edit float-right mr-3 icon"></i>
+                                                            <a href="test_run_detail.html"><i class="fas fa-eye float-right mr-3 icon"></i></a>
 
                                                             <div class="card-text">
-                                                                <p>By <i>Hiren Ghoniya</i></p>
-                                                                <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
+                                                                <p class="p-margin">By <i>Hiren Ghoniya</i></p>
+                                                                <p class="p-margin" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run</div>
+                                                            <div class="card-title">Test Run
+                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            </div>
 
                                                             <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
-
-                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            <i class="fas fa-edit float-right mr-3 icon"></i>
+                                                            <a href="test_run_detail.html"><i class="fas fa-eye float-right mr-3 icon"></i></a>
 
                                                             <div class="card-text">
-                                                                <p>By <i>Hiren Ghoniya</i></p>
-                                                                <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
+                                                                <p class="p-margin">By <i>Hiren Ghoniya</i></p>
+                                                                <p class="p-margin" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="card">
                                                         <div class="card-body">
-                                                            <div class="card-title">Test Run</div>
+                                                            <div class="card-title">Test Run
+                                                                <p class="ml-1 d-inline-block">03/03/2020</p>
+                                                                <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            </div>
 
                                                             <img alt="User Image" class="img-circle float-right" width="40px" height="40px" src="../../dist/img/user2-160x160.jpg">
-                                                            <i class="fas fa-edit float-right mr-3" style="color: grey"></i>
-                                                            <a href="test_run_detail.html" style="color: grey"><i class="fas fa-eye float-right mr-3"></i></a>
-
-                                                            <p class="ml-1 d-inline-block">03/03/2020</p>
-                                                            <p class="ml-3 d-inline-block font-weight-bold">Milestone 1</p>
+                                                            <i class="fas fa-edit float-right mr-3 icon"></i>
+                                                            <a href="test_run_detail.html"><i class="fas fa-eye float-right mr-3 icon"></i></a>
 
                                                             <div class="card-text">
-                                                                <p>By <i>Hiren Ghoniya</i></p>
-                                                                <p style="margin-bottom: 0px" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
+                                                                <p class="p-margin">By <i>Hiren Ghoniya</i></p>
+                                                                <p class="p-margin" class="font-italic">0 Passed, 0 Blocked, 0 Untested, 1 Retest and 0 Failed.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -525,7 +455,7 @@
                                     <div class="tab-pane" id="test_cases">
                                         <div class="row">
                                             <div class="col-md-10">
-                                                <button class="btn btn-success mr-2 d-inline-block" data-toggle="modal" data-target="#add_test_case">
+                                                <button class="btn btn-success btn-sm mr-2 d-inline-block" data-toggle="modal" data-target="#add_test_case">
                                                     <i class="fas fa-plus mr-2"></i>Add Test Case
                                                 </button>
 
@@ -549,7 +479,7 @@
                                                     </div>
                                                 </div>
 
-                                                <button class="btn btn-success mr-2 d-inline-block" data-toggle="modal" data-target="#add_section">
+                                                <button class="btn btn-success btn-sm mr-2 d-inline-block" data-toggle="modal" data-target="#add_section">
                                                     <i class="fas fa-plus mr-2"></i>Add Section
                                                 </button>
 
@@ -585,7 +515,7 @@
                                                     </div>
                                                 </div>
 
-                                                <button class="btn btn-success d-inline-block" data-toggle="modal" data-target="#import_file">
+                                                <button class="btn btn-success btn-sm d-inline-block" data-toggle="modal" data-target="#import_file">
                                                     <i class="fa fa-upload mr-2"></i>Import Test Cases
                                                 </button>
 
@@ -612,8 +542,8 @@
                                                 <div id="organizations">
                                                     <div class="card mt-3">
                                                         <h5 class="card-header">Organizations
-                                                            <i class="fas fa-edit ml-3 fa-xs" style="color: grey"></i>
-                                                            <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                            <i class="fas fa-edit ml-3 fa-xs icon"></i>
+                                                            <i class="fa fa-trash ml-1 fa-xs icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                         </h5>
 
                                                         <div class="modal fade" id="delete_test_case" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -637,28 +567,26 @@
                                                         </div>
 
                                                         <div class="card-body">
-                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary btn-sm new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
                                                             <div class="cases">
-                                                                <div class="case">
-                                                                    <div class="card mt-2">
-                                                                        <div class="card-body">
-                                                                            <div class="card-title">Should be visible in sidebar.</div>
-                                                                            <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                            <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                            <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
-                                                                        </div>
+                                                                <div class="card mt-2 case">
+                                                                    <div class="card-body">
+                                                                        <div class="card-title">Should be visible in sidebar.</div>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                        <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                        <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">Cannot accessible without permission.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -669,29 +597,29 @@
                                                 <div id="super_admin">
                                                     <div class="card mt-3">
                                                         <h5 class="card-header">Super Admin
-                                                            <i class="fas fa-edit ml-3 fa-xs" style="color: grey"></i>
-                                                            <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                            <i class="fas fa-edit ml-3 fa-xs icon"></i>
+                                                            <i class="fa fa-trash ml-1 fa-xs icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary btn-sm new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
                                                             <div class="cases">
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">Cannot accessible without permission.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">User can view this.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -702,29 +630,29 @@
                                                 <div id="license_view">
                                                     <div class="card mt-3">
                                                         <h5 class="card-header">License View
-                                                            <i class="fas fa-edit ml-3 fa-xs" style="color: grey"></i>
-                                                            <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                            <i class="fas fa-edit ml-3 fa-xs icon"></i>
+                                                            <i class="fa fa-trash ml-1 fa-xs icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary btn-sm new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
                                                             <div class="cases">
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">Should be visible in sidebar.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">User can accessible.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -735,62 +663,62 @@
                                                 <div  id="pheonix_incoming">
                                                     <div class="card mt-3">
                                                         <h5 class="card-header">Pheonix Incoming
-                                                            <i class="fas fa-edit ml-3 fa-xs" style="color: grey"></i>
-                                                            <i class="fa fa-trash ml-1 fa-xs" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                            <i class="fas fa-edit ml-3 fa-xs icon"></i>
+                                                            <i class="fa fa-trash ml-1 fa-xs icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                         </h5>
                                                         <div class="card-body">
-                                                            <button class="btn btn-secondary new-case mr-2 mb-2">
+                                                            <button class="btn btn-secondary btn-sm new-case mr-2 mb-2">
                                                                 <i class="fas fa-plus mr-2"></i>Add Case
                                                             </button>
 
                                                             <div class="cases">
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">Cannot accessible without permission.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="card mt-2 ml-5" id="pheonix_incoming_section1">
                                                                     <div class="card-header">
                                                                         <div class="card-title">Section 1</div>
-                                                                        <i class="fas fa-plus new-section ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-edit ml-3" style="color: grey"></i>
-                                                                        <i class="fa fa-trash ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                                        <i class="fas fa-plus new-section ml-3 icon"></i>
+                                                                        <i class="fas fa-edit ml-3 icon"></i>
+                                                                        <i class="fa fa-trash ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                                     </div>
 
                                                                     <div class="card-body">
                                                                         <div class="card-title">User</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="card mt-2 ml-5" id="pheonix_incoming_section2">
                                                                     <div class="card-header">
                                                                         <div class="card-title">Section 2</div>
-                                                                        <i class="fas fa-plus new-section ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-edit ml-3" style="color: grey"></i>
-                                                                        <i class="fa fa-trash ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
+                                                                        <i class="fas fa-plus new-section ml-3 icon"></i>
+                                                                        <i class="fas fa-edit ml-3 icon"></i>
+                                                                        <i class="fa fa-trash ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
                                                                     </div>
 
                                                                     <div class="card-body">
                                                                         <div class="card-title">Admin</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="card mt-2">
+                                                                <div class="card mt-2 case">
                                                                     <div class="card-body">
                                                                         <div class="card-title">Nav bar is not proper.</div>
-                                                                        <i class="fa fa-trash float-right ml-3" data-toggle="modal" data-target="#delete_test_case" style="color: grey"></i>
-                                                                        <i class="fas fa-edit float-right ml-3" style="color: grey"></i>
-                                                                        <i class="fas fa-plus float-right new-section" data-toggle="tooltip" data-placement="bottom" title="Add section" style="color: grey"></i>
+                                                                        <i class="fa fa-trash float-right ml-3 icon" data-toggle="modal" data-target="#delete_test_case"></i>
+                                                                            <i class="fas fa-edit float-right ml-3 icon"></i>
+                                                                            <i class="fas fa-plus float-right new-section icon" data-toggle="tooltip" data-placement="bottom" title="Add section"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -811,12 +739,12 @@
                                                         <div class="row">
                                                             <div class="nav flex-column nav-tabs nav-tabs-right">
                                                                 <!--data-toggle="pill"-->
-                                                                <a class="nav-link active" href="#organizations">Organization</a>
-                                                                <a class="nav-link" href="#super_admin">Super Admin</a>
-                                                                <a class="nav-link" href="#license_view">License View</a>
-                                                                <a class="nav-link" href="#pheonix_incoming">Pheonix Incoming</a>
-                                                                <a class="nav-link ml-4" href="#pheonix_incoming_section1">Section 1</a>
-                                                                <a class="nav-link ml-4" href="#pheonix_incoming_section2">Section 2</a>
+                                                                <a class="nav-link active-link" href="#organizations">Organization</a>
+                                                                <a class="nav-link active-link" href="#super_admin">Super Admin</a>
+                                                                <a class="nav-link active-link" href="#license_view">License View</a>
+                                                                <a class="nav-link active-link" href="#pheonix_incoming">Pheonix Incoming</a>
+                                                                <a class="nav-link active-link ml-4" href="#pheonix_incoming_section1">Section 1</a>
+                                                                <a class="nav-link active-link ml-4" href="#pheonix_incoming_section2">Section 2</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -881,42 +809,33 @@
 <script src="../../dist/js/demo.js"></script>
 <!-- Select2 -->
 <script src="../../plugins/select2/js/select2.full.min.js"></script>
+<!--js-->
+<script src="../../layouts/js/pms_d.js"></script>
 
 <!--Page Script-->
 <script>
     // select2
     $(function () {
         //Initialize Select2 Elements
-        $('.select2').select2()
-
-        $('.select2bs4').select2({
+        $('.select2').select2({
             theme: 'bootstrap4'
         })
     });
 
-    //modal close
-    function closeSpecificTestCases() {
-        $('#specific_test_cases').modal('hide');
-    }
-
-    function closeAddTestRun() {
-        $('#add_test_run').modal('hide');
-    }
-
     // opens new case textarea when clicked on 'Add case' button.
     $(document).on('click', '.new-case', function () {
 
-        $(this).parents('.card-body').find('.cases').prepend("<textarea rows='2' " + "cols='8' " +
-            "class='form-control new-case-textarea mb-3 mt-2'" + "style='resize: none;' " + "placeholder='Test case title' " + "'>");
+        $(this).parent('.card-body').find('.cases').prepend("<textarea rows='2' " + "cols='8' " +
+            "class='form-control new-case-textarea mb-3 mt-2 textarea-resize'" + "placeholder='Test case title' " + "'>");
 
-        $(this).parents('.card-body').find('.new-case-textarea').focus();
+        $(this).parent('.card-body').find('.new-case-textarea').focus();
     });
 
     // opens new case textarea when clicked on 'Add section' button.
     $(document).on('click', '.new-section', function () {
 
-        $(this).parents('.cases').find('.case').append("<textarea rows='2' " + "cols='8' " +
-            "class='form-control new-section-textarea mb-3'" + "style='resize: none;' " + "placeholder='Section name' " + "'>");
+        $(this).parents('.case').after("<textarea rows='2' " + "cols='8' " +
+            "class='form-control new-section-textarea mb-3 textarea-resize'" + "placeholder='Section name' " + "'>");
 
         $(this).parents('.cases').find('.new-section-textarea').focus();
     });
@@ -945,15 +864,22 @@
                     "<div class='card mt-2'>"
                     + "<div class='card-body'>"
                     + "<div class='card-title'>" + caseVal + "</div>"
-                    + "<i class='fa fa-trash float-right ml-3' style='color: grey'></i>"
-                    + "<i class='fas fa-edit float-right ml-3' style='color: grey'></i>"
-                    + "<i class='fas fa-plus float-right new-section' style='color: grey'></i>"
+                    + "<i class='fa fa-trash float-right ml-3 icon'></i>"
+                    + "<i class='fas fa-edit float-right ml-3 icon'></i>"
+                    + "<i class='fas fa-plus float-right new-section icon'></i>"
                     + "</div>"
                     + "</div>"
                 );
                 $(this).val('');
             }
         }
+    });
+
+    // sidebar active
+    $(document).on('click', '.active-link', function (e) {
+        $('.active-link').removeClass('active');
+
+        $(this).addClass('active');
     });
 
 </script>

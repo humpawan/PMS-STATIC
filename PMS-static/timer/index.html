@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../../layouts/css/pms_d.css">
     <!-- summernote -->
     <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
     <!-- Select2 -->
@@ -47,51 +49,54 @@
         </ul>
 
         <div class="col-md-4">
-            <input class="form-control" id="input" type="text" placeholder="What have you done?" style="border: none; font-size: 20px">
+            <input class="form-control timer-input" id="input" type="text" placeholder="What have you done?">
         </div>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto col-md-5">
 
             <li class="col">
-                <select class="form-control select2bs4">
-                    <option selected="selected">PMS</option>
-                    <option>Posbill</option>
-                    <option>Slotino</option>
+                <select class="form-control select2" data-placeholder="Projects">
+                    <option></option>
+                    <option value="pms">PMS</option>
+                    <option value="posbill">Posbill</option>
+                    <option value="slotino">Slotino</option>
                 </select>
             </li>
 
             <li class="col">
-                <select class="form-control select2bs4">
-                    <option selected="selected">Milestone 1</option>
-                    <option>Milestone 2</option>
-                    <option>Milestone 3</option>
-                    <option>Milestone 4</option>
-                    <option>Milestone 5</option>
+                <select class="form-control select2" data-placeholder="Milestones">
+                    <option></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </li>
 
             <li class="col">
-                <select class="form-control select2bs4">
-                    <option selected="selected">git</option>
-                    <option>ajax</option>
-                    <option>jquery</option>
-                    <option>QA</option>
-                    <option>Graphic design</option>
+                <select class="form-control select2" data-placeholder="Tags">
+                    <option></option>
+                    <option value="git">git</option>
+                    <option value="ajax">ajax</option>
+                    <option value="jquery">jquery</option>
+                    <option value="QA">QA</option>
+                    <option value="graphic design">Graphic design</option>
                 </select>
             </li>
 
             <div class="bootstrap-timepicker col-md-3">
                 <div class="input-group date" id="timepicker" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker"/>
                     <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="far fa-clock"></i></div>
                     </div>
+                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" placeholder="Time"/>
                 </div>
             </div>
 
             <li>
-                <i class="fa fa-play-circle fa-2x mr-1" data-toggle="tooltip" data-placement="bottom" title="Timer Mode" style="color: #00A000;"></i>
+                <i class="fa fa-play-circle fa-2x mr-1 timer-mode" data-toggle="tooltip" data-placement="bottom" title="Timer Mode"></i>
             </li>
 
             <div class="">
@@ -222,27 +227,23 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="col-md-2 d-inline-block">
-                                    <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
                                         <label>Mode</label>
-                                        <div>
-                                            <select class="form-control select2bs4">
-                                                <option selected="selected">Timer</option>
-                                                <option>Manual</option>
-                                            </select>
-                                        </div>
+                                        <select class="form-control select2" data-placeholder="Mode">
+                                            <option></option>
+                                            <option value="timer">Timer</option>
+                                            <option value="manual">Manual</option>
+                                        </select>
                                     </div>
-                                </div>
 
-                                <div class="col-md-2 d-inline-block">
-                                    <div class="form-group">
+                                    <div class="form-group col-md-2">
                                         <label>Logs</label>
-                                        <div>
-                                            <select class="form-control select2bs4">
-                                                <option selected="selected">Daily</option>
-                                                <option>Weekly</option>
-                                                <option>Monthly</option>
-                                            </select>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="far fa-calendar-alt icon"></i></span>
+                                            </div>
+                                            <input type="text" placeholder="Logs" class="form-control pull-right" id="daterange-btn" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" data-mask>
                                         </div>
                                     </div>
                                 </div>
@@ -251,8 +252,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <button class="btn btn-outline-info col-md-1">Today</button>
-
+                                <label>Today</label>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
@@ -268,8 +268,33 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Posbill Milestone 1</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
-                                        <button class="btn btn-success btn-sm float-right mr-5 col-md-1">In progress</button>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <!--<div class="float-right col-md-1">
+                                            <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Task status
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <select class="form-control select2" data-placeholder="Task status">
+                                                    <option></option>
+                                                    <option value="timer">In progress</option>
+                                                    <option value="manual">Stop</option>
+                                                    <option value="manual">Resume</option>
+                                                    <option value="manual">Done</option>
+                                                </select>
+                                            </div>
+                                        </div>-->
+
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
@@ -285,7 +310,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">G2V Milestone 1</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-success btn-sm float-right mr-5 col-md-1">In progress</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -300,7 +325,7 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-secondary btn-sm float-right mr-5 col-md-1">0h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
 
@@ -314,7 +339,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Slotino</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-success btn-sm float-right mr-5 col-md-1">Done</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-danger btn-sm float-right mr-2 col-md-1">Bug</button>
@@ -331,7 +356,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">PMS</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Stop</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -348,7 +373,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Slotino</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-success btn-sm float-right mr-5 col-md-1">Done</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -364,7 +389,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Posbill</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Stop</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -380,7 +405,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <button class="btn btn-outline-info col-md-1">Yesterday</button>
+                                <label>Today</label>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -396,7 +421,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Posbill Milestone 1</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Done</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -412,7 +437,7 @@
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">G2V</div>
 
-                                        <i class="fas fa-clock fa-2x float-right" style="color: grey"></i>
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
                                         <button class="btn btn-success btn-sm float-right mr-5 col-md-1">In progress</button>
                                         <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
                                         <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
@@ -485,7 +510,7 @@
     // select2
     $(function () {
 
-        $('.select2bs4').select2({
+        $('.select2').select2({
             theme: 'bootstrap4'
         })
     });
@@ -504,6 +529,25 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
+
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+        {
+            ranges   : {
+                'Today'       : [moment(), moment()],
+                'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+                'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            startDate: moment().subtract(29, 'days'),
+            endDate  : moment()
+        },
+        function (start, end) {
+            $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        }
+    );
 </script>
 
 <!--<script>

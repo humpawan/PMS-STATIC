@@ -21,23 +21,7 @@
     <!--inline css code here-->
     <link href="../layouts/assets/css/adminlte.min.css" rel="stylesheet">
     <link href="../layouts/assets/css/style.css" rel="stylesheet">
-    <link href="../layouts/css/pms_k.css" rel="stylesheet">
-    <style>
-        .pending{
-            background-color: #6c757d;
-            color: #f8f9fa;
-            padding: 0 60px;
-            width: 210px;
-            font-size: medium;
-        }
-        .logging{
-            background-color: #000000;
-            color: #f8f9fa;
-            padding: 0 60px;
-            width: 210px;
-            font-size: medium;
-        }
-    </style>
+    <link href="../layouts/css/pms_p.css" rel="stylesheet">
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -243,7 +227,7 @@
                                 </label>
                             </div>
                         </div>
-                        <fieldset style="background: #dee2e6">
+                        <fieldset class="timesheet-card">
                             <legend class="pending">Pending</legend>
                             <div class="card mt-2 mr-5 ml-5">
                                 <div class="card-header">
@@ -299,15 +283,19 @@
                                 </div>
                             </div>
                         </fieldset>
-                        <fieldset style="background: #dee2e6" class="pt-lg-3 mt-3">
+                        <fieldset class="pt-lg-3 mt-3 timesheet-card">
                             <legend class="logging">Logging</legend>
                             <div class="card mt-2 mr-5 ml-5">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <img alt="User Image"
-                                             class="img-circle img-sm"
-                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                        <span>Pawan Garg</span>
+                                        <figure>
+                                            <img alt="User Image"
+                                                 class="img-circle img-size-32 custom-control-inline"
+                                                 src="../layouts/assets/img/avatar04.png">
+                                            <figcaption class="custom-control-inline">
+                                                Pawan garg
+                                            </figcaption>
+                                        </figure>
                                     </div>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool pt-3" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -357,10 +345,14 @@
                             <div class="card collapsed-card mt-2 mr-5 ml-5">
                                 <div class="card-header">
                                     <div class="card-title">
-                                        <img alt="User Image"
-                                             class="img-circle img-sm"
-                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                        <span>Ashish Makwana</span>
+                                        <figure>
+                                            <img alt="User Image"
+                                                 class="img-circle img-size-32 custom-control-inline"
+                                                 src="../layouts/assets/img/avatar04.png">
+                                            <figcaption class="custom-control-inline">
+                                                Ashish Makwana
+                                            </figcaption>
+                                        </figure>
                                     </div>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool pt-3" data-card-widget="collapse"><i class="fas fa-plus"></i>

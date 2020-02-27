@@ -18,14 +18,9 @@
     <link href="../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../layouts/assets/css/adminlte.min.css" rel="stylesheet">
     <link href="../layouts/assets/css/style.css" rel="stylesheet">
+    <link href="../layouts/css/pms_p.css" rel="stylesheet">
     <!--end-->
-
     <!--inline css code here-->
-    <style>
-        .dropdown-menu {
-            margin-top: 5rem;
-        }
-    </style>
     <!--end-->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
@@ -269,7 +264,7 @@
                                                         <i class="far fa-clock"></i>
                                                     </span>
                                         </div>
-                                        <input class="form-control text-input" id="datepicker" placeholder="Start date"
+                                        <input class="form-control text-input" data-provide="datepicker" placeholder="Start date"
                                                type="text">
                                     </div>
                                 </div>
@@ -281,7 +276,7 @@
                                                         <i class="far fa-clock"></i>
                                                     </span>
                                         </div>
-                                        <input class="form-control" data-provide="datepicker" placeholder="Start date"
+                                        <input class="form-control" data-provide="datepicker" placeholder="Due date"
                                                type="text">
                                     </div>
                                 </div>
@@ -346,11 +341,10 @@
                                     <label>Release date</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                                                                    <span class="input-group-text"><i
-                                                                                            class="far fa-clock"></i></span>
+                                            <span class="input-group-text"><i class="far fa-clock"></i></span>
                                         </div>
-                                        <input class="form-control" data-provide="datepicker"
-                                               id="date-picker" placeholder="Start date"
+                                        <input class="form-control"
+                                               data-provide="datepicker" placeholder="Release date"
                                                type="text">
                                     </div>
                                 </div>
@@ -369,9 +363,6 @@
                                            placeholder="Local" type="text">
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="form-group">
 
                         </div>
                         <div class="form-group">
@@ -402,18 +393,21 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="card">
-                        <div class="card-body" style="padding: 55px;">
-                            <img alt="User Image" class="img-lg"
-                                 src="../layouts/assets/img/project.png" style="width:130px; height:130px;">
-                            <h2 class="text-primary" style="padding:35px;">PMS</h2>
+                        <div class="card-body">
+                            <figure class="text-primary text-lg-center">
+                                <img alt="User Image" class="img-size-64"
+                                     src="../layouts/assets/img/project.png">
+                                <figcaption class="font-weight-bolder">
+                                    <h3>PMS</h3>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">
-                            <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist"
-                                style="border-bottom:none; ">
+                            <ul class="nav nav-tabs border-bottom-0" id="custom-content-above-tab" role="tablist">
                                 <li class="nav-item">
                                     <a aria-controls="custom-content-above-manage" aria-selected="true" class="nav-link active"
                                        data-toggle="pill" href="#custom-content-above-manage"
@@ -478,10 +472,14 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>
-                                                        <img alt="User Image"
-                                                             class="img-circle img-sm"
-                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                                        <span>Ashish Makwana</span>
+                                                        <figure>
+                                                            <img alt="User Image"
+                                                                 class="img-circle img-size-32 custom-control-inline"
+                                                                 src="../layouts/assets/img/avatar04.png">
+                                                            <figcaption class="custom-control-inline">
+                                                                Ashish Makwana
+                                                            </figcaption>
+                                                        </figure>
                                                     </td>
                                                     <td>Team Lead</td>
                                                     <td>Active</td>
@@ -491,10 +489,15 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <img alt="User Image"
-                                                             class="img-circle img-sm"
-                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                                        <span>Ruchita Sheth</span></td>
+                                                        <figure>
+                                                            <img alt="User Image"
+                                                                 class="img-circle img-size-32 custom-control-inline"
+                                                                 src="../layouts/assets/img/avatar04.png">
+                                                            <figcaption class="custom-control-inline">
+                                                                Pawan
+                                                            </figcaption>
+                                                        </figure>
+                                                    </td>
                                                     <td>Developer</td>
                                                     <td>Active</td>
                                                     <td><i class="fa fa-window-close"></i>
@@ -503,10 +506,15 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <img alt="User Image"
-                                                             class="img-circle img-sm"
-                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                                        <span>Mehul Patel</span></td>
+                                                        <figure>
+                                                            <img alt="User Image"
+                                                                 class="img-circle img-size-32 custom-control-inline"
+                                                                 src="../layouts/assets/img/avatar04.png">
+                                                            <figcaption class="custom-control-inline">
+                                                                Mehul
+                                                            </figcaption>
+                                                        </figure>
+                                                    </td>
                                                     <td>Frontend Designer</td>
                                                     <td>Active</td>
                                                     <td><i class="fa fa-window-close"></i>
@@ -515,10 +523,15 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <img alt="User Image"
-                                                             class="img-circle img-sm"
-                                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
-                                                        <span>Hiren Gohiya</span></td>
+                                                        <figure>
+                                                            <img alt="User Image"
+                                                                 class="img-circle img-size-32 custom-control-inline"
+                                                                 src="../layouts/assets/img/avatar04.png">
+                                                            <figcaption class="custom-control-inline">
+                                                               Gopal
+                                                            </figcaption>
+                                                        </figure>
+                                                    </td>
                                                     <td>QA</td>
                                                     <td>Active</td>
                                                     <td><i class="fa fa-window-close"></i>
@@ -722,10 +735,6 @@
 <script src="../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="../layouts/dist/js/adminlte.min.js"></script>
 <script src="../layouts/js/pms_p.js"></script>
-<script>
-    $('#datepicker').datepicker({
-        autoclose: true
-    })
-</script>
+
 <!--end-->
 </body>

@@ -1,3 +1,25 @@
 .external-event {
     min-height: 31px;
 }
+/* date picker */
+.dropdown-menu {
+    margin-top: 5rem;
+}
+/* timesheet */
+.pending{
+    background-color: #6c757d;
+    color: #f8f9fa;
+    padding: 0 60px;
+    width: 210px;
+    font-size: medium;
+}
+.logging{
+    background-color: #000000;
+    color: #f8f9fa;
+    padding: 0 60px;
+    width: 210px;
+    font-size: medium;
+}
+.timesheet-card{
+    background: #dee2e6;
+}

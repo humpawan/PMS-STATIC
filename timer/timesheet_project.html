@@ -1,0 +1,453 @@
+<!--document--->
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="csrf-token">
+    <title>Project-task project</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!--style code here-->
+    <link rel="stylesheet" href="../layouts/assets/plugins/icheck-bootstrap/icheck-bootstrap.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="../layouts/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="../layouts/assets/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../layouts/assets/plugins/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="../layouts/assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../layouts/assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="../layouts/assets/plugins/daterangepicker/datepicker.min.css">
+    <!--end-->
+    <!--inline css code here-->
+    <link href="../layouts/assets/css/adminlte.min.css" rel="stylesheet">
+    <link href="../layouts/assets/css/style.css" rel="stylesheet">
+    <link href="../layouts/css/pms_k.css" rel="stylesheet">
+    <style>
+        .pending{
+            background-color: #6c757d;
+            color: #f8f9fa;
+            padding: 0 60px;
+            width: 210px;
+            font-size: medium;
+        }
+        .logging{
+            background-color: #000000;
+            color: #f8f9fa;
+            padding: 0 60px;
+            width: 210px;
+            font-size: medium;
+        }
+    </style>
+    <!--end-->
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
+<!--page content here-->
+<div class="wrapper wrapper-without-filter">
+    <!--Page nav-bar code here-->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <div class="page-header page-header-without-filter">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link" href="../timer/timesheet.html">
+                        Timesheet-Member
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link" href="../timer/timesheet_user.html">
+                        Timesheet-User
+                    </a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a class="nav-link" href="../timer/timesheet_project.html">
+                        Timesheet-Project
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--end nav-bar-->
+    <!--sidebar code here-->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a class="brand-link" href="../dashboard/index.html">
+            <img alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 src="../layouts/assets/img/AdminLTELogo.png"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">PMS</span>
+        </a>
+        <div class="sidebar">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img alt="User Image"
+                         class="img-circle elevation-2"
+                         src="../layouts/assets/img/avatar04.png">
+                </div>
+                <div class="info">
+                    <a class="d-block" href="../profile/index.html">Pawan garg</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-accordion="false"
+                data-widget="treeview"
+                role="menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="nav-icon fas fa-clock-o"></i>
+                        <p>
+                            Timer
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../timer/timesheet.html">
+                        <i class="nav-icon fas fa-clock-o"></i>
+                        <p>
+                            Timesheet
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false"
+                data-widget="treeview"
+                role="menu">
+                <li class="nav-header">Analyze</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../dashboard/index.html">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboards
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../report/index.html">
+                        <i class="nav-icon fas fa-file-alt"></i>
+                        <p>
+                            Reports
+                        </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent " data-accordion="false"
+                data-widget="treeview"
+                role="menu">
+                <li class="nav-header">Manage</li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link" href="../project/index.html">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Projects
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../team/index.html">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Teams
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../client/index.html">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Clients
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../tag/index.html">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>
+                            Tags
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../dashboard/index.html">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+            <!--end Sidebar Menu-->
+        </div>
+    </aside>
+    <!--main page content-->
+    <div class="content-wrapper">
+        <section class="content-header">
+        </section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title p-1">
+                            <label>
+                                <select class="form-control filter-select" data-column="2">
+                                    <option value="">Project</option>
+                                    <option value="1">P-1</option>
+                                    <option value="0">P-2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="card-title p-1">
+                            <label>
+                                <select class="form-control filter-select" data-column="2">
+                                    <option value="">Assigned to me</option>
+                                    <option value="1">P-1</option>
+                                    <option value="0">P-2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="card-title p-1">
+                            <label>
+                                <select class="form-control filter-select" data-column="2">
+                                    <option value="">Group by User</option>
+                                    <option value="1">P-1</option>
+                                    <option value="0">P-2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="card-title p-1">
+                            <label>
+                                <select class="form-control filter-select" data-column="2">
+                                    <option value="">Today</option>
+                                    <option value="1">This week</option>
+                                    <option value="0">This month</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="card-tools">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Search description..." type="search">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group clearfix text-right">
+                            <div class="icheck-primary d-inline">
+                                <input type="checkbox" id="checkboxPrimary3" checked>
+                                <label for="checkboxPrimary3">
+                                    Enable pending log
+                                </label>
+                            </div>
+                        </div>
+                        <fieldset style="background: #dee2e6">
+                            <legend class="pending">Pending</legend>
+                            <div class="card mt-2 mr-5 ml-5">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="text-lg bg">
+                                            Project name * Milestone-1
+                                        </div>
+                                        <div class="text-sm">
+                                            Some text here
+                                        </div>
+                                    </div>
+                                    <div class="card-tools">
+                                        <button class="btn btn-info rounded-circle">
+                                            <i class="fas fa-plus "></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-2 mr-5 ml-5">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="text-lg bg">
+                                            Select project * Select milestone
+                                        </div>
+                                        <div class="text-sm">
+                                            Some text here
+                                        </div>
+                                    </div>
+                                    <div class="card-tools form-inline">
+                                        <input type="text" class="form-control m-1" placeholder="2 Hour">
+                                        <button class="btn btn-info rounded-circle">
+                                            <i class="fas fa-plus "></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-2 mr-5 ml-5">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <div class="text-lg bg">
+                                            Select project * Select milestone
+                                        </div>
+                                        <div class="text-sm">
+                                            Some text here
+                                        </div>
+                                    </div>
+                                    <div class="card-tools form-inline">
+                                        <input type="text" class="form-control m-1" placeholder="2 Hour">
+                                        <button class="btn btn-info rounded-circle">
+                                            <i class="fas fa-window-close"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset style="background: #dee2e6" class="pt-lg-3 mt-3">
+                            <legend class="logging">Logging</legend>
+                            <div class="card mt-2 mr-5 ml-5">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <img alt="User Image"
+                                             class="img-circle img-sm"
+                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                        <span>PMS</span>
+                                    </div>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool pt-3" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-body mt-2 mr-5 ml-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <div class="text-lg bg">
+                                                    Project name * Milestone-1
+                                                </div>
+                                                <div class="text-sm">
+                                                    Some text here
+                                                </div>
+                                            </div>
+                                            <div class="card-tools">
+                                                <button class="btn btn-info rounded-circle">
+                                                    <i class="fas fa-plus "></i>
+                                                </button>
+                                                <button class="badge badge-pill badge-dark">1-H</button>
+                                                <button type="button" class="btn btn-secondary btn-sm">In-progress</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <div class="text-lg bg">
+                                                    Project name * Milestone-3
+                                                </div>
+                                                <div class="text-sm">
+                                                    Some text here
+                                                </div>
+                                            </div>
+                                            <div class="card-tools">
+                                                <button class="btn btn-info rounded-circle">
+                                                    <i class="fas fa-plus "></i>
+                                                </button>
+                                                <button class="badge badge-pill badge-dark">1-H</button>
+                                                <button type="button" class="btn btn-success btn-sm">Completed</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card collapsed-card mt-2 mr-5 ml-5">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <img alt="User Image"
+                                             class="img-circle img-sm"
+                                             src="../layouts/assets/img/avatar04.png" style="float:none;">
+                                        <span>Possible</span>
+                                    </div>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool pt-3" data-card-widget="collapse"><i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body mt-2 mr-5 ml-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <div class="text-lg bg">
+                                                    Project name * Milestone-1
+                                                </div>
+                                                <div class="text-sm">
+                                                    Some text here
+                                                </div>
+                                            </div>
+                                            <div class="card-tools">
+                                                <button class="btn btn-info rounded-circle">
+                                                    <i class="fas fa-plus "></i>
+                                                </button>
+                                                <button class="badge badge-pill badge-dark">1-H</button>
+                                                <button type="button" class="btn btn-secondary btn-sm">In-progress</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <div class="text-lg bg">
+                                                    Project name * Milestone-3
+                                                </div>
+                                                <div class="text-sm">
+                                                    Some text here
+                                                </div>
+                                            </div>
+                                            <div class="card-tools">
+                                                <button class="btn btn-info rounded-circle">
+                                                    <i class="fas fa-plus "></i>
+                                                </button>
+                                                <button class="badge badge-pill badge-dark">1-H</button>
+                                                <button type="button" class="btn btn-success btn-sm">Completed</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--end main page content-->
+    <!--footer page here-->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 3.0.1
+        </div>
+        <strong>Copyright</strong>
+        2020
+    </footer>
+    <aside class="control-sidebar control-sidebar-dark"></aside>
+    <!--end footer page-->
+</div>
+<!--end page content-->
+
+<!--scripts here-->
+<script src="../layouts/assets/plugins/jquery/jquery.min.js"></script>
+<script src="../layouts/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../layouts/assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../layouts/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../layouts/assets/plugins/select2/js/select2.full.min.js"></script>
+<script src="../layouts/assets/plugins/icheck-bootstrap/icheck.js"></script>
+<!-- AdminLTE App -->
+<!-- date-range-picker -->
+
+<script src="../layouts/assets/plugins/moment/moment.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="../layouts/assets/plugins/daterangepicker/datepicker.js"></script>
+<script src="../layouts/assets/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../layouts/assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="../layouts/assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="../layouts/dist/js/adminlte.min.js"></script>
+<script src="../layouts/js/pms_k.js"></script>
+<!--end-->
+<!--incline script here-->
+</body>

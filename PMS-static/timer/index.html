@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PMS | Timer</title>
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
     <!-- css -->
     <link rel="stylesheet" href="../../layouts/css/pms_d.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -87,11 +76,11 @@
             </li>
 
             <div class="bootstrap-timepicker col-md-3">
-                <div class="input-group date" id="timepicker" data-target-input="nearest">
+                <div class="input-group date" data-target-input="nearest">
                     <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="far fa-clock"></i></div>
                     </div>
-                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" placeholder="Time"/>
+                    <input type="text" id="timepicker" class="form-control datetimepicker-input" data-target="#timepicker" placeholder="Time"/>
                 </div>
             </div>
 
@@ -111,10 +100,8 @@
             </li>-->
         </ul>
     </nav>
-    <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a class="brand-link" href="#">
@@ -217,7 +204,6 @@
     </aside>
 
     <div class="content-wrapper">
-
         <section class="content-header"></section>
 
         <!-- Main content -->
@@ -273,7 +259,7 @@
                                         <div class="float-right col-md-1 mr-5">
                                             <select class="form-control select2" data-placeholder="Task status">
                                                 <option></option>
-                                                <option value="timer">In progress</option>
+                                                <option value="timer" style="color: #00A000">In progress</option>
                                                 <option value="manual">Stop</option>
                                                 <option value="manual">Resume</option>
                                                 <option value="manual">Done</option>
@@ -281,7 +267,7 @@
                                         </div>
 
                                         <!--<div class="float-right col-md-1">
-                                            <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
                                                 Task status
                                             </button>
                                             <div class="dropdown-menu">
@@ -295,10 +281,10 @@
                                             </div>
                                         </div>-->
 
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
-                                        <button class="btn btn-info btn-sm float-right mr-2 col-md-1">Start</button>
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
+                                        <button class="btn btn-info float-right mr-2 col-md-1">Start</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores at cumque eius, eum maiores qui sequi similique velit veritatis. Dolores exercitationem hic labore nam nostrum quidem ut vero. Laboriosam?
@@ -308,26 +294,9 @@
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="card-title font-weight-bold">G2V Milestone 1</div>
-
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-success btn-sm float-right mr-5 col-md-1">In progress</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
-                                        <button class="btn btn-info btn-sm float-right mr-2 col-md-1">Start</button>
-
-                                        <div class="card-text col-md-5">
-                                            Lorem ipsum
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body">
-                                        <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-secondary btn-sm float-right mr-5 col-md-1">0h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-secondary float-right mr-5 col-md-1">0h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -340,11 +309,21 @@
                                         <div class="card-title font-weight-bold">Slotino</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-success btn-sm float-right mr-5 col-md-1">Done</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-danger btn-sm float-right mr-2 col-md-1">Bug</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
-                                        <button class="btn btn-info btn-sm float-right mr-2 col-md-1">Start</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-danger float-right mr-2 col-md-1">Bug</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
+                                        <button class="btn btn-info float-right mr-2 col-md-1">Start</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, atque cupiditate eligendi hic necessitatibus neque saepe ullam! Accusantium aliquid at nesciunt sunt ullam. Consequatur fugiat libero magni nobis possimus rerum.
@@ -354,14 +333,51 @@
 
                                 <div class="card">
                                     <div class="card-body">
+                                        <div class="card-title font-weight-bold">G2V Milestone 1</div>
+
+                                        <i class="fas fa-clock fa-2x float-right icon"></i>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
+                                        <button class="btn btn-info float-right mr-2 col-md-1">Start</button>
+
+                                        <div class="card-text col-md-5">
+                                            Lorem ipsum
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
                                         <div class="card-title font-weight-bold">PMS</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Stop</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
-                                        <button class="btn btn-info btn-sm float-right mr-2 col-md-1">Start</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
+                                        <button class="btn btn-info float-right mr-2 col-md-1">Start</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -374,10 +390,20 @@
                                         <div class="card-title font-weight-bold">Slotino</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-success btn-sm float-right mr-5 col-md-1">Done</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -390,10 +416,20 @@
                                         <div class="card-title font-weight-bold">Posbill</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Stop</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -415,17 +451,27 @@
                                     </button>
                                 </div>
                             </div>
-                            <!-- /.card-header -->
+
                             <div class="card-body">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-title font-weight-bold">Posbill Milestone 1</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-danger btn-sm float-right mr-5 col-md-1">Done</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -438,10 +484,20 @@
                                         <div class="card-title font-weight-bold">G2V</div>
 
                                         <i class="fas fa-clock fa-2x float-right icon"></i>
-                                        <button class="btn btn-success btn-sm float-right mr-5 col-md-1">In progress</button>
-                                        <button class="btn btn-secondary btn-sm float-right mr-2 col-md-1">2h</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Research</button>
-                                        <button class="btn btn-default btn-sm float-right mr-2 col-md-1">Staging</button>
+
+                                        <div class="float-right col-md-1 mr-5">
+                                            <select class="form-control select2" data-placeholder="Task status">
+                                                <option></option>
+                                                <option value="timer">In progress</option>
+                                                <option value="manual">Stop</option>
+                                                <option value="manual">Resume</option>
+                                                <option value="manual">Done</option>
+                                            </select>
+                                        </div>
+
+                                        <button class="btn btn-secondary float-right mr-2 col-md-1">2h</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Research</button>
+                                        <button class="btn btn-default float-right mr-2 col-md-1">Staging</button>
 
                                         <div class="card-text col-md-5">
                                             Lorem ipsum
@@ -454,62 +510,38 @@
                 </div>
             </div>
         </section>
-        <!-- /.content -->
+
         <div class="text-center">
             <button class="btn btn-default btn-lg col-md-2 mb-3">Load more</button>
         </div>
     </div>
-    <!-- /.content-wrapper -->
+
     <footer class="main-footer">
-        <strong>Copyright &copy; 2020.</strong>
-        All rights reserved.
+        <strong>Copyright &copy; 2020.</strong>All rights reserved.
     </footer>
 
 </div>
-<!-- ./wrapper -->
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="../../plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="../../plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="../../plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="../../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="../../plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
 <script src="../../plugins/moment/moment.min.js"></script>
 <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
 <!-- Select2 -->
 <script src="../../plugins/select2/js/select2.full.min.js"></script>
 <!-- Bootstrap Switch -->
 <script src="../../plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!--js-->
+<script src="../../layouts/js/pms_d.js"></script>
 
 <!-- page script -->
 <script>
     // select2
     $(function () {
-
         $('.select2').select2({
             theme: 'bootstrap4'
         })

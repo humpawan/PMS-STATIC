@@ -37,8 +37,16 @@
     margin-bottom: 0px;
 }
 
+.p-margin-card-text {
+    margin-bottom: -18px;
+}
+
 .dataTable {
     caption-side: top;
     color: black;
     font-size: 22px;
+}
+
+.select2-container .select2-selection--single {
+    height: 20px !important;
 }

@@ -1,4 +1,6 @@
-// QA/index.html
+/*
+    projects/tasks.html
+*/
 
 // keyCode for Enter and Escape
 var nEnterBtnKeyCode = 13;
@@ -107,7 +109,9 @@ function initPopOver() {
     }).click(showPopover).hover(hidePopover);
 }
 
-// Modal js
+/*
+    Modal when clicked on task card
+*/
 
 $(document).ready(function(){
     //on click of add task button
@@ -172,15 +176,13 @@ $('.textarea').summernote({
 });
 
 // select2
-$('.select2').select2()
-
-//Initialize Select2 Elements
-$('.select2bs4').select2({
+$('.select2').select2({
     theme: 'bootstrap4'
 })
 
-
-// timer/index.html
+/*
+    timer/index.html
+*/
 
 //Timepicker
 $('#timepicker').datetimepicker({
@@ -197,3 +199,21 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 });
 
+//Date range as a button
+$('#daterange-btn').daterangepicker(
+    {
+        ranges   : {
+            'Today'       : [moment(), moment()],
+            'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+            'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        startDate: moment().subtract(29, 'days'),
+        endDate  : moment()
+    },
+    function (start, end) {
+        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+    }
+);
